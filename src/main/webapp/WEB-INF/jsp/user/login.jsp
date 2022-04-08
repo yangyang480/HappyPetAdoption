@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/static/css/style/login.css">
-    <script src="/static/css/js/login.js"></script>
+    <link rel="stylesheet" href="/src/main/webapp/pub/style/login.css">
+    <script src="/src/main/webapp/pub/js/login.js"></script>
     <script src="https://kit.fontawesome.com/30c6872bce.js" crossorigin="anonymous"></script>
 </head>
 
@@ -43,7 +43,7 @@
             <div id="iconHomeContainer">
                 <div id="iconHomeWhitespace"></div>
                 <div id="homeLink">
-                    <a class="back-home" href="home.html"><i class="home fa-solid fa-house"></i></a>
+                    <a class="back-home" href="../../../../resources/templates/home.html"><i class="home fa-solid fa-house"></i></a>
                 </div>
                 <div class="hover-text">
                     <span title="home link">Back to home</span>
@@ -53,7 +53,7 @@
         </div>
         <div class="create-new">
             <p>Don't have a account yet?</p>
-            <a href="register.html">Create a
+            <a href="register.jsp">Create a
                 new account</a>
         </div>
     </div>

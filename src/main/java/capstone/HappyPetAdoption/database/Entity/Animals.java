@@ -20,14 +20,16 @@ public class Animals {
 
     private Integer animalSpeciesID;
 
+    private String animalDescription;
+
     private Boolean animalStatus;
+
+    private Integer userHospitalID;
 
     @Column(name = "animalCreateDate")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createData = new Date();
 
     private Date updateDate = new Date();
-
-    private Integer userHospitalID;
 
 }

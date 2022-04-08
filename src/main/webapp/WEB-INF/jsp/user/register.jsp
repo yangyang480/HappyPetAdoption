@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Register</title>
-	<link rel="stylesheet" href="/static/css/style/register.css">
-	<script src="/static/css/js/register.js"></script>
-	<script src="https://kit.fontawesome.com/30c6872bce.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/src/main/webapp/pub/style/register.css">
+	<script src="/src/main/webapp/pub/js/register.js"></script>
+	<script src="/https://kit.fontawesome.com/30c6872bce.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
 
 				<div class="form-field">
 					<input id="password" class="password" name="password" type="password" placeholder="Password"
-						required></input>
+						required>
 					<div id="emptyPassword" class="invalid-feedback">
 						Please enter a password
 					</div>
@@ -39,8 +39,8 @@
 				</div>
 
 				<div class="form-field">
-					<input id="confirmPassword" class="confirmPassword" name="confirmPassword" type="password"
-						placeholder="Confirm Password" required></input>
+					<input id="confirmPassword" class="password" name="confirmPassword" type="password"
+						placeholder="Confirm Password" required>
 					<div id="passwordNotSame" class="invalid-feedback">
 						Passwords do not match
 					</div>
@@ -60,14 +60,14 @@
 
 				<div class="form-field">
 					<input id="address" class="address" name="address" type="text" placeholder="Address"
-						required></input>
+						required>
 						<div id="emptyAddress" class="invalid-feedback">
 							Please enter address
 						</div>
 				</div>
 
 				<div class="form-field">
-					<input id="city" class="city" name="city" type="text" placeholder="City" required></input>
+					<input id="city" class="city" name="city" type="text" placeholder="City" required>
 					<div id="emptyCity" class="invalid-feedback">
 						Please enter city
 					</div>
@@ -135,7 +135,7 @@
 
 				<div class="form-field">
 					<input id="zipcode" class="zipcode" name="zipcode" type="text" placeholder="Zipcode"
-						required></input>
+						required>
 						<div id="emptyZipcode" class="invalid-feedback">
 							Please enter zipcode
 						</div>
@@ -145,7 +145,7 @@
 				</div>
 
 				<div class="form-field">
-					<input id="phone" class="phone" name="phone" type="tel" placeholder="Phone Number" required></input>
+					<input id="phone" class="phone" name="phone" type="tel" placeholder="Phone Number" required>
 					<div id="emptyPhone" class="invalid-feedback">
 						Please enter phone number
 					</div>
@@ -157,11 +157,11 @@
 				<br>
 				
 				<a class="submit" onclick="validate();">Register</a>
-				<p class="forgot"><a href="login.html">Have account already?</a></p>
+				<p class="forgot"><a href="login.jsp">Have account already?</a></p>
 				<div id="iconHomeContainer">
 					<div id="iconHomeWhitespace"></div>
 					<div id="homeLink">
-						<a class="back-home" href="home.html"><i class="home fa-solid fa-house"></i></a>
+						<a class="back-home" href="../../../../resources/templates/home.html"><i class="home fa-solid fa-house"></i></a>
 					</div>
 					<div class="hover-text">
 						<span title="home link"> -Back to home</span>
@@ -171,7 +171,7 @@
 		</div>
 	</div>
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	<script src="/https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
 </body>
