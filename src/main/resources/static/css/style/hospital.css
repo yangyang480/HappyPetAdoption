@@ -1,0 +1,39 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  flex: auto;
+}
+
+.hf {
+    background-color: #f4d3cf;
+  }
+
+  a.login.link-primary, a.link-primary {
+    text-decoration: none;
+  }
+
+  .fa-brands {
+    color: rgb(138, 135, 135);
+  
+  }
+  
+  .fa-brands.fa-youtube:hover {
+    color: rgb(213, 45, 73);
+  }
+  
+  .fa-brands.fa-facebook:hover {
+    color: rgb(45, 115, 213);
+  }
+
+  .row.title {
+    height: 2em;
+    font-size: 20px;
+  }
+
+  #footer {
+    background-color:#f4d3cf ;
+}

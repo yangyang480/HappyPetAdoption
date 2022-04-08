@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'lobsterregular';
+  src: url('../font/lobster-regular-webfont.woff2') format('woff2'),
+       url('../font/lobster-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'send_flowersregular';
+  src: url('../font/sendflowers-regular-webfont.woff2') format('woff2'),
+       url('../font/sendflowers-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.animal-section {
+  flex: auto;
+}
+
+.welcome-container {
+  background-color: #f4ebf4;
+}
+
+h1 {
+  font-family: 'send_flowersregular';
+  color: rgb(228, 76, 109);
+  font-weight: 200;
+}
+
+.hf {
+  background-color: #f4d3cf;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+a.login.link-primary, a.link-primary {
+  text-decoration: none;
+}
+
+.fa-brands {
+  color: rgb(138, 135, 135);
+}
+
+.fa-brands.fa-youtube:hover {
+  color: rgb(213, 45, 73);
+}
+
+.fa-brands.fa-facebook:hover {
+  color: rgb(45, 115, 213);
+}
+
+.row.title {
+  height: 2em;
+}
+
+#footer {
+  background-color:#f4d3cf ;
+}
