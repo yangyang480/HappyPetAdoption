@@ -67,7 +67,7 @@ public class RegisterController {
         userDAO.save(user);
 
         log.info(formBean.toString());
-        response.setViewName("redirect:/user/edit/" + user.getId());
+        response.setViewName("redirect:/");
         return response;
     }
 
