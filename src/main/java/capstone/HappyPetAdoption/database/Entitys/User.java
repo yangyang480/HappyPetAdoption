@@ -29,6 +29,9 @@ public class User {
     @Column(name = "userName")
     private String userName;
 
+    @Column(name = "userTypeID")
+    private Integer userTypeID;
+
     @Column(name = "userAddress")
     private String userAddress;
 
@@ -43,9 +46,6 @@ public class User {
 
     @Column(name = "userPhone")
     private String userPhone;
-
-    @Column(name = "userTypeId")
-    private Integer userTypeId;
 
     @Column(name = "createDate")
     @Temporal(TemporalType.TIMESTAMP)

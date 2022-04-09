@@ -48,6 +48,14 @@
 				</div>
 
 				<div class="form-field">
+					<input id="userName" class="userName" name="userName" type="text"
+						   placeholder="Full Name" value="${formbean.userName}">
+					<div id="emptyName" class="invalid-feedback">
+						Please enter your full name
+					</div>
+				</div>
+
+				<div class="form-field">
 					<div id="roles" class="roles">Register As:
 						<input id="roles1" name="roles" type="radio">
 						<label for="roles1">Hospital</label>

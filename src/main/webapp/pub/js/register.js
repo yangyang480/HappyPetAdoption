@@ -33,6 +33,13 @@ function validate() {
     document.getElementById("passwordNotSame").style.display = "block";
   }
 
+  //validate userName
+  var UserName = document.getElementById("userName").value;
+  if (!UserName) {
+    isValid = false;
+    document.getElementById("emptyName").style.display = "block";
+  }
+
   // Validate Roles. If type == radio, and also role[0] or role[1] checked then validCheckRole == ture.
   var registerAs = document.getElementById("roles");
   var roles = registerAs.getElementsByTagName("input");
@@ -98,16 +105,17 @@ function validate() {
 
 function reset() {
   document.getElementById("emptyEmail").style.display = "none";
+  document.getElementById("emailNoAnnotation").style.display = "none";
   document.getElementById("emptyPassword").style.display = "none";
+  document.getElementById("passwordTooLong").style.display = "none";
   document.getElementById("passwordNotSame").style.display = "none";
+  document.getElementById("emptyName").style.display = "none";
   document.getElementById("emptyRegisterAs").style.display = "none";
   document.getElementById("emptyAddress").style.display = "none";
   document.getElementById("emptyCity").style.display = "none";
   document.getElementById("emptySelectState").style.display = "none";
   document.getElementById("emptyZipcode").style.display = "none";
-  document.getElementById("emptyPhone").style.display = "none";
   document.getElementById("zipNot5Digits").style.display = "none";
+  document.getElementById("emptyPhone").style.display = "none";
   document.getElementById("phoneNot10Digits").style.display = "none";
-  document.getElementById("emailNoAnnotation").style.display = "none";
-  document.getElementById("passwordTooLong").style.display = "none";
 }

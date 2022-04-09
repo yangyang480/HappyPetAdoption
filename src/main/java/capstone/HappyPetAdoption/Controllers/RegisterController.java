@@ -52,14 +52,15 @@ public class RegisterController {
             user = new User();
         }
         user.setId(formBean.getId());
-        user.setUserEmail(formBean.getUserEmail());
-        user.setUserPassword(formBean.getUserPassword());
-        user.setUserName(formBean.getUserName());
-        user.setUserAddress(formBean.getUserAddress());
-        user.setUserCity(formBean.getUserCity());
-        user.setUserState(formBean.getUserState());
+        user.setUserEmail(formBean.getUserEmail().toString());
+        user.setUserPassword(formBean.getUserPassword().toString());
+        user.setUserName(formBean.getUserName().toString());
+//        user.setUserTypeID(formBean.getUserTypeID());
+        user.setUserAddress(formBean.getUserAddress().toString());
+        user.setUserCity(formBean.getUserCity().toString());
+        user.setUserState(formBean.getUserState().toString());
         user.setUserZipcode(formBean.getUserZipcode());
-        user.setUserPhone(formBean.getUserPhone());
+        user.setUserPhone(formBean.getUserPhone().toString());
         user.setCreateDate(new Date());
 
         userDAO.save(user);

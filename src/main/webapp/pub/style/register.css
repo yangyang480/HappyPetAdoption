@@ -16,7 +16,7 @@ body {
 .main {
   margin: 0 auto 24px auto;
   background-color: #ffffff;
-  width: 600px;
+  width: 800px;
   border-radius: 1.5em;
   box-shadow: 0px 11px 35px 2px rgba(235, 156, 156, 0.4);
   padding-bottom: 24px;
@@ -34,6 +34,7 @@ body {
 .email,
 .password,
 .confirmPassword,
+.userName,
 .address,
 .city,
 #state,
