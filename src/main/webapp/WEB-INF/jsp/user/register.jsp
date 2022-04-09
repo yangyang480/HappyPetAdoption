@@ -8,8 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Register</title>
 	<link rel="stylesheet" href="../../../pub/style/register.css">
-	<script src="/src/main/webapp/pub/js/register.js"></script>
-	<script src="/https://kit.fontawesome.com/30c6872bce.js" crossorigin="anonymous"></script>
+	<script src="../../../pub/js/register.js"></script>
+	<script src="https://kit.fontawesome.com/30c6872bce.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -159,6 +159,7 @@
 				
 				<a class="submit" onclick="validate();">Register</a>
 				<p class="forgot"><a href="/user/login">Have account already?</a></p>
+			</form>
 				<div id="iconHomeContainer">
 					<div id="iconHomeWhitespace"></div>
 					<div id="homeLink">
@@ -168,13 +169,10 @@
 						<span title="home link"> -Back to home</span>
 					</div>
 				</div>
-			</form>
 		</div>
 	</div>
 
-	<script src="/https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous"></script>
+
 </body>
 
 </html>
