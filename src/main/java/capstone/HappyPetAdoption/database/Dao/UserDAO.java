@@ -1,4 +1,4 @@
-package capstone.HappyPetAdoption.database.DAO;
+package capstone.HappyPetAdoption.database.Dao;
 
 import capstone.HappyPetAdoption.database.Entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
