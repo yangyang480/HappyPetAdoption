@@ -46,6 +46,9 @@ public class User {
     @Column(name = "userPhone")
     private String userPhone;
 
+    @Column(name = "userTypeId")
+    private Integer userTypeId;
+
     @Column(name = "createDate")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createDate = new Date();
