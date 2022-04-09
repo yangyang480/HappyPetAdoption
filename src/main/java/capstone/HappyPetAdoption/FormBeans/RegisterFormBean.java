@@ -13,23 +13,23 @@ public class RegisterFormBean {
 
     private Integer id;
 
-    private String userEmail;
+    private String email;
 
-    private String userPassword;
+    private String password;
 
     private String confirmPassword;
 
-    private String userName;
+    private String name;
 
-    private String userTypeID;
+    private String address;
 
-    private String userAddress;
+    private String city;
 
-    private String userCity;
+    private String state;
 
-    private String userState;
+    private Integer userTypeId;
 
-    private Integer userZipcode;
+    private Integer zipcode;
 
-    private String userPhone;
+    private String phone;
 }

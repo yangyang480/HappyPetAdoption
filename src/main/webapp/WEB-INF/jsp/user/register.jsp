@@ -17,20 +17,20 @@
 	<div class="wrapper">
 		<div class="main">
 			<p class="sign">Register</p>
-			<form class="form" action="/user/registerSubmit" method="get" >
+			<form class="form" action="/user/registerSubmit" method="post" autocomplete="off">
 				<div class="form-field">
-					<input id="email" class="email" name="email" type="email" placeholder="Email" value="${formbean.userEmail}">
+					<input id="email" class="email" name="email" type="email" placeholder="Email" value="${formbean.email}">
 					<div id="emptyEmail" class="invalid-feedback">
 						Please enter an email
 					</div>					
 					<div id="emailNoAnnotation" class="invalid-feedback">
-						Email should have @ .
+						Email should have @.
 					</div>
 				</div>
 
 				<div class="form-field">
 					<input id="password" class="password" name="password" type="password" placeholder="Password"
-						   value="${formbean.userPassword}">
+						   value="${formbean.password}">
 					<div id="emptyPassword" class="invalid-feedback">
 						Please enter a password
 					</div>
@@ -48,10 +48,10 @@
 				</div>
 
 				<div class="form-field">
-					<input id="userName" class="userName" name="userName" type="text"
-						   placeholder="Full Name" value="${formbean.userName}">
+					<input id="name" class="name" name="name" type="text"
+						   placeholder="Name" value="${formbean.name}">
 					<div id="emptyName" class="invalid-feedback">
-						Please enter your full name
+						Please enter your name
 					</div>
 				</div>
 
@@ -69,21 +69,21 @@
 
 				<div class="form-field">
 					<input id="address" class="address" name="address" type="text" placeholder="Address"
-						   value="${formbean.userAddress}">
+						   value="${formbean.address}">
 						<div id="emptyAddress" class="invalid-feedback">
-							Please enter address
+							Please enter an address
 						</div>
 				</div>
 
 				<div class="form-field">
-					<input id="city" class="city" name="city" type="text" placeholder="City" value="${formbean.userCity}">
+					<input id="city" class="city" name="city" type="text" placeholder="City" value="${formbean.city}">
 					<div id="emptyCity" class="invalid-feedback">
-						Please enter city
+						Please enter a city
 					</div>
 				</div>	
 
 				<div class="form-field">
-					<select name="state" id="state" value="${formbean.userState}">
+					<select name="state" id="state" value="${formbean.state}">
 						<option value="-1">--State--</option>
 						<option value="AL">Alabama</option>
 						<option value="AK">Alaska</option>
@@ -138,15 +138,15 @@
 						<option value="WY">Wyoming</option>
 					</select>
 					<div id="emptySelectState" class="invalid-feedback">
-						Please select state
+						Please select a state
 					</div>
 				</div>
 
 				<div class="form-field">
 					<input id="zipcode" class="zipcode" name="zipcode" type="text" placeholder="Zipcode"
-						   value="${formbean.userZipcode}">
+						   value="${formbean.zipcode}">
 						<div id="emptyZipcode" class="invalid-feedback">
-							Please enter zipcode
+							Please enter a zipcode
 						</div>
 						<div id="zipNot5Digits" class="invalid-feedback">
 							Zipcode should be 5 digits
@@ -154,9 +154,9 @@
 				</div>
 
 				<div class="form-field">
-					<input id="phone" class="phone" name="phone" type="tel" placeholder="Phone Number" value="${formBean.userPhone}">
+					<input id="phone" class="phone" name="phone" type="tel" placeholder="Phone Number" value="${formBean.phone}">
 					<div id="emptyPhone" class="invalid-feedback">
-						Please enter phone number
+						Please enter a phone number
 					</div>
 					<div id="phoneNot10Digits" class="invalid-feedback">
 						Phone should be 10 digits

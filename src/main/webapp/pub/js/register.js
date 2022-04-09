@@ -33,9 +33,9 @@ function validate() {
     document.getElementById("passwordNotSame").style.display = "block";
   }
 
-  //validate userName
-  var UserName = document.getElementById("userName").value;
-  if (!UserName) {
+  // Validate Name
+  var name = document.getElementById("name").value;
+  if (!name) {
     isValid = false;
     document.getElementById("emptyName").style.display = "block";
   }
@@ -55,51 +55,52 @@ function validate() {
   }
 
   // Validate Address
-  var Address = document.getElementById("address").value;
-  if (!Address) {
+  var address = document.getElementById("address").value;
+  if (!address) {
     isValid = false;
     document.getElementById("emptyAddress").style.display = "block";
   }
 
   // Validate City
-  var City = document.getElementById("city").value;
-  if (!City) {
+  var city = document.getElementById("city").value;
+  if (!city) {
     isValid = false;
     document.getElementById("emptyCity").style.display = "block";
   }
 
   // Validate State
-  var State = document.getElementById("state");
-  var optionSelIndex = State.options[State.selectedIndex].value;
+  var state = document.getElementById("state");
+  var optionSelIndex = state.options[state.selectedIndex].value;
   if (optionSelIndex == -1) {
     isValid = false;
     document.getElementById("emptySelectState").style.display = "block";
   }
 
   // Validate Zipcode
-  var Zipcode = document.getElementById("zipcode").value;
-  if (!Zipcode) {
+  var zipcode = document.getElementById("zipcode").value;
+  if (!zipcode) {
     isValid = false;
     document.getElementById("emptyZipcode").style.display = "block";
   }
-  if (Zipcode && !/^\d{5}(-\d{4})?$/.test(Zipcode)) {
+  if (zipcode && !/^\d{5}(-\d{4})?$/.test(zipcode)) {
     isValid = false;
     document.getElementById("zipNot5Digits").style.display = "block";
   }
 
   // Validate Phone Number
-  var Phone = document.getElementById("phone").value;
-  if (!Phone) {
+  var phone = document.getElementById("phone").value;
+  if (!phone) {
     isValid = false;
     document.getElementById("emptyPhone").style.display = "block";
   }
-  if (Phone && !/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/.test(Phone)) {
+  if (phone && !/^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/.test(phone)) {
     isValid = false;
     document.getElementById("phoneNot10Digits").style.display = "block";
   }
 
   if (isValid) {
-    window.location.href = "/home";
+    var form = document.getElementsByTagName("form");
+    form[0].submit();
   }
 }
 
