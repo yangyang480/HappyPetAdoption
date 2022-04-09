@@ -21,7 +21,7 @@
 <div class="welcome-container">
     <div class="welcome container-lg p-5 rounded-3">
         <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold">WELCOME</h1>
+            <h1 class="display-5 fw-bold">Welcome to Happy Pet Adoption</h1>
             <p class="description col-md-8 fs-4">
                 We hope our beloved animals can have a sweet home. However, not everyone have one.
                 If you love animal, please don't miss the chance to provide a real home to the animals.</p>
