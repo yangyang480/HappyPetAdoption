@@ -49,7 +49,7 @@
 
 				<div class="form-field">
 					<input id="name" class="name" name="name" type="text"
-						   placeholder="Name" value="${formbean.name}">
+						   placeholder="Full Name" value="${formbean.name}">
 					<div id="emptyName" class="invalid-feedback">
 						Please enter your name
 					</div>
