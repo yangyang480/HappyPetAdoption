@@ -1,12 +1,13 @@
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Register</title>
-	<link rel="stylesheet" href="/src/main/webapp/pub/style/register.css">
+	<link rel="stylesheet" href="../../../pub/style/register.css">
 	<script src="/src/main/webapp/pub/js/register.js"></script>
 	<script src="/https://kit.fontawesome.com/30c6872bce.js" crossorigin="anonymous"></script>
 </head>
@@ -157,11 +158,11 @@
 				<br>
 				
 				<a class="submit" onclick="validate();">Register</a>
-				<p class="forgot"><a href="login.jsp">Have account already?</a></p>
+				<p class="forgot"><a href="/user/login">Have account already?</a></p>
 				<div id="iconHomeContainer">
 					<div id="iconHomeWhitespace"></div>
 					<div id="homeLink">
-						<a class="back-home" href="../../../../resources/templates/home.html"><i class="home fa-solid fa-house"></i></a>
+						<a class="back-home" href="/home"><i class="home fa-solid fa-house"></i></a>
 					</div>
 					<div class="hover-text">
 						<span title="home link"> -Back to home</span>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/src/main/webapp/pub/style/login.css">
+    <link rel="stylesheet" href="../../../pub/style/login.css">
     <script src="/src/main/webapp/pub/js/login.js"></script>
     <script src="https://kit.fontawesome.com/30c6872bce.js" crossorigin="anonymous"></script>
 </head>
@@ -17,7 +17,7 @@
             <p class="sign">Sign in</p>
             <form class="form">
                 <div class="form-field">
-                    <input id="username" class="username " name="username" type="text" placeholder="Email"></input>
+                    <input id="username" class="username " name="username" type="text" placeholder="Email">
                     <div id="emptyUsername" class="invalid-feedback">
                         Please enter an email
                     </div>
@@ -28,7 +28,7 @@
 
                 <div class="form-field"> 
                     <input id="password" class="password" name="password" type="password"
-                        placeholder="Password"></input>
+                        placeholder="Password">
                     <div id="emptyPassword" class="invalid-feedback">
                         Please enter a password
                     </div>
@@ -43,7 +43,7 @@
             <div id="iconHomeContainer">
                 <div id="iconHomeWhitespace"></div>
                 <div id="homeLink">
-                    <a class="back-home" href="../../../../resources/templates/home.html"><i class="home fa-solid fa-house"></i></a>
+                    <a class="back-home" href="/home"><i class="home fa-solid fa-house"></i></a>
                 </div>
                 <div class="hover-text">
                     <span title="home link">Back to home</span>
@@ -53,7 +53,7 @@
         </div>
         <div class="create-new">
             <p>Don't have a account yet?</p>
-            <a href="register.jsp">Create a
+            <a href="/user/register">Create a
                 new account</a>
         </div>
     </div>
