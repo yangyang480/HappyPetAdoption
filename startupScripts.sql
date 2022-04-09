@@ -2,11 +2,15 @@
 ### Drop Tables ###
 DROP TABLE Adoption;
 DROP TABLE Animal;
-DROP TABLE UserType;
 DROP TABLE User;
+DROP TABLE UserType;
 DROP TABLE AnimalSpecies;
 
 ### Create Tables ###
+CREATE TABLE UserType(
+	id int NOT NULL PRIMARY KEY UNIQUE,
+    userType varchar(225) NOT NULL);   
+
 CREATE TABLE User(
 	id int PRIMARY KEY AUTO_INCREMENT UNIQUE,
 	userEmail varchar(225) NOT NULL UNIQUE,
@@ -17,14 +21,10 @@ CREATE TABLE User(
     userState varchar(225) NOT NULL,
     userZipcode int NOT NULL,
     userPhone varchar(225) NOT NULL,
+	userTypeID int NOT NULL,
     createDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updateDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
-
-CREATE TABLE UserType(
-	userTypeID int NOT NULL PRIMARY KEY UNIQUE,
-    userType varchar(225) NOT NULL,
-    userID int NOT NULL,
-    foreign key (userID) references User(id) ON DELETE restrict);   
+    updateDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    foreign key (userTypeID) references UserType(id) ON DELETE restrict);
     
 CREATE TABLE AnimalSpecies (
 	animalSpeciesID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -59,19 +59,19 @@ CREATE TABLE Adoption (
     foreign key (userRescuerID) references User(id) ON DELETE restrict);
 
 ### Insert Info ###
-INSERT INTO User (id, userEmail, userPassword, userName, userAddress, userCity, userState, userZipcode, userPhone)
+INSERT INTO UserType (id, userType)
 VALUES
-(1, 'oak@gmail.com', 'hfsgfydg', 'Oak Knoll Animal Hospital', '6315 Minnetonka Blvd', 'Los Angeles', 'LA', 76342, '6538762435'),
-(2, 'banfield@gmail.com', 'tdagew453dd', 'Banfield Pet Hospital', '651 Winnetka Ave N', 'Minneapolis', 'MN', 65423, '7463569874'),
-(3, 'edina@gmail.com', 'tjkjgeefe73dd', 'Edina Pet Hospital', '7701 Cahill Rd', 'Houston', 'TX', 62241, '8542436254'),
-(4, 'jaden@g.com', 'ythdv653gi', 'Jaden', '8610Minnehaha', 'Rhome', 'TX', 45321, '7652445380'),
-(5, 'Mary@g.com', 'kajdgr3646', 'Mary', '8765 St paul', 'Chicago', 'IL', 54821, '1489526741'),
-(6, 'Art@g.com', 'vkfje644', 'Art', '6532 University st', 'San Fransico', 'LA', 98562, '98548756123');
+(0, 'Hospital'),
+(1, 'Rescuer');
 
-INSERT INTO UserType (userTypeID, userType, userID)
+INSERT INTO User (id, userEmail, userPassword, userName, userAddress, userCity, userState, userZipcode, userPhone, userTypeID)
 VALUES
-(0, 'Hospital', 1),
-(1, 'Rescuer', 6);
+(1, 'oak@gmail.com', 'hfsgfydg', 'Oak Knoll Animal Hospital', '6315 Minnetonka Blvd', 'Los Angeles', 'LA', 76342, '6538762435', 0),
+(2, 'banfield@gmail.com', 'tdagew453dd', 'Banfield Pet Hospital', '651 Winnetka Ave N', 'Minneapolis', 'MN', 65423, '7463569874', 0),
+(3, 'edina@gmail.com', 'tjkjgeefe73dd', 'Edina Pet Hospital', '7701 Cahill Rd', 'Houston', 'TX', 62241, '8542436254', 0),
+(4, 'jaden@g.com', 'ythdv653gi', 'Jaden', '8610Minnehaha', 'Rhome', 'TX', 45321, '7652445380', 1),
+(5, 'Mary@g.com', 'kajdgr3646', 'Mary', '8765 St paul', 'Chicago', 'IL', 54821, '1489526741', 1),
+(6, 'Art@g.com', 'vkfje644', 'Art', '6532 University st', 'San Fransico', 'LA', 98562, '98548756123', 1);
 
 INSERT INTO AnimalSpecies (animalSpeciesID, speciesName)
 VALUES

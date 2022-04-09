@@ -1,10 +1,7 @@
 package capstone.HappyPetAdoption.database.Entity;
 
 public class UserType {
-
-    private Integer userTypeID;
+    private Integer id;
 
     private String userType;
-
-    private Integer userID;
 }
