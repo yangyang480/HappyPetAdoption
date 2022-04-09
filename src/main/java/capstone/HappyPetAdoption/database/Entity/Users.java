@@ -4,51 +4,50 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.Date;
 
-//@Getter
-//@Setter
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@ToString
-//@Entity
-//@Table
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Entity
+@Table
 public class Users {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "userID")
-    private Integer userID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
 
-//    @Column(name = "userEmail")
+    @Column(name = "userEmail")
     private String userEmail;
 
-//    @Column(name = "userPassword")
+    @Column(name = "userPassword")
     private String userPassword;
 
-//    @Column(name = "userName")
+    @Column(name = "userName")
     private String userName;
 
-//    @Column(name = "userAddress")
+    @Column(name = "userAddress")
     private String userAddress;
 
-//    @Column(name = "userCity")
+    @Column(name = "userCity")
     private String userCity;
 
-//    @Column(name = "userState")
+    @Column(name = "userState")
     private String userState;
 
-//    @Column(name = "userzipcode")
-    private Integer userzipcode;
+    @Column(name = "userZipcode")
+    private Integer userZipcode;
 
-//    @Column(name = "userPhone")
+    @Column(name = "userPhone")
     private String userPhone;
 
-//    @Column(name = "userCreateDate")
-//    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "userCreateDate")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createData = new Date();
 
-    //TODO figure out how to set the update date up
-//    @Column(name = "userUpdateDate")
-//    @Temporal(TemporalType.TIMESTAMP)
-//    private Date updateDate = new Date();
+    @Column(name = "userUpdateDate")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updateDate = new Date();
 
 }
