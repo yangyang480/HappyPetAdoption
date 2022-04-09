@@ -92,7 +92,7 @@ function validate() {
   }
 
   if (isValid) {
-    window.location.href = "home.html";
+    window.location.href = "/home";
   }
 }
 
