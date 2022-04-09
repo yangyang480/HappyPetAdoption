@@ -1,17 +1,17 @@
-package capstone.HappyPetAdoption.controller;
+package capstone.HappyPetAdoption.Controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class HospitalController {
-    @RequestMapping(value = "/view/hospital", method = RequestMethod.GET)
-    public ModelAndView register() throws Exception {
+public class LoginController {
+
+    @RequestMapping(value = "/user/login", method = RequestMethod.GET)
+    public ModelAndView home() throws Exception {
         ModelAndView response = new ModelAndView();
-        response.setViewName("view/hospital");
+        response.setViewName("user/login");
 
         return response;
     }

@@ -1,17 +1,21 @@
 package capstone.HappyPetAdoption.database.Entity;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Getter
 @Setter
+@ToString
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Entity
 @Table
-public class Users {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,12 +46,11 @@ public class Users {
     @Column(name = "userPhone")
     private String userPhone;
 
-    @Column(name = "userCreateDate")
+    @Column(name = "createDate")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createData = new Date();
+    private Date createDate = new Date();
 
-    @Column(name = "userUpdateDate")
+    @Column(name = "updateDate")
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateDate = new Date();
-
 }
