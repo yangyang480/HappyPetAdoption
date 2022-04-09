@@ -20,32 +20,32 @@ public class User {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "userEmail")
-    private String userEmail;
+    @Column(name = "email")
+    private String email;
 
-    @Column(name = "userPassword")
-    private String userPassword;
+    @Column(name = "password")
+    private String password;
 
-    @Column(name = "userName")
-    private String userName;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "userTypeID")
     private Integer userTypeID;
 
-    @Column(name = "userAddress")
-    private String userAddress;
+    @Column(name = "address")
+    private String address;
 
-    @Column(name = "userCity")
-    private String userCity;
+    @Column(name = "city")
+    private String city;
 
-    @Column(name = "userState")
-    private String userState;
+    @Column(name = "state")
+    private String state;
 
-    @Column(name = "userZipcode")
-    private Integer userZipcode;
+    @Column(name = "zipcode")
+    private Integer zipcode;
 
-    @Column(name = "userPhone")
-    private String userPhone;
+    @Column(name = "phone")
+    private String phone;
 
     @Column(name = "createDate")
     @Temporal(TemporalType.TIMESTAMP)

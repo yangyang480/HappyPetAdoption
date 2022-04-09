@@ -13,14 +13,14 @@ CREATE TABLE UserType(
 
 CREATE TABLE User(
 	id int PRIMARY KEY AUTO_INCREMENT UNIQUE,
-	userEmail varchar(225) NOT NULL UNIQUE,
-	userPassword varchar(225) NOT NULL,
-	userName varchar(225) NOT NULL,
-	userAddress varchar(225) NOT NULL,
-	userCity varchar(225) NOT NULL,
-    userState varchar(225) NOT NULL,
-    userZipcode int NOT NULL,
-    userPhone varchar(225) NOT NULL,
+	email varchar(225) NOT NULL UNIQUE,
+	password varchar(225) NOT NULL,
+	name varchar(225) NOT NULL,
+	address varchar(225) NOT NULL,
+	city varchar(225) NOT NULL,
+    state varchar(225) NOT NULL,
+    zipcode int NOT NULL,
+    phone varchar(225) NOT NULL,
 	userTypeID int NOT NULL,
     createDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updateDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -64,7 +64,7 @@ VALUES
 (0, 'Hospital'),
 (1, 'Rescuer');
 
-INSERT INTO User (id, userEmail, userPassword, userName, userAddress, userCity, userState, userZipcode, userPhone, userTypeID)
+INSERT INTO User (id, email, password, name, address, city, state, zipcode, phone, userTypeID)
 VALUES
 (1, 'oak@gmail.com', 'hfsgfydg', 'Oak Knoll Animal Hospital', '6315 Minnetonka Blvd', 'Los Angeles', 'LA', 76342, '6538762435', 0),
 (2, 'banfield@gmail.com', 'tdagew453dd', 'Banfield Pet Hospital', '651 Winnetka Ave N', 'Minneapolis', 'MN', 65423, '7463569874', 0),

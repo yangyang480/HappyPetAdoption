@@ -32,7 +32,7 @@ public class RegisterController {
         return response;
     }
 
-    @RequestMapping(value = "/user/registerSubmit", method = RequestMethod.GET)
+    @RequestMapping(value = "/user/registerSubmit", method = RequestMethod.POST)
     public ModelAndView registerSubmit(@Valid RegisterFormBean formBean, BindingResult bindingResult) throws Exception {
         ModelAndView response = new ModelAndView();
 
@@ -51,16 +51,17 @@ public class RegisterController {
         if (user == null) {
             user = new User();
         }
-        user.setId(formBean.getId());
-        user.setUserEmail(formBean.getUserEmail().toString());
-        user.setUserPassword(formBean.getUserPassword().toString());
-        user.setUserName(formBean.getUserName().toString());
-//        user.setUserTypeID(formBean.getUserTypeID());
-        user.setUserAddress(formBean.getUserAddress().toString());
-        user.setUserCity(formBean.getUserCity().toString());
-        user.setUserState(formBean.getUserState().toString());
-        user.setUserZipcode(formBean.getUserZipcode());
-        user.setUserPhone(formBean.getUserPhone().toString());
+
+        user.setEmail(formBean.getEmail());
+        user.setPassword(formBean.getPassword());
+        user.setName(formBean.getName());
+        user.setAddress(formBean.getAddress());
+        user.setCity(formBean.getCity());
+        user.setState(formBean.getState());
+        user.setZipcode(formBean.getZipcode());
+        //user.setUserTypeId(formBean.getUserTypeId());
+        user.setUserTypeID(0); // TODO get usertype
+        user.setPhone(formBean.getPhone());
         user.setCreateDate(new Date());
 
         userDAO.save(user);
