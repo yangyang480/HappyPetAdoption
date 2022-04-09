@@ -1,4 +1,4 @@
-package capstone.HappyPetAdoption.database.Entity;
+package capstone.HappyPetAdoption.database.Entitys;
 
 import javax.persistence.Column;
 import javax.persistence.Temporal;

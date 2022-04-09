@@ -1,4 +1,4 @@
-package capstone.HappyPetAdoption.database.Entity;
+package capstone.HappyPetAdoption.database.Entitys;
 
 public class UserType {
 

@@ -1,10 +1,10 @@
-package capstone.HappyPetAdoption.Validation;
+package capstone.HappyPetAdoption.Validations;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 import capstone.HappyPetAdoption.database.Dao.UserDAO;
-import capstone.HappyPetAdoption.database.Entity.User;
+import capstone.HappyPetAdoption.database.Entitys.User;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

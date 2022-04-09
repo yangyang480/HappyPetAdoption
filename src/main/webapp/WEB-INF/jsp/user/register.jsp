@@ -17,9 +17,9 @@
 	<div class="wrapper">
 		<div class="main">
 			<p class="sign">Register</p>
-			<form class="form">
+			<form class="form" action="/user/registerSubmit" method="get" >
 				<div class="form-field">
-					<input id="email" class="email" name="email" type="email" placeholder="Email" required>
+					<input id="email" class="email" name="email" type="email" placeholder="Email" value="${formbean.userEmail}">
 					<div id="emptyEmail" class="invalid-feedback">
 						Please enter an email
 					</div>					
@@ -30,7 +30,7 @@
 
 				<div class="form-field">
 					<input id="password" class="password" name="password" type="password" placeholder="Password"
-						required>
+						   value="${formbean.userPassword}">
 					<div id="emptyPassword" class="invalid-feedback">
 						Please enter a password
 					</div>
@@ -41,7 +41,7 @@
 
 				<div class="form-field">
 					<input id="confirmPassword" class="password" name="confirmPassword" type="password"
-						placeholder="Confirm Password" required>
+						placeholder="Confirm Password" value="${formbean.confirmPassword}">
 					<div id="passwordNotSame" class="invalid-feedback">
 						Passwords do not match
 					</div>
@@ -61,21 +61,21 @@
 
 				<div class="form-field">
 					<input id="address" class="address" name="address" type="text" placeholder="Address"
-						required>
+						   value="${formbean.userAddress}">
 						<div id="emptyAddress" class="invalid-feedback">
 							Please enter address
 						</div>
 				</div>
 
 				<div class="form-field">
-					<input id="city" class="city" name="city" type="text" placeholder="City" required>
+					<input id="city" class="city" name="city" type="text" placeholder="City" value="${formbean.userCity}">
 					<div id="emptyCity" class="invalid-feedback">
 						Please enter city
 					</div>
 				</div>	
 
 				<div class="form-field">
-					<select name="state" id="state" required>
+					<select name="state" id="state" value="${formbean.userState}">
 						<option value="-1">--State--</option>
 						<option value="AL">Alabama</option>
 						<option value="AK">Alaska</option>
@@ -136,7 +136,7 @@
 
 				<div class="form-field">
 					<input id="zipcode" class="zipcode" name="zipcode" type="text" placeholder="Zipcode"
-						required>
+						   value="${formbean.userZipcode}">
 						<div id="emptyZipcode" class="invalid-feedback">
 							Please enter zipcode
 						</div>
@@ -146,7 +146,7 @@
 				</div>
 
 				<div class="form-field">
-					<input id="phone" class="phone" name="phone" type="tel" placeholder="Phone Number" required>
+					<input id="phone" class="phone" name="phone" type="tel" placeholder="Phone Number" value="${formBean.userPhone}">
 					<div id="emptyPhone" class="invalid-feedback">
 						Please enter phone number
 					</div>

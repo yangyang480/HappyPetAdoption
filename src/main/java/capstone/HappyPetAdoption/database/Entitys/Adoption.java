@@ -1,11 +1,11 @@
-package capstone.HappyPetAdoption.database.Entity;
+package capstone.HappyPetAdoption.database.Entitys;
 
 import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.util.Date;
 
-public class Adoptions {
+public class Adoption {
 
     private Integer orderID;
 
