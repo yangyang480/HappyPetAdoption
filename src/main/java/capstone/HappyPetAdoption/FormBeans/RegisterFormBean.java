@@ -21,6 +21,8 @@ public class RegisterFormBean {
 
     private String userName;
 
+    private String userTypeID;
+
     private String userAddress;
 
     private String userCity;
