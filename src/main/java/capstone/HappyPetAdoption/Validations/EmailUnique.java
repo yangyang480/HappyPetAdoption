@@ -1,4 +1,4 @@
-package capstone.HappyPetAdoption.Validation;
+package capstone.HappyPetAdoption.Validations;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
