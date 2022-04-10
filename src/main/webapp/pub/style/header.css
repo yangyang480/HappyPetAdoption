@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.hf {
+  background-color: #f4d3cf;
+}
+
+a.login.link-primary, a.link-primary {
+  text-decoration: none;
+}
+
+.row.title {
+  height: 2em;
+}
