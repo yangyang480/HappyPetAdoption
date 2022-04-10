@@ -32,6 +32,7 @@ public class User implements UserDetails {
     @Column(name = "name")
     private String name;
 
+//    @OneToMany()
     @Column(name = "userTypeID")
     private Integer userTypeID;
 

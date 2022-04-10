@@ -11,9 +11,9 @@ public class Adoption {
 
     private Integer animalID;
 
-    private Integer userRescuerID;
+    private Integer RescuerID;
 
-    private Integer userHospitalID;
+    private Integer ShelterID;
 
     //TODO enum datatype
 //    private OrderStatus orderStatus;

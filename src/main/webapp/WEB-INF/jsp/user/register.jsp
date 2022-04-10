@@ -58,14 +58,20 @@
 				<div class="form-field">
 					<div id="roles" class="roles">Register As:
 						<input id="roles1" name="roles" type="radio">
-						<label for="roles1">Hospital</label>
+						<form:radiobutton path="role" value="0" label="Shelter" id="roles"/>Shelter
 						<input type="radio" id="roles2" name="roles">
-						<label for="roles2">Rescuer</label>
+						<form:radiobutton path="role" value="1" label="Rescuer" id="roles"/>Rescuer
 					</div>
 					<div id="emptyRegisterAs" class="invalid-feedback">
 						Please select a role
 					</div>
 				</div>
+
+<%--				<c:forEach items="${bindingResult.getFieldErrors('checkbox')}" var="error">--%>
+<%--					<div style="color: red;">--%>
+<%--							${error.getDefaultMessage()}--%>
+<%--					</div>--%>
+<%--				</c:forEach>--%>
 
 				<div class="form-field">
 					<input id="address" class="address" name="address" type="text" placeholder="Address"
