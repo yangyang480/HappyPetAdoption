@@ -24,7 +24,7 @@ public class Animals {
 
     private Boolean animalStatus;
 
-    private Integer userHospitalID;
+    private Integer ShelterID;
 
     @Column(name = "animalCreateDate")
     @Temporal(TemporalType.TIMESTAMP)

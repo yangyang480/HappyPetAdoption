@@ -27,6 +27,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable()
                 .authorizeRequests()
                 .antMatchers("/",
+                        "/view/shelter",
+                        "/view/animal",
                         "/error",
                         "/error/*",
                         "/home",

@@ -17,7 +17,7 @@
 <div class="hf">
     <nav class="container-lg navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Happy Pet Adoption</a>
+            <a class="navbar-brand" href="/home">Happy Pet Adoption</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
                         <a class="nav-link active" aria-current="page" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/view/hospital">Hospital</a>
+                        <a class="nav-link" href="/view/shelter">Shelter</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/view/animal">Animal</a>

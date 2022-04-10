@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.Date;
 
@@ -31,6 +32,15 @@ public class RegisterController {
 
         return response;
     }
+
+//    @RequestMapping(value = "/user", method = RequestMethod.GET)
+//    public ModelAndView user() {
+//        User user = new User();
+//        user.setFavoriteFrameworks((new String []{"Spring MVC","Struts 2"}));
+//        user.setGender("M");
+//        ModelAndView modelAndView = new ModelAndView("user", "command", user);
+//        return modelAndView;
+//    }
 
     @RequestMapping(value = "/user/registerSubmit", method = RequestMethod.POST)
     public ModelAndView registerSubmit(@Valid RegisterFormBean formBean, BindingResult bindingResult) throws Exception {
@@ -70,5 +80,6 @@ public class RegisterController {
         response.setViewName("redirect:/");
         return response;
     }
+
 
 }

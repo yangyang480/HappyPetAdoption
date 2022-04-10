@@ -5,6 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Column;
+import javax.validation.constraints.NotEmpty;
 
 @Getter
 @Setter
@@ -27,7 +28,8 @@ public class RegisterFormBean {
 
     private String state;
 
-    private Integer userTypeId;
+//    @NotEmpty
+    private Integer userTypeId = 0;
 
     private Integer zipcode;
 

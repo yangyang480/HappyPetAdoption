@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital</title>
-    <link rel="stylesheet" href="../../../pub/style/hospital.css">
+    <title>Shelter</title>
+    <link rel="stylesheet" href="../../../pub/style/shelter.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/30c6872bce.js" crossorigin="anonymous"></script>
@@ -28,10 +28,10 @@
                             <a class="nav-link" href="/home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Hospital</a>
+                            <a class="nav-link active" aria-current="page" href="/view/shelter">Shelter</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Animal</a>
+                            <a class="nav-link" href="/view/animal">Animal</a>
                         </li>
                     </ul>
                     <span class="navbar-text">
@@ -53,17 +53,17 @@
                 <div class="col-4">
                     <div class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                            id="hospitalSearchBox">
-                        <button class="btn btn-outline-success" onclick="searchHospitals()">Search</button>
+                            id="shelterSearchBox">
+                        <button class="btn btn-outline-success" onclick="searchShelters()">Search</button>
                     </div>
                 </div>
             </div>
 
-            <table class="table" id="hospitalTable">
+            <table class="table" id="shelterTable">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Hospital</th>
+                        <th scope="col">Shelter</th>
                         <th scope="col">Link</th>
                     </tr>
                 </thead>
@@ -85,14 +85,14 @@
         crossorigin="anonymous"></script>
 
     <script>
-        var hospitalData = [{
+        var shelterData = [{
             "id": "1",
-            "name": "Otto Hospital",
+            "name": "Otto Shelter",
             "link": ""
         },
         {
             "id": "2",
-            "name": "Thornton Mercy Hospital",
+            "name": "Thornton Mercy Shelter",
             "link": ""
         },
         {
@@ -136,17 +136,17 @@
             "link": ""
         }];
 
-        function loadHospitalData(searchTerm, notFoundCallback) {
+        function loadShelterData(searchTerm, notFoundCallback) {
             var tableTbodyInnerHTML = "";
 
-            hospitalData.forEach(value => {
+            shelterData.forEach(value => {
                 //The search() method returns -1 if no match is found, != -1 name in the array list, return id, name and link
                 if (searchTerm === undefined || value.name.search(searchTerm) != -1) {
                     tableTbodyInnerHTML += "<tr><th scope='row'>" + value.id + "</th><td>" + value.name + "</td><td><a href='#'>link" + value.link
                 }
             });
             //get the first row of the result
-            document.getElementById('hospitalTable').getElementsByTagName('tbody')[0].innerHTML = tableTbodyInnerHTML;
+            document.getElementById('shelterTable').getElementsByTagName('tbody')[0].innerHTML = tableTbodyInnerHTML;
 
             //if table innerhtml is empty, then we will pass the loading to notfoundcallback and call the nohospiatlfoundcallback function.
             if (tableTbodyInnerHTML === "") {
@@ -154,18 +154,18 @@
             }
         }
 
-        //give searchbox value to searchterm, pass the searchterm to loadhospital parameter. when we click on the search button this function get called.
-        function searchHospitals() {
-            var searchTerm = document.getElementById('hospitalSearchBox').value;
-            loadHospitalData(searchTerm, noHospitalFoundCallback);
+        //give searchbox value to searchterm, pass the searchterm to loadShelter parameter. when we click on the search button this function get called.
+        function searchShelters() {
+            var searchTerm = document.getElementById('shelterSearchBox').value;
+            loadShelterData(searchTerm, noShelterFoundCallback);
         }
 
-        function noHospitalFoundCallback() {
-            alert("No hospitals found.");
+        function noShelterFoundCallback() {
+            alert("No shelters found.");
         }
 
         //when we road the page this function get called
-        loadHospitalData("", noHospitalFoundCallback);
+        loadShelterData("", noShelterFoundCallback);
         //A callback is a function passed as an argument to another function.
     </script>
 
