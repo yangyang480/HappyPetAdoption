@@ -1,7 +1,6 @@
 package capstone.HappyPetAdoption.Controllers;
 
 import capstone.HappyPetAdoption.Services.UserService;
-import capstone.HappyPetAdoption.database.Entitys.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,15 +18,8 @@ public class HomeController {
 
     @RequestMapping(value = {"/","/home"}, method = RequestMethod.GET)
     public ModelAndView home() throws Exception {
-        Map<String, Object> model = new HashMap<>();
-
-        User user = this.userService.getCurrentUser();
-
-        model.put("user", user);
-
-        ModelAndView response = new ModelAndView("/home", model);
+        ModelAndView response = new ModelAndView("/home");
 
         return response;
     }
-
 }
