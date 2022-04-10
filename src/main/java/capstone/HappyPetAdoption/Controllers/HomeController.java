@@ -13,9 +13,6 @@ import java.util.Map;
 @Controller
 public class HomeController {
 
-    @Autowired
-    private UserService userService;
-
     @RequestMapping(value = {"/","/home"}, method = RequestMethod.GET)
     public ModelAndView home() throws Exception {
         ModelAndView response = new ModelAndView("/home");
