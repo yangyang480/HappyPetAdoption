@@ -11,7 +11,7 @@ public interface UserDAO extends JpaRepository<User, Long> {
 
     public User findById(@Param("id") Integer id);
 
-    @Query(value = "select * from users where email = :email", nativeQuery = true)
+    @Query(value = "select * from User where email = :email", nativeQuery = true)
     public User findByEmail(@Param("email") String email);
 
     // select * from user where upper(first_name) like '%:firstName%';
