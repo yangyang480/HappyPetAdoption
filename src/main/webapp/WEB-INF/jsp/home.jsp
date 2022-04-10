@@ -5,7 +5,7 @@
 
 <body class="bg-light">
 
-<div class="container-xxl bg-light carousel-container p-0">
+<div class="container-xxl carousel-container p-0">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -52,7 +52,7 @@
     </div>
 </div>
 
-<div class="bg-light animal-section">
+<div class="animal-section">
     <div class="container-lg album py-5 ">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
