@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -14,6 +16,7 @@
 </head>
 
 <body>
+
 <div class="hf">
     <nav class="container-lg navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
@@ -36,20 +39,17 @@
                 </ul>
                 <span class="navbar-text">
                     <small>
-                        <c:if test="${user == null}">
+                        <sec:authorize access="!isAuthenticated()">
                             <i class="fa-solid fa-circle-user fa-lg "></i> &nbsp
                             <a href="/user/login" class="login link-primary"> Login</a> /
                             <a href="/user/register" class="link-primary">Register</a>
-                        </c:if>
-                        <c:if test="${user != null}">
-                            <a href="/user/profile" class="link-primary">Welcome, ${user.name}!</a>
-                        </c:if>
+                        </sec:authorize>
+                        <sec:authorize access="isAuthenticated()">
+                            <a href="/user/profile" class="link-primary">Welcome, <sec:authentication property="name"/>!</a>
+                        </sec:authorize>
                     </small>
                 </span>
             </div>
         </div>
     </nav>
 </div>
-
-</body>
-</html>
