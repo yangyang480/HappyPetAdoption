@@ -1,0 +1,139 @@
+
+.main {
+  margin: 0 auto 24px auto;
+  background-color: #ffffff;
+  width: 800px;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(235, 156, 156, 0.4);
+  padding-bottom: 24px;
+}
+
+.sign {
+  padding-top: 40px;
+  color: #ea5aa9;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.email,
+.password,
+.confirmPassword,
+.name,
+.address,
+.city,
+#state,
+.zipcode,
+.phone,
+.roles {
+  width: 76%;
+  color: rgb(38, 50, 56);
+  background: rgba(237, 174, 174, 0.2);
+  font-weight: 700;
+  font-family: sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 10px 52px;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  text-align: center;
+  margin: 0 auto;
+}
+
+.form-field {
+  margin-bottom: 25px;
+}
+
+.form {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.username:focus,
+.password:focus {
+  border: 2px solid rgba(0, 0, 0, 0.18) !important;
+}
+
+.submit {
+  color: #fff;
+  background: linear-gradient(to right, #d41e81, #e78cbe);
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 5em;
+}
+
+.forgot {
+  color: #e1bee7;
+  text-align: center;
+  padding-top: 15px;
+}
+
+a {
+  color: #bbb8bb;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #e78cbe;
+}
+
+.create-new {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.create-new a {
+  color: #e31b93;
+}
+
+.create-new a:hover {
+  color: #b14782;
+}
+
+.create-new p {
+  color: #716d71;
+}
+
+
+.invalid-feedback {
+  display: none;
+  font-family: sans-serif;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: small;
+  color: #dc3545;
+}
+
+#homeLink:hover {
+  color: #ea5aa9;
+}
+
+.hover-text {
+  visibility: hidden;
+  flex-direction: row;
+}
+
+#homeLink:hover ~ .hover-text {
+  visibility: visible;
+  color: #9a9196;
+}
+
+#iconHomeContainer {
+  display: flex;
+  text-align: left;
+}
+
+#iconHomeContainer #iconHomeWhitespace,
+#iconHomeContainer .hover-text {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding-left: 0.5em;;
+}
