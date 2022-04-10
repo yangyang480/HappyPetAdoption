@@ -30,7 +30,7 @@ body {
   font-size: 23px;
 }
 
-.username,
+.email,
 .password {
   width: 76%;
   color: rgb(38, 50, 56);
@@ -57,7 +57,7 @@ body {
   margin-bottom: 25px;
 }
 
-.username:focus,
+.email:focus,
 .password:focus {
   border: 2px solid rgba(0, 0, 0, 0.18) !important;
 }

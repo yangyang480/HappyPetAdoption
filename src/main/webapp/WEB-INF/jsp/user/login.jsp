@@ -15,14 +15,11 @@
     <div class="wrapper">
         <div class="main">
             <p class="sign">Sign in</p>
-            <form class="form">
+			<form class="form" action="/user/loginSubmit" method="POST">
                 <div class="form-field">
-                    <input id="username" class="username " name="username" type="text" placeholder="Email">
-                    <div id="emptyUsername" class="invalid-feedback">
+                    <input id="email" class="email" name="email" type="text" placeholder="Email">
+                    <div id="emptyEmail" class="invalid-feedback">
                         Please enter an email
-                    </div>
-                    <div id="usernameNoAnnotation" class="invalid-feedback">
-                        Email should have @ .
                     </div>
                 </div>
 
@@ -31,9 +28,6 @@
                         placeholder="Password">
                     <div id="emptyPassword" class="invalid-feedback">
                         Please enter a password
-                    </div>
-                    <div id="passwordTooLong" class="invalid-feedback">
-                        6 ~ 20 with at least one numeric digit, one uppercase and one lowercase
                     </div>
                 </div>
                 <a class="submit" onclick="validate();">Sign in</a>

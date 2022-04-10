@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,12 +35,17 @@
                     </li>
                 </ul>
                 <span class="navbar-text">
-                        <small>
+                    <small>
+                        <c:if test="${user == null}">
                             <i class="fa-solid fa-circle-user fa-lg "></i> &nbsp
                             <a href="/user/login" class="login link-primary"> Login</a> /
                             <a href="/user/register" class="link-primary">Register</a>
-                        </small>
-                    </span>
+                        </c:if>
+                        <c:if test="${user != null}">
+                            Welcome, ${user.name}!
+                        </c:if>
+                    </small>
+                </span>
             </div>
         </div>
     </nav>
