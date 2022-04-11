@@ -1,18 +1,25 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:include page="../../../WEB-INF/jsp/include/header.jsp" />
+<jsp:include page="../../../WEB-INF/jsp/include/header.jsp"/>
 
 <link rel="stylesheet" href="../../../pub/style/profile.css">
 
 <div class="container-lg my-2 my-lg-4">
-    <h1>User Profile (Registered As)</h1>
+    <c:if test="${user.userTypeID == 0}">
+        <h1>Shelter Profile</h1>
+    </c:if>
+    <c:if test="${user.userTypeID == 1}">
+        <h1>Rescuer Profile</h1>
+    </c:if>
 
-    <form>
+    <form:form action="/user/profileSubmit" modelAttribute="user">
         <fieldset class="mt-2 mt-lg-4">
             <div class="mb-3 row">
                 <label for="email" class="col-sm-2 col-form-label text-end">Email</label>
                 <div class="col-sm-10">
-                    <input type="text" id="email" class="form-control" name="email" value="${user.email}">
+                    <form:input type="text" id="email" class="form-control" name="email" path="email"/>
                 </div>
                 <div id="emptyEmail" class="invalid-feedback">
                     Please enter an email
@@ -25,7 +32,7 @@
             <div class="mb-3 row">
                 <label for="name" class="col-sm-2 col-form-label text-end">Full Name</label>
                 <div class="col-sm-10">
-                    <input id="name" class="form-control" name="name" type="text" value="${user.name}">
+                    <form:input type="text" id="name" class="form-control" name="name" path="name"/>
                 </div>
                 <div id="emptyName" class="invalid-feedback">
                     Please enter your name
@@ -35,7 +42,7 @@
             <div class="mb-3 row">
                 <label for="address" class="col-sm-2 col-form-label text-end">Address</label>
                 <div class="col-sm-10">
-                    <input id="address" class="form-control" name="address" type="text" value="${user.address}">
+                    <form:input type="text" id="address" class="form-control" name="address" path="address"/>
                 </div>
                 <div id="emptyAddress" class="invalid-feedback">
                     Please enter an address
@@ -45,7 +52,7 @@
             <div class="mb-3 row">
                 <label for="city" class="col-sm-2 col-form-label text-end">City</label>
                 <div class="col-sm-10">
-                    <input id="city" class="form-control" name="city" type="text" value="${user.city}">
+                    <form:input type="text" id="city" class="form-control" name="city" path="city"/>
                 </div>
                 <div id="emptyCity" class="invalid-feedback">
                     Please enter a city
@@ -55,9 +62,60 @@
             <div class="mb-3 row">
                 <label for="state" class="col-sm-2 col-form-label text-end">State</label>
                 <div class="col-sm-10">
-                    <select name="state" class="form-control" id="state" value="${user.state}">
-                        <option value="-1">--State--</option><option value="AL">Alabama</option><option value="AK">Alaska</option><option value="AZ">Arizona</option><option value="AR">Arkansas</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DE">Delaware</option><option value="DC">District Of Columbia</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="IA">Iowa</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="ME">Maine</option><option value="MD">Maryland</option><option value="MA">Massachusetts</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MS">Mississippi</option><option value="MO">Missouri</option><option value="MT">Montana</option><option value="NE">Nebraska</option><option value="NV">Nevada</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NY">New York</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VT">Vermont</option><option value="VA">Virginia</option><option value="WA">Washington</option><option value="WV">West Virginia</option><option value="WI">Wisconsin</option><option value="WY">Wyoming</option>
-                    </select>
+                    <form:select name="state" class="form-control" id="state" path="state">
+                        <form:option label="--State--" value="-1"/>
+                        <form:option label="Alabama" value="AL"/>
+                        <form:option label="Alaska" value="AK"/>
+                        <form:option label="Arizona" value="AZ"/>
+                        <form:option label="Arkansas" value="AR"/>
+                        <form:option label="California" value="CA"/>
+                        <form:option label="Colorado" value="CO"/>
+                        <form:option label="Connecticut" value="CT"/>
+                        <form:option label="Delaware" value="DE"/>
+                        <form:option label="District Of Columbia" value="DC"/>
+                        <form:option label="Florida" value="FL"/>
+                        <form:option label="Georgia" value="GA"/>
+                        <form:option label="Hawaii" value="HI"/>
+                        <form:option label="Idaho" value="ID"/>
+                        <form:option label="Illinois" value="IL"/>
+                        <form:option label="Indiana" value="IN"/>
+                        <form:option label="Iowa" value="IA"/>
+                        <form:option label="Kansas" value="KS"/>
+                        <form:option label="Kentucky" value="KY"/>
+                        <form:option label="Louisiana" value="LA"/>
+                        <form:option label="Maine" value="ME"/>
+                        <form:option label="Maryland" value="MD"/>
+                        <form:option label="Massachusetts" value="MA"/>
+                        <form:option label="Michigan" value="MI"/>
+                        <form:option label="Minnesota" value="MN"/>
+                        <form:option label="Mississippi" value="MS"/>
+                        <form:option label="Missouri" value="MO"/>
+                        <form:option label="Montana" value="MT"/>
+                        <form:option label="Nebraska" value="NE"/>
+                        <form:option label="Nevada" value="NV"/>
+                        <form:option label="New Hampshire" value="NH"/>
+                        <form:option label="New Jersey" value="NJ"/>
+                        <form:option label="New Mexico" value="NM"/>
+                        <form:option label="New York" value="NY"/>
+                        <form:option label="North Carolina" value="NC"/>
+                        <form:option label="North Dakota" value="ND"/>
+                        <form:option label="Ohio" value="OH"/>
+                        <form:option label="Oklahoma" value="OK"/>
+                        <form:option label="Oregon" value="OR"/>
+                        <form:option label="Pennsylvania" value="PA"/>
+                        <form:option label="Rhode Island" value="RI"/>
+                        <form:option label="South Carolina" value="SC"/>
+                        <form:option label="South Dakota" value="SD"/>
+                        <form:option label="Tennessee" value="TN"/>
+                        <form:option label="Texas" value="TX"/>
+                        <form:option label="Utah" value="UT"/>
+                        <form:option label="Vermont" value="VT"/>
+                        <form:option label="Virginia" value="VA"/>
+                        <form:option label="Washington" value="WA"/>
+                        <form:option label="West Virginia" value="WV"/>
+                        <form:option label="Wisconsin" value="WI"/>
+                        <form:option label="Wyoming" value="WY"/>
+                    </form:select>
                 </div>
                 <div id="emptySelectState" class="invalid-feedback">
                     Please select a state
@@ -67,7 +125,7 @@
             <div class="mb-3 row">
                 <label for="zipcode" class="col-sm-2 col-form-label text-end">Zipcode</label>
                 <div class="col-sm-10">
-                    <input id="zipcode" class="form-control" name="zipcode" type="text" value="${user.zipcode}">
+                    <form:input type="text" id="zipcode" class="form-control" name="zipcode" path="zipcode"/>
                 </div>
                 <div id="emptyZipcode" class="invalid-feedback">
                     Please enter a zipcode
@@ -80,7 +138,7 @@
             <div class="mb-3 row">
                 <label for="phone" class="col-sm-2 col-form-label text-end">Phone Number</label>
                 <div class="col-sm-10">
-                    <input id="phone" class="form-control" name="phone" type="tel" value="${user.phone}">
+                    <form:input type="text" id="phone" class="form-control" name="phone" path="phone"/>
                 </div>
                 <div id="emptyPhone" class="invalid-feedback">
                     Please enter a phone number
@@ -99,7 +157,7 @@
         </div>
 
 
-    </form>
+    </form:form>
 </div>
 
-<jsp:include page="../../../WEB-INF/jsp/include/footer.jsp" />
+<jsp:include page="../../../WEB-INF/jsp/include/footer.jsp"/>
