@@ -1,0 +1,98 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.page-heading {
+    padding: 210px 0px 130px 0px;
+    text-align: center;
+    justify-content: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../images/shelter-home.jpg");
+}
+
+.text-content {
+    color: #f5f1f5;
+}
+
+.shelter {
+    margin-top: 100px;
+}
+
+.shelter .filters {
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 60px;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+@media (min-width: 1200px){
+    .container {
+        max-width: 1140px;
+    }
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.shelter .filters ul li.active, .shelter .filters ul li:hover {
+    color: #e57575;
+    cursor: pointer;
+
+}
+
+ul {
+    display: block;
+    list-style: none;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+li {
+    margin-left: 1em;
+}
+
+.products ul.pages {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.products ul.pages li {
+    display: inline-block;
+    margin: 0px 2px;
+}
+
+.products ul.pages li a {
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    line-height: 42px;
+    border: 1px solid #eee;
+    font-size: 15px;
+    font-weight: 700;
+    color: #121212;
+    transition: all .3s;
+}
+
+.products ul.pages li a:hover,
+.products ul.pages li.active a {
+    background-color: #f33f3f;
+    border-color: #f33f3f;
+    color: #fff;
+}
+
+.pages {
+    margin-top: 2em;
+}
