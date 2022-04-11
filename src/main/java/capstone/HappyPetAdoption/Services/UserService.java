@@ -12,6 +12,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
+import javax.security.auth.message.AuthException;
+
 @Service
 @RequiredArgsConstructor
 public class UserService implements UserDetailsService {
@@ -47,4 +49,7 @@ public class UserService implements UserDetailsService {
         return user.getId().equals(getCurrentUser().getId());
     }
 
+    public User save(User user) {
+        return userDAO.save(user);
+    }
 }
