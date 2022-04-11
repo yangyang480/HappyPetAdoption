@@ -33,15 +33,6 @@ public class RegisterController {
         return response;
     }
 
-//    @RequestMapping(value = "/user", method = RequestMethod.GET)
-//    public ModelAndView user() {
-//        User user = new User();
-//        user.setFavoriteFrameworks((new String []{"Spring MVC","Struts 2"}));
-//        user.setGender("M");
-//        ModelAndView modelAndView = new ModelAndView("user", "command", user);
-//        return modelAndView;
-//    }
-
     @RequestMapping(value = "/user/registerSubmit", method = RequestMethod.POST)
     public ModelAndView registerSubmit(@Valid RegisterFormBean formBean, BindingResult bindingResult) throws Exception {
         ModelAndView response = new ModelAndView();
@@ -80,6 +71,4 @@ public class RegisterController {
         response.setViewName("redirect:/");
         return response;
     }
-
-
 }

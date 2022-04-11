@@ -1,6 +1,7 @@
 package capstone.HappyPetAdoption.Controllers;
 
 
+import capstone.HappyPetAdoption.FormBeans.ProfileFormBean;
 import capstone.HappyPetAdoption.FormBeans.RegisterFormBean;
 import capstone.HappyPetAdoption.Services.UserService;
 import capstone.HappyPetAdoption.database.Dao.UserDAO;
@@ -28,14 +29,37 @@ public class ProfileController {
     @Autowired
     private UserService userService;
 
-
     @RequestMapping(value = "/user/profile", method = RequestMethod.GET)
-    public ModelAndView register(Model model) throws Exception {
+    public ModelAndView profile(ProfileFormBean profileFormBean) throws Exception
+    {
+        User user = this.userService.getCurrentUser();
+        profileFormBean.setEmail(user.getEmail());
+        profileFormBean.setName(user.getName());
+        profileFormBean.setAddress(user.getAddress());
+        profileFormBean.setCity(user.getCity());
+        profileFormBean.setState(user.getState());
+        profileFormBean.setZipcode(user.getZipcode());
+        profileFormBean.setPhone(user.getPhone());
+        profileFormBean.setUserTypeId(user.getUserTypeID());
+
+        return new ModelAndView("/user/profile");
+    }
+
+    @RequestMapping(value = "/user/profileSubmit", method = RequestMethod.POST)
+    public ModelAndView profileSubmit(ProfileFormBean profileFormBean) throws Exception {
 
         User user = this.userService.getCurrentUser();
 
-        model.addAttribute("user", user);
+        user.setEmail(profileFormBean.getEmail());
+        user.setName(profileFormBean.getName());
+        user.setAddress(profileFormBean.getAddress());
+        user.setCity(profileFormBean.getCity());
+        user.setState(profileFormBean.getState());
+        user.setZipcode(profileFormBean.getZipcode());
+        user.setPhone(profileFormBean.getPhone());
 
-        return new ModelAndView("/user/profile");
+        this.userService.save(user);
+
+        return new ModelAndView("redirect:/user/profile");
     }
 }

@@ -7,14 +7,14 @@
 <link rel="stylesheet" href="../../../pub/style/profile.css">
 
 <div class="container-lg my-2 my-lg-4">
-    <c:if test="${user.userTypeID == 0}">
+    <c:if test="${profileFormBean.userTypeId == 0}">
         <h1>Shelter Profile</h1>
     </c:if>
-    <c:if test="${user.userTypeID == 1}">
+    <c:if test="${profileFormBean.userTypeId == 1}">
         <h1>Rescuer Profile</h1>
     </c:if>
 
-    <form:form action="/user/profileSubmit" modelAttribute="user">
+    <form:form action="/user/profileSubmit" modelAttribute="profileFormBean">
         <fieldset class="mt-2 mt-lg-4">
             <div class="mb-3 row">
                 <label for="email" class="col-sm-2 col-form-label text-end">Email</label>
