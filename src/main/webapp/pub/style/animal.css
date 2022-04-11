@@ -1,5 +1,16 @@
+h4 {
+    color: #ee6e6e !important;
+}
 
-.picturebox {
-    height: 20%;
-    width: auto;
+h1, h4, h5 {
+    font-weight: 800 !important;
+    font-family: "Nunito", sans-serif;
+}
+
+.mb-4 {
+    font-size: medium;
+}
+
+.search-box {
+    margin-top: 2em;
 }
