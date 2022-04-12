@@ -25,6 +25,11 @@ public interface UserDAO extends JpaRepository<User, Long> {
     @Query(value = "select a from Animal a where a.ShelterId = : ShelterId", nativeQuery = true)
     public List<Animals> findByShelterId(@Param("ShelterId") Integer ShelterId);
 
+    //get list of shelters
+    @Query(value = "select u from User u where u.userTypeID = 0 AND u.name like CONCAT('%',:name,'%')")
+    public List<User> findByNameIgnoreCaseContaining(@Param("name") String name);
+
+
     // select * from user where upper(first_name) like '%:firstName%';
     //public List<Users> findByFirstNameIgnoreCaseContaining(@Param("firstName") String firstName);
 
