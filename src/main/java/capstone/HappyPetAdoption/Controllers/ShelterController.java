@@ -3,6 +3,7 @@ package capstone.HappyPetAdoption.Controllers;
 import capstone.HappyPetAdoption.FormBeans.RegisterFormBean;
 import capstone.HappyPetAdoption.database.Dao.UserDAO;
 import capstone.HappyPetAdoption.database.Entitys.Animals;
+import capstone.HappyPetAdoption.database.Entitys.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,18 +39,18 @@ public class ShelterController {
         return response;
     }
 
-    @RequestMapping(value = "/shelter/{id}", method = RequestMethod.GET)
-    public ModelAndView editUser(@RequestParam(value = "ShelterId") Integer ShelterId) throws Exception {
+    @RequestMapping(value = "/view/shelterSearch", method = RequestMethod.GET)
+    public ModelAndView search(@RequestParam(value = "name", required = false) String name) throws Exception {
         ModelAndView response = new ModelAndView();
-        response.setViewName("shelter/{id}");
+        response.setViewName("view/shelter");
 
-        List<Animals> animalsList = new ArrayList<Animals>();
+        List<User> user = new ArrayList<>();
 
-        if (!StringUtils.isEmpty("ShelterId")) {
-            animalsList = userDAO.findByShelterId(ShelterId);
+        if (!StringUtils.isEmpty(name)) {
+            user = userDAO.findByNameIgnoreCaseContaining(name);
         }
-        response.addObject("findAnimalsByShelter", animalsList);
-        response.addObject("ShelterId", ShelterId);
+        response.addObject("userModelKey", user);
+        response.addObject("name", name);
         return response;
         //TODO route this with shelter-home jsp page. this is more like search animals by shelter id
     }

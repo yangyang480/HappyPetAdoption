@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shelter</title>
-    <link rel="stylesheet" href="../../../pub/style/shelter.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/30c6872bce.js" crossorigin="anonymous"></script>
 </head>
+<link rel="stylesheet" href="../../../pub/style/shelter.css">
 
 <body>
     <div class="hf">
@@ -49,31 +49,53 @@
     <div class="main-content bg-light">
         <div class="container-lg album py-5 ">
             <div class="row">
-                <div class="col-8"></div>
-                <div class="col-4">
+                <div class="col-3"></div>
+                <div class="col-6">
                     <div class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                            id="shelterSearchBox">
-                        <button class="btn btn-outline-success" onclick="searchShelters()">Search</button>
+                        <form action="/view/shelterSearch" method="get">
+                            <input class="form-control me-2" type="text" name="name" placeholder="Search" aria-label="Search"
+                                   id="shelterSearchBox" value="${name}">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+<%--                            onclick="searchShelters()"--%>
+                        </form>
                     </div>
                 </div>
             </div>
 
+            <c:if test="${not empty name}">
+                <h5>Search Results Found ${userModelKey.size()}</h5>
+                <br>
+            </c:if>
+
             <table class="table" id="shelterTable">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Shelter</th>
-                        <th scope="col">Link</th>
+<%--                        <th scope="col">#</th>--%>
+<%--                        <th scope="col">Shelter</th>--%>
+<%--                        <th scope="col">Link</th>--%>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
                     </tr>
+
+                    <c:forEach items="${userModelKey}" var="user">
+                        <tr scope = "row">
+                            <td>${user.name}</td>
+                            <td>${user.address}</td>
+                            <td>${user.email}</td>
+                            <td>${user.phone}</td>
+                        </tr>
+                    </c:forEach>
+
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Loading</td>
-                        <td>Loading</td>
-                        <td>Loading</td>
-                    </tr>
-                </tbody>
+<%--                <tbody>--%>
+<%--                    <tr>--%>
+<%--                        <td>Loading</td>--%>
+<%--                        <td>Loading</td>--%>
+<%--                        <td>Loading</td>--%>
+<%--                    </tr>--%>
+<%--                </tbody>--%>
             </table>
         </div>
     </div>
