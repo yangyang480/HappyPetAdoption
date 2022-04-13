@@ -1,4 +1,3 @@
-<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -14,7 +13,8 @@
         <h1>Rescuer Profile</h1>
     </c:if>
 
-    <form:form action="/user/profileSubmit" modelAttribute="profileFormBean">
+    <%--@elvariable id="profileFormBean" type=""--%>
+    <form:form action="/user/profileSubmit" modelAttribute="profileFormBean" method="POST">
         <fieldset class="mt-2 mt-lg-4">
             <div class="mb-3 row">
                 <label for="email" class="col-sm-2 col-form-label text-end">Email</label>
@@ -155,6 +155,21 @@
                 <button type="submit" class="btn btn-primary py-3 px-5">Submit</button>
             </div>
         </div>
+
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary py-3 px-5">Delete</button>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary py-3 px-5"><a href="/user/logout">Logout</a></button>
+            </div>
+        </div>
+
 
 
     </form:form>

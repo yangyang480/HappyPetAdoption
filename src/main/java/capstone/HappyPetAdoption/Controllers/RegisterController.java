@@ -6,6 +6,7 @@ import capstone.HappyPetAdoption.database.Dao.UserDAO;
 import capstone.HappyPetAdoption.database.Entitys.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.Date;
 
@@ -24,6 +24,8 @@ public class RegisterController {
 
     @Autowired
     private UserDAO userDAO;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @RequestMapping(value = "/user/register", method = RequestMethod.GET)
     public ModelAndView register() throws Exception {
@@ -54,7 +56,10 @@ public class RegisterController {
         }
 
         user.setEmail(formBean.getEmail());
-        user.setPassword(formBean.getPassword());
+
+        //when register get the password encoded in database
+        String password = passwordEncoder.encode(formBean.getPassword());
+        user.setPassword(password);
         user.setName(formBean.getName());
         user.setAddress(formBean.getAddress());
         user.setCity(formBean.getCity());

@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
@@ -44,6 +45,7 @@
                             <a href="/user/register" class="link-primary">Register</a>
                         </sec:authorize>
                         <sec:authorize access="isAuthenticated()">
+<%--                            <a href="/home" class="link-primary">Log out</a>--%>
                             <a href="/user/profile" class="link-primary">Welcome, <sec:authentication property="name"/>!</a>
                         </sec:authorize>
                     </small>
