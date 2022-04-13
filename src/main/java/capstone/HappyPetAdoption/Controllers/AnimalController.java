@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AnimalController {
 
+
     @RequestMapping(value = "/view/animal", method = RequestMethod.GET)
     public ModelAndView home() throws Exception {
         ModelAndView response = new ModelAndView();

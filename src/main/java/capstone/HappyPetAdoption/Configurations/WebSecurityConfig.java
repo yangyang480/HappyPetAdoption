@@ -1,25 +1,32 @@
 package capstone.HappyPetAdoption.Configurations;
 
+import capstone.HappyPetAdoption.Services.UserDetailsServiceImpl;
 import capstone.HappyPetAdoption.Services.UserService;
 
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @RequiredArgsConstructor
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final UserService userService;
+    @Autowired
+    private final UserDetailsServiceImpl userDetailsService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -45,32 +52,44 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .formLogin()
 //                    .usernameParameter("email")
                     .loginPage("/user/login")
-//                    .loginProcessingUrl("/user/loginSubmit")
-                    .defaultSuccessUrl("/", true)
+                    .usernameParameter("email") // https://stackoverflow.com/questions/50673400/how-to-log-in-by-email-instead-of-username-in-spring-security
+                    .loginProcessingUrl("/user/loginSubmit") //tell spring security where to listen
+                    .defaultSuccessUrl("/home", true) //if login successful go to the home page
                     .permitAll()
                 .and()
                     .logout()
+                    .logoutUrl("/user/logout")
+                    .invalidateHttpSession(true)
                     .logoutSuccessUrl("/")
-                    .permitAll();
+                    .permitAll() // the URL that the user goes to after they log out.
+                .and()
+                    .exceptionHandling()
+                    .accessDeniedPage("/error/404");
     }
 
+
+    @Bean
+    public DaoAuthenticationProvider getAuthenticationProvider() {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(userDetailsService);
+        authProvider.setPasswordEncoder(getPasswordEncoder());
+        return authProvider;
+    }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(daoAuthenticationProvider());
+        auth.userDetailsService(userDetailsService);
+        auth.authenticationProvider(getAuthenticationProvider());
     }
 
-    @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider() {
-        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
+//    @Bean
+//    @Override
+//    public AuthenticationManager authenticationManagerBean() throws Exception {
+//        return super.authenticationManagerBean();
+//    }
 
-        provider.setUserDetailsService(userService);
-
-        return provider;
+    @Bean(name = "passwordEncoder")
+    public PasswordEncoder getPasswordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
-    }
 }

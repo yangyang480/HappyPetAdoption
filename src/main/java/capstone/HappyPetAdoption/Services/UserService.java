@@ -8,32 +8,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import javax.security.auth.message.AuthException;
 
+@Component
 @Service
 @RequiredArgsConstructor
-public class UserService implements UserDetailsService {
+public class UserService {
 
     @Autowired
     private UserDAO userDAO;
 
-    @Override
-    public UserDetails loadUserByUsername(String email) {
-        return userDAO.findByEmail(email);
-    }
-
-    public User getCurrentUser() {
+    //get current logged-in user detail. in order to edit, and save it.
+    public User getCurrentUser()
+    {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         if (auth instanceof AnonymousAuthenticationToken) {
             return null;
         }
 
-        User user = this.userDAO.findByEmail((String) auth.getPrincipal());
+        org.springframework.security.core.userdetails.User principal
+                = (org.springframework.security.core.userdetails.User) auth.getPrincipal();
+
+        User user = this.userDAO.findByEmail(principal.getUsername());
 
         return user;
     }
