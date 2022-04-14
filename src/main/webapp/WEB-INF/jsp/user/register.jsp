@@ -18,6 +18,7 @@
 	<div class="wrapper">
 		<div class="main">
 			<p class="sign">Register</p>
+			<%--@elvariable id="registerFormBean" type=""--%>
 			<form:form class="form" action="/user/registerSubmit" modelAttribute="registerFormBean" method="POST" autocomplete="off">
 				<div class="form-field">
 					<form:input id="email" path="email" class="email" name="email" type="email" placeholder="Email"/>
