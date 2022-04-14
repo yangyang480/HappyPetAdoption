@@ -1,6 +1,5 @@
 package capstone.HappyPetAdoption.Controllers;
 
-
 import capstone.HappyPetAdoption.FormBeans.RegisterFormBean;
 import capstone.HappyPetAdoption.database.Dao.UserDAO;
 import capstone.HappyPetAdoption.database.Entitys.User;
@@ -28,7 +27,7 @@ public class RegisterController {
     private PasswordEncoder passwordEncoder;
 
     @RequestMapping(value = "/user/register", method = RequestMethod.GET)
-    public ModelAndView register() throws Exception {
+    public ModelAndView register(RegisterFormBean registerFormBean) throws Exception {
         ModelAndView response = new ModelAndView();
         response.setViewName("user/register");
 
@@ -36,43 +35,42 @@ public class RegisterController {
     }
 
     @RequestMapping(value = "/user/registerSubmit", method = RequestMethod.POST)
-    public ModelAndView registerSubmit(@Valid RegisterFormBean formBean, BindingResult bindingResult) throws Exception {
+    public ModelAndView registerSubmit(@Valid RegisterFormBean registerFormBean, BindingResult bindingResult) throws Exception {
         ModelAndView response = new ModelAndView();
 
-        log.info(formBean.toString());
+        log.info(registerFormBean.toString());
 
         if (bindingResult.hasErrors()) {
             for (ObjectError error : bindingResult.getAllErrors()) {
                 log.info(((FieldError) error).getField() + " " + error.getDefaultMessage());
             }
-            response.addObject("formbean", formBean);
+            response.addObject("formbean", registerFormBean);
             response.addObject("bindingResult", bindingResult);
             response.setViewName("user/register");
             return response;
         }
-        User user = userDAO.findById(formBean.getId());
+        User user = userDAO.findById(registerFormBean.getId());
         if (user == null) {
             user = new User();
         }
 
-        user.setEmail(formBean.getEmail());
+        user.setEmail(registerFormBean.getEmail());
 
         //when register get the password encoded in database
-        String password = passwordEncoder.encode(formBean.getPassword());
+        String password = passwordEncoder.encode(registerFormBean.getPassword());
         user.setPassword(password);
-        user.setName(formBean.getName());
-        user.setAddress(formBean.getAddress());
-        user.setCity(formBean.getCity());
-        user.setState(formBean.getState());
-        user.setZipcode(formBean.getZipcode());
-        //user.setUserTypeId(formBean.getUserTypeId());
-        user.setUserTypeID(0); // TODO get usertype
-        user.setPhone(formBean.getPhone());
+        user.setName(registerFormBean.getName());
+        user.setAddress(registerFormBean.getAddress());
+        user.setCity(registerFormBean.getCity());
+        user.setState(registerFormBean.getState());
+        user.setZipcode(registerFormBean.getZipcode());
+        user.setUserTypeID(registerFormBean.getUserTypeId());
+        user.setPhone(registerFormBean.getPhone());
         user.setCreateDate(new Date());
 
         userDAO.save(user);
 
-        log.info(formBean.toString());
+        log.info(registerFormBean.toString());
         response.setViewName("redirect:/");
         return response;
     }

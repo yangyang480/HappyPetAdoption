@@ -1,4 +1,5 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,9 +18,9 @@
 	<div class="wrapper">
 		<div class="main">
 			<p class="sign">Register</p>
-			<form class="form" action="/user/registerSubmit" method="post" autocomplete="off">
+			<form:form class="form" action="/user/registerSubmit" modelAttribute="registerFormBean" method="POST" autocomplete="off">
 				<div class="form-field">
-					<input id="email" class="email" name="email" type="email" placeholder="Email" value="${formbean.email}">
+					<form:input id="email" path="email" class="email" name="email" type="email" placeholder="Email"/>
 					<div id="emptyEmail" class="invalid-feedback">
 						Please enter an email
 					</div>					
@@ -29,8 +30,8 @@
 				</div>
 
 				<div class="form-field">
-					<input id="password" class="password" name="password" type="password" placeholder="Password"
-						   value="${formbean.password}">
+					<form:input id="password" path="password" class="password" name="password" type="password"
+					    placeholder="Password"/>
 					<div id="emptyPassword" class="invalid-feedback">
 						Please enter a password
 					</div>
@@ -41,26 +42,23 @@
 
 				<div class="form-field">
 					<input id="confirmPassword" class="password" name="confirmPassword" type="password"
-						placeholder="Confirm Password" value="${formbean.confirmPassword}">
+					    placeholder="Confirm Password">
 					<div id="passwordNotSame" class="invalid-feedback">
 						Passwords do not match
 					</div>
 				</div>
 
 				<div class="form-field">
-					<input id="name" class="name" name="name" type="text"
-						   placeholder="Full Name" value="${formbean.name}">
-					<div id="emptyName" class="invalid-feedback">
+					<form:input id="name" path="name" class="name" name="name" type="text" placeholder="Full Name"/>
+					<div id="emptyName" class="invalid-feedback"/>
 						Please enter your name
 					</div>
 				</div>
 
 				<div class="form-field">
 					<div id="roles" class="roles">Register As:
-						<input id="roles1" name="roles" type="radio">
-						<form:radiobutton path="role" value="0" label="Shelter" id="roles"/>Shelter
-						<input type="radio" id="roles2" name="roles">
-						<form:radiobutton path="role" value="1" label="Rescuer" id="roles"/>Rescuer
+						<form:radiobutton path="userTypeId" value="0" label="Shelter" id="roles1" name="roles"/>
+						<form:radiobutton path="userTypeId" value="1" label="Rescuer" id="roles2" name="roles"/>
 					</div>
 					<div id="emptyRegisterAs" class="invalid-feedback">
 						Please select a role
@@ -74,22 +72,22 @@
 <%--				</c:forEach>--%>
 
 				<div class="form-field">
-					<input id="address" class="address" name="address" type="text" placeholder="Address"
-						   value="${formbean.address}">
-						<div id="emptyAddress" class="invalid-feedback">
-							Please enter an address
-						</div>
+					<form:input id="address" path="address" class="address" name="address" type="text"
+				        placeholder="Address"/>
+                    <div id="emptyAddress" class="invalid-feedback">
+                        Please enter an address
+                    </div>
 				</div>
 
 				<div class="form-field">
-					<input id="city" class="city" name="city" type="text" placeholder="City" value="${formbean.city}">
+					<form:input id="city" path="city" class="city" name="city" type="text" placeholder="City"/>
 					<div id="emptyCity" class="invalid-feedback">
 						Please enter a city
 					</div>
 				</div>	
 
 				<div class="form-field">
-					<select name="state" id="state" value="${formbean.state}">
+					<form:select name="state" path="state" id="state">
 						<option value="-1">--State--</option>
 						<option value="AL">Alabama</option>
 						<option value="AK">Alaska</option>
@@ -142,25 +140,26 @@
 						<option value="WV">West Virginia</option>
 						<option value="WI">Wisconsin</option>
 						<option value="WY">Wyoming</option>
-					</select>
+					</form:select>
 					<div id="emptySelectState" class="invalid-feedback">
 						Please select a state
 					</div>
 				</div>
 
 				<div class="form-field">
-					<input id="zipcode" class="zipcode" name="zipcode" type="text" placeholder="Zipcode"
-						   value="${formbean.zipcode}">
-						<div id="emptyZipcode" class="invalid-feedback">
-							Please enter a zipcode
-						</div>
-						<div id="zipNot5Digits" class="invalid-feedback">
-							Zipcode should be 5 digits
-						</div>
+					<form:input id="zipcode" path="zipcode" class="zipcode" name="zipcode" type="text"
+					    placeholder="Zipcode"/>
+                    <div id="emptyZipcode" class="invalid-feedback">
+                        Please enter a zipcode
+                    </div>
+                    <div id="zipNot5Digits" class="invalid-feedback">
+                        Zipcode should be 5 digits
+                    </div>
 				</div>
 
 				<div class="form-field">
-					<input id="phone" class="phone" name="phone" type="tel" placeholder="Phone Number" value="${formBean.phone}">
+					<form:input id="phone" path="phone" class="phone" name="phone" type="tel"
+					    placeholder="Phone Number"/>
 					<div id="emptyPhone" class="invalid-feedback">
 						Please enter a phone number
 					</div>
@@ -173,16 +172,16 @@
 				
 				<a class="submit" onclick="validate();">Register</a>
 				<p class="forgot"><a href="/user/login">Have account already?</a></p>
-			</form>
-				<div id="iconHomeContainer">
-					<div id="iconHomeWhitespace"></div>
-					<div id="homeLink">
-						<a class="back-home" href="/home"><i class="home fa-solid fa-house"></i></a>
-					</div>
-					<div class="hover-text">
-						<span title="home link"> -Back to home</span>
-					</div>
-				</div>
+			</form:form>
+            <div id="iconHomeContainer">
+                <div id="iconHomeWhitespace"></div>
+                <div id="homeLink">
+                    <a class="back-home" href="/home"><i class="home fa-solid fa-house"></i></a>
+                </div>
+                <div class="hover-text">
+                    <span title="home link"> -Back to home</span>
+                </div>
+            </div>
 		</div>
 	</div>
 
