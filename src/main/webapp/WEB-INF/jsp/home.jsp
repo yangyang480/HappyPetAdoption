@@ -17,11 +17,10 @@
                 <img src="../../pub/images/carousel-1.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h3 class="text-white mb-3 d-none d-sm-block">Best Pet Services</h3>
+                            <h3 class="text-white mb-3 d-none d-sm-block">Best home</h3>
                             <h1 class="display-3 text-white mb-3">Happy Pet Adoption</h1>
                             <h5 class="text-white mb-3 d-none d-sm-block">We hope our beloved animals can have a sweet home.</h5>
                             <a href="/user/register" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">JOIN US</a>
-                            <a href="" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
                         </div>
 
                     </div>
@@ -29,15 +28,15 @@
             <div class="carousel-item">
                 <img src="../../pub/images/carousel-2.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
+                    <h5>Happy Pet Adoption</h5>
+                    <p>Don't miss the chance to give them a home.</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="../../pub/images/11.jpeg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
+                    <h5>Happy Pet Adoption</h5>
+                    <p>Every animal deserve a sweet home.</p>
                 </div>
             </div>
         </div>
@@ -52,120 +51,206 @@
     </div>
 </div>
 
-<div class="animal-section">
-    <div class="container-lg album py-5 ">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://placedog.net/506/506?r" alt="dog">
-                        <div class="card-body">
-                            <p class="card-text">
-                                My name is Coco. I am 2 years old. I love playing throw and catch.
-                                Happy pet Adoption saved me in a cold day.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
-                                <small class="text-muted">create date</small>
+<div class="page-section">
+    <div class="container-xxl about">
+        <div class="row align-items-center">
+            <div class="col-lg-6 py-3">
+                <div class="subhead">About Us</div>
+                <h2 class="title-section">We are <span class="fg-primary">Professional Teams</span> to Growth your Business</h2>
+
+                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of</p>
+
+                <a href="howtoadopt" class="btn btn-primary mt-4">Read More</a>
+            </div>
+            <div class="col-lg-6 py-3">
+                <div class="about-img">
+                    <img src="../../pub/images/about.jpg" alt="about">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-light pt-5">
+    <div class="container py-5">
+        <div class="d-flex flex-column text-center mb-5">
+            <h4 class="text-secondary mb-3">Our Services</h4>
+            <h1 class="display-4 m-0">What you can do in this website</h1>
+        </div>
+        <div class="row pb-3">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
+                    <h3 class="flaticon-house display-3 font-weight-normal text-secondary mb-3"><i class="fa-solid fa-dog"></i></h3>
+                    <h3 class="mb-3">Dogs Adoption</h3>
+                    <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                    <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
+                    <h3 class="flaticon-food display-3 font-weight-normal text-secondary mb-3"><i class="fa-solid fa-cat"></i></h3>
+                    <h3 class="mb-3">Cats Adoption</h3>
+                    <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                    <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
+                    <h3 class="flaticon-grooming display-3 font-weight-normal text-secondary mb-3"><i class="fa-solid fa-heart"></i></h3>
+                    <h3 class="mb-3">Volunteer</h3>
+                    <p>Volunteers play a vital role in our organization, caring for animals, taking photos, writing bios and more.</p>
+                    <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                </div>
+            </div>
+
+    </div>
+    </div>
+</div>
+
+<div class="team-members">
+    <div class="container-xxl">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Our Shelter Members</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <div class="thumb-container">
+                        <img src="../../pub/images/client1.jpg" alt="">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <ul class="social-icons">
+                                    <li><a href="https://www.facebook.com/tricountyhumanesociety"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://twitter.com/tricountyhumane"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/tricountyhumanesociety/"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="https://www.instagram.com/tricountyhumanesociety/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                    <div class="down-content">
+                        <h4>TCHS</h4>
+                        <span>Minnesota</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
+                    </div>
                 </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://placekitten.com/401/401" alt="cat">
-                        <div class="card-body">
-                            <p class="card-text">
-                                My name is Coco. I am 2 years old. I love playing throw and catch.
-                                Happy pet Adoption saved me in a cold day.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
-                                <small class="text-muted">create date</small>
+            </div>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <div class="thumb-container">
+                        <img src="../../pub/images/client2.jpg" alt="">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <ul class="social-icons">
+                                    <li><a href="https://www.facebook.com/PetHavenMN"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://instagram.com/PetHavenMN"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://www.youtube.com/user/PetHavenMN1"><i class="fa fa-youtube"></i></a></li>
+                                    <li><a href="https://twitter.com/PetHaven_MN"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                    <div class="down-content">
+                        <h4>Pet Haven</h4>
+                        <span>Minnesota</span>
+                        <p>Foster-Based Animal Rescue.</p>
+                    </div>
                 </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://placekitten.com/400/400" alt="cat">
-                        <div class="card-body">
-                            <p class="card-text">
-                                My name is Coco. I am 2 years old. I love playing throw and catch.
-                                Happy pet Adoption saved me in a cold day.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
-                                <small class="text-muted">create date</small>
+            </div>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <div class="thumb-container">
+                        <img src="../../pub/images/client3.jpg" alt="">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <ul class="social-icons">
+                                    <li><a href="https://www.facebook.com/PetHavenMN"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://instagram.com/PetHavenMN"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://twitter.com/PetHaven_MN"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="https://www.tiktok.com/@pawsshelter?"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                    <div class="down-content">
+                        <h4>Paws Shelter</h4>
+                        <span>Texas</span>
+                        <p>Find your new best friend today.</p>
+                    </div>
                 </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://placekitten.com/460/460" alt="cat">
-                        <div class="card-body">
-                            <p class="card-text">
-                                My name is Coco. I am 2 years old. I love playing throw and catch.
-                                Happy pet Adoption saved me in a cold day.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
-                                <small class="text-muted">create date</small>
+            </div>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <div class="thumb-container">
+                        <img src="../../pub/images/client4.jpg" alt="">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <ul class="social-icons">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                    <div class="down-content">
+                        <h4>Animal Care Centers</h4>
+                        <span>New York</span>
+                        <p>Find lovely homes for homeless and abandoned animals.</p>
+                    </div>
                 </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://placedog.net/500/500" alt="dog">
-                        <div class="card-body">
-                            <p class="card-text">
-                                My name is Coco. I am 2 years old. I love playing throw and catch.
-                                Happy pet Adoption saved me in a cold day.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
-                                <small class="text-muted">create date</small>
+            </div>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <div class="thumb-container">
+                        <img src="../../pub/images/client5.jpg" alt="">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <ul class="social-icons">
+                                    <li><a href="https://www.facebook.com/LAAnimalServices"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://twitter.com/lacitypets"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://www.laanimalservices.com/shelters/"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="https://www.instagram.com/laanimalservices/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                    <div class="down-content">
+                        <h4>West LA Animal Shelter</h4>
+                        <span>California</span>
+                        <p>LA Animal Services operates six animal shelters throughout the City of Los Angeles.</p>
+                    </div>
                 </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://placedog.net/499/499" alt="dog">
-                        <div class="card-body">
-                            <p class="card-text">
-                                My name is Coco. I am 2 years old. I love playing throw and catch.
-                                Happy pet Adoption saved me in a cold day.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
-                                <small class="text-muted">create date</small>
+            </div>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <div class="thumb-container">
+                        <img src="../../pub/images/client6.jpg" alt="">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <ul class="social-icons">
+                                    <li><a href="https://www.facebook.com/LakelandAnimalShelter/"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://www.youtube.com/user/LakelandAnimalShelte"><i class="fa fa-youtube"></i></a></li>
+                                    <li><a href="https://lakelandanimalshelter.org"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="https://www.instagram.com/lakelandanimalshelter/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                </ul>
                             </div>
                         </div>
+                    </div>
+                    <div class="down-content">
+                        <h4>Lakeland Animal Shelter</h4>
+                        <span>Wisconsin</span>
+                        <p>No-kill humane society and animal rescue.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 
 <jsp:include page="include/footer.jsp" />
