@@ -71,7 +71,7 @@
     </div>
 </div>
 
-<div class="container-fluid bg-light pt-5">
+<div id="ourServices" class="container-fluid pt-5">
     <div class="container py-5">
         <div class="d-flex flex-column text-center mb-5">
             <h4 class="text-secondary mb-3">Our Services</h4>
