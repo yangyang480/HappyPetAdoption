@@ -59,33 +59,16 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateDate = new Date();
 
-//    @Override
-//    public Collection<? extends GrantedAuthority> getAuthorities() {
-//        return null;
-//    }
+
+//    import java.time.LocalDate;
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
+//    @Column(name = "birth_date")
+//    private LocalDate birthDate;
 //
-//    @Override
-//    public String getUsername() {
-//        return this.email;
-//    }
+//    public ModelAndView addChild(ChildFormBean form,
+//                                 @RequestParam("birthDay") String birthDay,
+//                                 @PathVariable("family_id") Integer familyId) throws Exception
 //
-//    @Override
-//    public boolean isAccountNonExpired() {
-//        return false;
-//    }
-//
-//    @Override
-//    public boolean isAccountNonLocked() {
-//        return false;
-//    }
-//
-//    @Override
-//    public boolean isCredentialsNonExpired() {
-//        return false;
-//    }
-//
-//    @Override
-//    public boolean isEnabled() {
-//        return false;
-//    }
+//        log.info(String.valueOf(LocalDate.parse(birthDay)));
+
 }

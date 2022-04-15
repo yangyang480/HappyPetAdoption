@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Register</title>
 	<link rel="stylesheet" href="../../../pub/style/register.css">
-	<script src="../../../pub/js/register.js"></script>
+<%--	<script src="../../../pub/js/register.js"></script>--%>
 	<script src="https://kit.fontawesome.com/30c6872bce.js" crossorigin="anonymous"></script>
 </head>
 
@@ -21,39 +21,41 @@
 			<%--@elvariable id="registerFormBean" type=""--%>
 			<form:form class="form" action="/user/registerSubmit" modelAttribute="registerFormBean" method="POST" autocomplete="off">
 				<div class="form-field">
-					<form:input id="email" path="email" class="email" name="email" type="email" placeholder="Email"/>
-					<div id="emptyEmail" class="invalid-feedback">
-						Please enter an email
-					</div>					
-					<div id="emailNoAnnotation" class="invalid-feedback">
-						Email should have @.
-					</div>
+					<form:input id="email" path="email" class="email" name="email" type="text" placeholder="Email"/>
+						<c:forEach items="${bindingResult.getFieldErrors('email')}" var="error">
+							<div style="color: red;">
+									${error.getDefaultMessage()}
+							</div>
+						</c:forEach>
 				</div>
 
 				<div class="form-field">
 					<form:input id="password" path="password" class="password" name="password" type="password"
 					    placeholder="Password"/>
-					<div id="emptyPassword" class="invalid-feedback">
-						Please enter a password
-					</div>
-					<div id="passwordTooLong" class="invalid-feedback">
-						6 ~ 20 with at least one numeric digit, one uppercase and one lowercase
-					</div>
+					<c:forEach items="${bindingResult.getFieldErrors('password')}" var="error">
+						<div style="color: red;">
+								${error.getDefaultMessage()}
+						</div>
+					</c:forEach>
 				</div>
 
 				<div class="form-field">
 					<input id="confirmPassword" class="password" name="confirmPassword" type="password"
 					    placeholder="Confirm Password">
-					<div id="passwordNotSame" class="invalid-feedback">
-						Passwords do not match
-					</div>
+					<c:forEach items="${bindingResult.getFieldErrors('confirmPassword')}" var="error">
+						<div style="color: red;">
+								${error.getDefaultMessage()}
+						</div>
+					</c:forEach>
 				</div>
 
 				<div class="form-field">
 					<form:input id="name" path="name" class="name" name="name" type="text" placeholder="Full Name"/>
-					<div id="emptyName" class="invalid-feedback"/>
-						Please enter your name
-					</div>
+					<c:forEach items="${bindingResult.getFieldErrors('name')}" var="error">
+						<div style="color: red;">
+								${error.getDefaultMessage()}
+						</div>
+					</c:forEach>
 				</div>
 
 				<div class="form-field">
@@ -61,30 +63,30 @@
 						<form:radiobutton path="userTypeId" value="0" label="Shelter" id="roles1" name="roles"/>
 						<form:radiobutton path="userTypeId" value="1" label="Rescuer" id="roles2" name="roles"/>
 					</div>
-					<div id="emptyRegisterAs" class="invalid-feedback">
-						Please select a role
-					</div>
+					<c:forEach items="${bindingResult.getFieldErrors('userTypeId')}" var="error">
+						<div style="color: red;">
+								${error.getDefaultMessage()}
+						</div>
+					</c:forEach>
 				</div>
-
-<%--				<c:forEach items="${bindingResult.getFieldErrors('checkbox')}" var="error">--%>
-<%--					<div style="color: red;">--%>
-<%--							${error.getDefaultMessage()}--%>
-<%--					</div>--%>
-<%--				</c:forEach>--%>
 
 				<div class="form-field">
 					<form:input id="address" path="address" class="address" name="address" type="text"
 				        placeholder="Address"/>
-                    <div id="emptyAddress" class="invalid-feedback">
-                        Please enter an address
-                    </div>
+					<c:forEach items="${bindingResult.getFieldErrors('address')}" var="error">
+						<div style="color: red;">
+								${error.getDefaultMessage()}
+						</div>
+					</c:forEach>
 				</div>
 
 				<div class="form-field">
 					<form:input id="city" path="city" class="city" name="city" type="text" placeholder="City"/>
-					<div id="emptyCity" class="invalid-feedback">
-						Please enter a city
-					</div>
+					<c:forEach items="${bindingResult.getFieldErrors('city')}" var="error">
+						<div style="color: red;">
+								${error.getDefaultMessage()}
+						</div>
+					</c:forEach>
 				</div>	
 
 				<div class="form-field">
@@ -142,38 +144,45 @@
 						<option value="WI">Wisconsin</option>
 						<option value="WY">Wyoming</option>
 					</form:select>
-					<div id="emptySelectState" class="invalid-feedback">
-						Please select a state
-					</div>
+					<c:forEach items="${bindingResult.getFieldErrors('state')}" var="error">
+						<div style="color: red;">
+								${error.getDefaultMessage()}
+						</div>
+					</c:forEach>
 				</div>
 
 				<div class="form-field">
 					<form:input id="zipcode" path="zipcode" class="zipcode" name="zipcode" type="text"
 					    placeholder="Zipcode"/>
-                    <div id="emptyZipcode" class="invalid-feedback">
-                        Please enter a zipcode
-                    </div>
-                    <div id="zipNot5Digits" class="invalid-feedback">
-                        Zipcode should be 5 digits
-                    </div>
+					<c:forEach items="${bindingResult.getFieldErrors('zipcode')}" var="error">
+						<div style="color: red;">
+								${error.getDefaultMessage()}
+						</div>
+					</c:forEach>
 				</div>
 
 				<div class="form-field">
 					<form:input id="phone" path="phone" class="phone" name="phone" type="tel"
 					    placeholder="Phone Number"/>
-					<div id="emptyPhone" class="invalid-feedback">
-						Please enter a phone number
-					</div>
-					<div id="phoneNot10Digits" class="invalid-feedback">
-						Phone should be 10 digits
-					</div>
+					<c:forEach items="${bindingResult.getFieldErrors('phone')}" var="error">
+						<div style="color: red;">
+								${error.getDefaultMessage()}
+						</div>
+					</c:forEach>
 				</div>
 
 				<br>
 				
-				<a class="submit" onclick="validate();">Register</a>
+				<button class="submit">Register</button>
 				<p class="forgot"><a href="/user/login">Have account already?</a></p>
 			</form:form>
+
+<%--			<c:if test="${not empty errorMessages}">--%>
+<%--				<c:forEach items="${errorMessages}" var="message">--%>
+<%--					<div style="color:red">${message}</div>--%>
+<%--				</c:forEach>--%>
+<%--			</c:if>--%>
+
             <div id="iconHomeContainer">
                 <div id="iconHomeWhitespace"></div>
                 <div id="homeLink">

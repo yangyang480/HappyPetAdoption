@@ -49,6 +49,7 @@ public class RegisterController {
             response.setViewName("user/register");
             return response;
         }
+        //if user is null, then create it.
         User user = userDAO.findById(registerFormBean.getId());
         if (user == null) {
             user = new User();
