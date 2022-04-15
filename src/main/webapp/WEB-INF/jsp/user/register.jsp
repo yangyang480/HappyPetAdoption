@@ -43,8 +43,8 @@
 				</div>
 
 				<div class="form-field">
-					<input id="confirmPassword" class="password form-control" name="confirmPassword" type="password"
-					    placeholder="Confirm Password">
+					<form:input path="confirmPassword" id="confirmPassword" class="password form-control" name="confirmPassword" type="password"
+					    placeholder="Confirm Password"/>
 					<c:forEach items="${bindingResult.getFieldErrors('confirmPassword')}" var="error">
 						<div style="color: red;">
 								${error.getDefaultMessage()}

@@ -9,10 +9,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class AnimalController {
 
 
-    @RequestMapping(value = "/view/animal", method = RequestMethod.GET)
+    @RequestMapping(value = "/animals", method = RequestMethod.GET)
     public ModelAndView home() throws Exception {
         ModelAndView response = new ModelAndView();
-        response.setViewName("view/animal");
+        response.setViewName("animals");
 
         return response;
     }

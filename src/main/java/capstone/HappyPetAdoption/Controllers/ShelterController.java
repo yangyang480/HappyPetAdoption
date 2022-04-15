@@ -25,20 +25,6 @@ public class ShelterController {
     @Autowired
     UserDAO userDAO;
 
-    @RequestMapping(value = "/view/shelter", method = RequestMethod.GET)
-    public ModelAndView register() throws Exception {
-        ModelAndView response = new ModelAndView();
-        response.setViewName("view/shelter");
-        return response;
-    }
-
-    @RequestMapping(value = "/shelter/home", method = RequestMethod.GET)
-    public ModelAndView home() throws Exception {
-        ModelAndView response = new ModelAndView();
-        response.setViewName("shelter/home");
-        return response;
-    }
-
     @RequestMapping(value = "/shelters", method = RequestMethod.GET)
     public ModelAndView shelters(@RequestParam(value = "name", required = false) String name) throws Exception {
         ModelAndView response = new ModelAndView();
@@ -57,5 +43,12 @@ public class ShelterController {
         response.addObject("name", name);
         return response;
         //TODO route this with shelter-home jsp page. this is more like search animals by shelter id
+    }
+
+    @RequestMapping(value = "/shelter/home", method = RequestMethod.GET)
+    public ModelAndView home() throws Exception {
+        ModelAndView response = new ModelAndView();
+        response.setViewName("shelter/home");
+        return response;
     }
 }

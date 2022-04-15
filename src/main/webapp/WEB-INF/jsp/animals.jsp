@@ -10,7 +10,8 @@
             <h4 class="text mb-3">Happy-Pet</h4>
             <h1 class="display-4 mb-4"><span class="text-primary">Adoption</span> &amp; <span class="text-secondary">MISSION</span></h1>
             <h5 class="text-muted mb-3">We Rescue Animals.</h5>
-            <p class="mb-4">We Commit to Our Animals through Adoption. We Inspire Change. It our responsiblity to help keep people & pets together! We can save lives while providing our beloved animal a sweet home.</p>
+            <p class="mb-4">We Commit to Our Animals through Adoption. We Inspire Change. It our responsiblity to help keep people & pets together!
+                We can save lives while providing our beloved animal a sweet home.</p>
             <ul class="list-inline">
                 <li><h5><i class="fa fa-check-double text-secondary mr-3"></i>Dogs for adoption</h5></li>
                 <li><h5><i class="fa fa-check-double text-secondary mr-3"></i>Cats for adoption</h5></li>

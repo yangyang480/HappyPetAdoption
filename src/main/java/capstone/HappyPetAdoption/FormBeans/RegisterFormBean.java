@@ -1,6 +1,7 @@
 package capstone.HappyPetAdoption.FormBeans;
 
 import capstone.HappyPetAdoption.Validations.EmailUnique;
+import capstone.HappyPetAdoption.Validations.TwoFieldsAreEqual;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -12,45 +13,47 @@ import javax.validation.constraints.*;
 @Getter
 @Setter
 @ToString
+@TwoFieldsAreEqual(fieldOneName = "password", fieldTwoName = "confirmPassword", message = "passwords must match")
 public class RegisterFormBean {
 
     private Integer id;
 
-    @NotBlank(message = "Please enter an email")
+    @NotBlank(message = "Email must not be empty")
     @EmailUnique(message = "Email is already in use")
-    @Email(message = "email must be formatted")
+    @Email(message = "Email must be formatted")
     private String email;
 
-    @NotBlank(message = "Please enter a password")
+    @NotBlank(message = "Password must not be empty")
     @Length(min = 6, max = 20)
     @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$", message = "at least one numeric digit, one uppercase and one lowercase ")
     private String password;
 
-    //TODO match the password
-    @NotBlank(message = "Passwords do not match")
+
+    //TODO the message won't show
+    @NotEmpty(message = "Confirm password must not be empty")
     private String confirmPassword;
 
-    @NotBlank(message = "Please enter a name")
+    @NotBlank(message = "Name must not be empty")
     private String name;
 
-    @NotNull(message = "Please select a role")
+    @NotNull(message = "Role must not be empty")
     private Integer userTypeId;
 
-    @NotBlank(message = "Please enter a address")
+    @NotBlank(message = "Address must not be empty")
     private String address;
 
-    @NotBlank(message = "Please enter a city")
+    @NotBlank(message = "City must not be empty")
     private String city;
 
     //TODO how to set default = null/0
-    @NotBlank(message = "Please select a state")
+    @NotBlank(message = "State must not be empty")
     private String state;
 
-    @NotNull(message = "Please enter zipcode")
+    @NotNull(message = "Zipcode must not be empty")
     private Integer zipcode;
 
     //TODO not showing in the form
-    @NotNull(message = "Please enter a phone")
+    @NotNull(message = "Phone must not be empty")
     private String phone;
 
 
