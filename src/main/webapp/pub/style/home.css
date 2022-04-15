@@ -7,9 +7,8 @@
 }
 
 h1 {
-  font-family: 'send_flowersregular';
-  color: rgb(228, 76, 109);
-  font-weight: 200;
+    font-family: "Nunito", sans-serif;
+    color: rgb(228, 76, 109);
 }
 
 .card img {
@@ -25,27 +24,11 @@ a.login.link-primary, a.link-primary {
   height: 2em;
 }
 
-.page-section {
-  position: relative;
-  display: block;
-  padding: 80px 0;
-}
-
-.container-about {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .row {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: 15px;
-  margin-left: 15px;
 }
 
 .title-section {
@@ -174,6 +157,10 @@ ul {
   padding: 0;
 }
 
+#homeCarousel {
+  background-color: #ffeffc;
+}
+
 #ourServices {
-background-color: #fbe5f7;
+    background-color: #fbe5f7;
 }

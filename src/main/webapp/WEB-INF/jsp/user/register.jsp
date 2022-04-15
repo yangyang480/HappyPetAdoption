@@ -8,6 +8,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../pub/style/main.css">
 	<link rel="stylesheet" href="../../../pub/style/register.css">
 <%--	<script src="../../../pub/js/register.js"></script>--%>
 	<script src="https://kit.fontawesome.com/30c6872bce.js" crossorigin="anonymous"></script>
@@ -16,12 +19,12 @@
 <body>
 
 	<div class="wrapper">
-		<div class="main">
+		<div class="card">
 			<p class="sign">Register</p>
 			<%--@elvariable id="registerFormBean" type=""--%>
 			<form:form class="form" action="/user/registerSubmit" modelAttribute="registerFormBean" method="POST" autocomplete="off">
 				<div class="form-field">
-					<form:input id="email" path="email" class="email" name="email" type="text" placeholder="Email"/>
+					<form:input id="email" path="email" class="email form-control" name="email" type="text" placeholder="Email"/>
 						<c:forEach items="${bindingResult.getFieldErrors('email')}" var="error">
 							<div style="color: red;">
 									${error.getDefaultMessage()}
@@ -30,7 +33,7 @@
 				</div>
 
 				<div class="form-field">
-					<form:input id="password" path="password" class="password" name="password" type="password"
+					<form:input id="password" path="password" class="password form-control" name="password" type="password"
 					    placeholder="Password"/>
 					<c:forEach items="${bindingResult.getFieldErrors('password')}" var="error">
 						<div style="color: red;">
@@ -40,7 +43,7 @@
 				</div>
 
 				<div class="form-field">
-					<input id="confirmPassword" class="password" name="confirmPassword" type="password"
+					<input id="confirmPassword" class="password form-control" name="confirmPassword" type="password"
 					    placeholder="Confirm Password">
 					<c:forEach items="${bindingResult.getFieldErrors('confirmPassword')}" var="error">
 						<div style="color: red;">
@@ -50,7 +53,7 @@
 				</div>
 
 				<div class="form-field">
-					<form:input id="name" path="name" class="name" name="name" type="text" placeholder="Full Name"/>
+					<form:input id="name" path="name" class="name form-control" name="name" type="text" placeholder="Full Name"/>
 					<c:forEach items="${bindingResult.getFieldErrors('name')}" var="error">
 						<div style="color: red;">
 								${error.getDefaultMessage()}
@@ -59,9 +62,10 @@
 				</div>
 
 				<div class="form-field">
-					<div id="roles" class="roles">Register As:
-						<form:radiobutton path="userTypeId" value="0" label="Shelter" id="roles1" name="roles"/>
-						<form:radiobutton path="userTypeId" value="1" label="Rescuer" id="roles2" name="roles"/>
+					<div id="roles" class="roles d-flex justify-content-center form-control">
+					    <div class="pe-2">Register As:</div>
+						<div class="form-check pe-2 mb-0"><form:radiobutton path="userTypeId" class="form-check-input" value="0" label="Shelter" id="roles1" name="roles"/></div>
+						<div class="form-check mb-0"><form:radiobutton path="userTypeId" class="form-check-input" value="1" label="Rescuer" id="roles2" name="roles"/></div>
 					</div>
 					<c:forEach items="${bindingResult.getFieldErrors('userTypeId')}" var="error">
 						<div style="color: red;">
@@ -71,7 +75,7 @@
 				</div>
 
 				<div class="form-field">
-					<form:input id="address" path="address" class="address" name="address" type="text"
+					<form:input id="address" path="address" class="address form-control" name="address" type="text"
 				        placeholder="Address"/>
 					<c:forEach items="${bindingResult.getFieldErrors('address')}" var="error">
 						<div style="color: red;">
@@ -81,7 +85,7 @@
 				</div>
 
 				<div class="form-field">
-					<form:input id="city" path="city" class="city" name="city" type="text" placeholder="City"/>
+					<form:input id="city" path="city" class="city form-control" name="city" type="text" placeholder="City"/>
 					<c:forEach items="${bindingResult.getFieldErrors('city')}" var="error">
 						<div style="color: red;">
 								${error.getDefaultMessage()}
@@ -90,7 +94,7 @@
 				</div>	
 
 				<div class="form-field">
-					<form:select name="state" path="state" id="state">
+					<form:select name="state" class="form-control" path="state" id="state">
 						<option value="-1">--State--</option>
 						<option value="AL">Alabama</option>
 						<option value="AK">Alaska</option>
@@ -152,7 +156,7 @@
 				</div>
 
 				<div class="form-field">
-					<form:input id="zipcode" path="zipcode" class="zipcode" name="zipcode" type="text"
+					<form:input id="zipcode" path="zipcode" class="zipcode form-control" name="zipcode" type="text"
 					    placeholder="Zipcode"/>
 					<c:forEach items="${bindingResult.getFieldErrors('zipcode')}" var="error">
 						<div style="color: red;">
@@ -162,7 +166,7 @@
 				</div>
 
 				<div class="form-field">
-					<form:input id="phone" path="phone" class="phone" name="phone" type="tel"
+					<form:input id="phone" path="phone" class="phone form-control" name="phone" type="tel"
 					    placeholder="Phone Number"/>
 					<c:forEach items="${bindingResult.getFieldErrors('phone')}" var="error">
 						<div style="color: red;">
@@ -171,10 +175,7 @@
 					</c:forEach>
 				</div>
 
-				<br>
-				
-				<button class="submit">Register</button>
-				<p class="forgot"><a href="/user/login">Have account already?</a></p>
+				<button class="submit btn btn-primary py-2 px-4">Register</button>
 			</form:form>
 
 <%--			<c:if test="${not empty errorMessages}">--%>
@@ -193,9 +194,15 @@
                 </div>
             </div>
 		</div>
+        <div class="create-new card">
+            <div>Already have an account?</div>
+            <a href="/user/login">Login to your account</a>
+        </div>
 	</div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>

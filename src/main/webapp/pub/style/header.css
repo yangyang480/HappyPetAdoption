@@ -1,15 +1,16 @@
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
+/* Every page will have css below due to being in the header */
 
 .hf {
-  background-color: #ffeffc;
+    border-bottom: 1px solid #f6e6f3;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #ffeffc;
 }
 
-a.login.link-primary, a.link-primary {
-  text-decoration: none;
+.main-content {
+  flex: auto;
 }
 
 .row.title {
