@@ -153,25 +153,10 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-10">
                 <button type="submit" class="btn btn-primary py-3 px-5">Submit</button>
+                <button class="btn btn-primary py-3 px-5">Delete</button>
+                <a class="btn btn-primary py-3 px-5" role="button" href="/user/logout">Logout</a>
             </div>
         </div>
-
-        <div class="mb-3 row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary py-3 px-5">Delete</button>
-            </div>
-        </div>
-
-        <div class="mb-3 row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary py-3 px-5"><a href="/user/logout">Logout</a></button>
-            </div>
-        </div>
-
-
-
     </form:form>
 </div>
 

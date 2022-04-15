@@ -26,8 +26,7 @@ public class RegisterFormBean {
 
     private String state;
 
-//    @NotEmpty
-    private Integer userTypeId = 0;
+    private Integer userTypeId;
 
     private Integer zipcode;
 
