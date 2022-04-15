@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="../../../pub/style/profile.css">
 
-<div class="container-lg my-2 my-lg-4">
+<div class="main-content container-lg my-2 my-lg-4">
     <c:if test="${profileFormBean.userTypeId == 0}">
         <h1>Shelter Profile</h1>
     </c:if>
@@ -152,9 +152,9 @@
         <div class="mb-3 row">
             <div class="col-sm-2"></div>
             <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary py-3 px-5">Submit</button>
-                <button class="btn btn-primary py-3 px-5">Delete</button>
-                <a class="btn btn-primary py-3 px-5" role="button" href="/user/logout">Logout</a>
+                <button type="submit" class="btn btn-primary mx-2 px-4">Save</button>
+                <a class="btn btn-primary mx-2 px-4" role="button" href="/user/logout">Logout</a>
+                <button class="btn btn-link mx-2 px-4 float-end">Delete</button>
             </div>
         </div>
     </form:form>

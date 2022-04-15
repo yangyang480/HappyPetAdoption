@@ -13,22 +13,17 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.main {
-  margin: 0 auto 24px auto;
-  background-color: #ffffff;
+.card {
   width: 800px;
-  border-radius: 1.5em;
-  box-shadow: 0px 11px 35px 2px rgba(235, 156, 156, 0.4);
-  padding-bottom: 24px;
 }
 
 .sign {
-  padding-top: 40px;
+  padding-top: 20px;
   color: #ea5aa9;
   text-align: center;
   font-family: sans-serif;
   font-weight: bold;
-  font-size: 23px;
+  font-size: 26px;
 }
 
 .email,
@@ -41,20 +36,10 @@ body {
 .zipcode,
 .phone,
 .roles {
-  width: 76%;
-  color: rgb(38, 50, 56);
-  background: rgba(237, 174, 174, 0.2);
-  font-weight: 700;
-  font-family: sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-  padding: 10px 52px;
-  outline: none;
-  box-sizing: border-box;
-  border-radius: 20px;
-  border: 2px solid rgba(0, 0, 0, 0.02);
-  text-align: center;
-  margin: 0 auto;
+    width: 76%;
+    letter-spacing: 1px;
+    padding: 10px 52px;
+    text-align: center;
 }
 
 .form-field {
@@ -62,33 +47,12 @@ body {
 }
 
 .form {
-  padding-top: 40px;
+  padding-top: 20px;
   text-align: center;
-}
-
-.username:focus,
-.password:focus {
-  border: 2px solid rgba(0, 0, 0, 0.18) !important;
 }
 
 .submit {
-  color: #fff;
-  background: linear-gradient(to right, #d41e81, #e78cbe);
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  font-family: sans-serif;
-  font-size: 13px;
-  cursor: pointer;
   border-radius: 5em;
-  border: navajowhite;
-}
-
-.forgot {
-  color: #e1bee7;
-  text-align: center;
-  padding-top: 15px;
 }
 
 a {
@@ -142,6 +106,7 @@ a:hover {
 }
 
 #iconHomeContainer {
+  padding-top: 15px;
   display: flex;
   text-align: left;
 }

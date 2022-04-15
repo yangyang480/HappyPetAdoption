@@ -14,30 +14,17 @@ h2, h4 {
   font-width: 10px;
 }
 
-.main-content {
-  flex: auto;
+a.login.link-primary, a.link-primary {
+    text-decoration: none;
 }
 
-
-  a.login.link-primary, a.link-primary {
-    text-decoration: none;
-  }
-
-
-  .row.title {
+.row.title {
     height: 2em;
     font-size: 20px;
-  }
-
-.form-control, .input-group-text {
-    color: rgb(38, 50, 56);
-    outline: none;
-    box-sizing: border-box;
-    border-radius: 20px;
-    border: 2px solid rgba(0, 0, 0, 0.02);
 }
-.form-control {
-    background: rgba(237, 174, 174, 0.2);
+
+.input-group-text {
+    border-radius: 20px;
 }
 
 .input-group-text {
@@ -45,7 +32,5 @@ h2, h4 {
 }
 
 .btn {
-  background: linear-gradient(to right, #d41e81, #e78cbe);
   border-radius: 5em;
-  border-color: unset;
 }

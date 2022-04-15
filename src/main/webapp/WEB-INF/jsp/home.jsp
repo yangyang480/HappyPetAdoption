@@ -3,75 +3,73 @@
 
 <link rel="stylesheet" href="../../../pub/style/home.css">
 
-<body class="bg-light">
+<div id="homeCarousel">
+    <div class="container-xxl carousel-container p-0">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../../pub/images/carousel-1.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h3 class="text-white mb-3 d-none d-sm-block">Best home</h3>
+                                <h1 class="display-3 text-white mb-3">Happy Pet Adoption</h1>
+                                <h5 class="text-white mb-3 d-none d-sm-block">We hope our beloved animals can have a sweet home.</h5>
+                                <a href="/user/register" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">JOIN US</a>
+                            </div>
 
-<div class="container-xxl carousel-container p-0">
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../../pub/images/carousel-1.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h3 class="text-white mb-3 d-none d-sm-block">Best home</h3>
-                            <h1 class="display-3 text-white mb-3">Happy Pet Adoption</h1>
-                            <h5 class="text-white mb-3 d-none d-sm-block">We hope our beloved animals can have a sweet home.</h5>
-                            <a href="/user/register" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">JOIN US</a>
                         </div>
-
+                </div>
+                <div class="carousel-item">
+                    <img src="../../pub/images/carousel-2.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Happy Pet Adoption</h2>
+                        <h5>Don't miss the chance to give them a home.</h5>
                     </div>
-            </div>
-            <div class="carousel-item">
-                <img src="../../pub/images/carousel-2.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Happy Pet Adoption</h5>
-                    <p>Don't miss the chance to give them a home.</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="../../pub/images/11.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Happy Pet Adoption</h2>
+                        <h5>Every animal deserve a sweet home.</h5>
+                    </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="../../pub/images/11.jpeg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Happy Pet Adoption</h5>
-                    <p>Every animal deserve a sweet home.</p>
-                </div>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 </div>
 
-<div class="page-section">
-    <div class="container-xxl about">
-        <div class="row align-items-center">
-            <div class="col-lg-6 py-3">
-                <div class="subhead">About Us</div>
-                <h2 class="title-section">We are <span class="fg-primary">Professional Teams</span> to Growth your Business</h2>
+<div class="container about py-5">
+    <div class="row align-items-center">
+        <div class="col-lg-6 py-3">
+            <div class="subhead">About Us</div>
+            <h2 class="title-section">We are <span class="fg-primary">Professional Teams</span> to Growth your Business</h2>
 
-                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of</p>
+            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of</p>
 
-                <a href="howtoadopt" class="btn btn-primary mt-4">Read More</a>
-            </div>
-            <div class="col-lg-6 py-3">
-                <div class="about-img">
-                    <img src="../../pub/images/about.jpg" alt="about">
-                </div>
+            <a href="howtoadopt" class="btn btn-primary mt-4">Read More</a>
+        </div>
+        <div class="col-lg-6 py-3">
+            <div class="about-img">
+                <img src="../../pub/images/about.jpg" alt="about">
             </div>
         </div>
     </div>
 </div>
 
-<div id="ourServices" class="container-fluid pt-5">
+<div id="ourServices" class="pt-5">
     <div class="container py-5">
         <div class="d-flex flex-column text-center mb-5">
             <h4 class="text-secondary mb-3">Our Services</h4>
@@ -102,13 +100,12 @@
                     <a class="text-uppercase font-weight-bold" href="">Read More</a>
                 </div>
             </div>
-
-    </div>
+        </div>
     </div>
 </div>
 
 <div class="team-members">
-    <div class="container-xxl">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-heading">
@@ -250,7 +247,5 @@
         </div>
     </div>
 </div>
-
-
 
 <jsp:include page="include/footer.jsp" />

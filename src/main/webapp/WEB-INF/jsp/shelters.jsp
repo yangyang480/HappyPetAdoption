@@ -2,7 +2,7 @@
 
 
 <jsp:include page="include/header.jsp" />
-<link rel="stylesheet" href="../../pub/style/shelter.css">
+<link rel="stylesheet" href="../../pub/style/shelters.css">
 
 
 <div class="page-heading products-heading header-text">
@@ -24,13 +24,10 @@
             <div class="col-12">
                 <div class="input-group">
                 <div class="input-group-text">Name</div>
-                    <input class="form-control me-2" type="text" name="name" placeholder="Hospital Name"
+                    <input class="form-control" type="text" name="name" placeholder="Shelter Name"
                         aria-label="Search" id="shelterSearchBox" value="${name}">
+                    <button class="btn btn-primary" type="submit">Search</button>
                 </div>
-            </div>
-
-            <div class="col-12">
-                <button class="btn btn-primary" type="submit">Search</button>
             </div>
         </form>
 
