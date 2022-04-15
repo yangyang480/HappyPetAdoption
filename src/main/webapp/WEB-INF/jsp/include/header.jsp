@@ -31,10 +31,10 @@
                         <a class="nav-link active" aria-current="page" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/view/shelter">Shelter</a>
+                        <a class="nav-link" href="/shelters">Shelters</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/view/animal">Animal</a>
+                        <a class="nav-link" href="/animals">Animals</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
