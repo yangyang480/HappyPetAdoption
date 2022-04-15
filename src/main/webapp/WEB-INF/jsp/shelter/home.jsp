@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="text-content">
-                    <h4>Hello, Shelter</h4>
+                    <h4>Hello, Shelter!</h4>
                     <h2>We are glad to have you</h2>
                 </div>
             </div>

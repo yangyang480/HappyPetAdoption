@@ -1,4 +1,28 @@
 
+.page-heading {
+  padding: 210px 0px 130px 0px;
+  text-align: center;
+  justify-content: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/shelter.jpg");
+}
+
+h2, h4 {
+  color: white;
+  font-width: 10px;
+}
+
+.main-content {
+  flex: auto;
+}
+
+
+  a.login.link-primary, a.link-primary {
+    text-decoration: none;
+  }
+
 
   .row.title {
     height: 2em;

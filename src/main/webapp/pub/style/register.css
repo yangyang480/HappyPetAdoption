@@ -82,6 +82,7 @@ body {
   font-size: 13px;
   cursor: pointer;
   border-radius: 5em;
+  border: navajowhite;
 }
 
 .forgot {
