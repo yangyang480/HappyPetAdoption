@@ -1,8 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -28,13 +29,13 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                        <a class="nav-link ${requestScope['javax.servlet.forward.request_uri'] eq '/' or requestScope['javax.servlet.forward.request_uri'] eq '/home' ? ' active' : ''}" aria-current="page" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/shelters">Shelters</a>
+                        <a class="nav-link ${fn:startsWith(requestScope['javax.servlet.forward.request_uri'], '/shelter') ? ' active' : ''}" href="/shelters">Shelters</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/animals">Animals</a>
+                        <a class="nav-link ${fn:startsWith(requestScope['javax.servlet.forward.request_uri'], '/animal') ? ' active' : ''}" href="/animals">Animals</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
@@ -45,7 +46,6 @@
                             <a href="/user/register" class="link-primary">Register</a>
                         </sec:authorize>
                         <sec:authorize access="isAuthenticated()">
-<%--                            <a href="/home" class="link-primary">Log out</a>--%>
                             <a href="/user/profile" class="link-primary">Welcome, <sec:authentication property="name"/>!</a>
                         </sec:authorize>
                     </small>
@@ -54,3 +54,4 @@
         </div>
     </nav>
 </div>
+
