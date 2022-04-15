@@ -34,6 +34,27 @@ body {
     font-size: 20px;
   }
 
-  #footer {
+#footer {
     background-color:#f4d3cf ;
+}
+
+.form-control, .input-group-text {
+    color: rgb(38, 50, 56);
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+}
+.form-control {
+    background: rgba(237, 174, 174, 0.2);
+}
+
+.input-group-text {
+    background: rgba(137, 114, 114, 0.2);
+}
+
+.btn {
+  background: linear-gradient(to right, #d41e81, #e78cbe);
+  border-radius: 5em;
+  border-color: unset;
 }

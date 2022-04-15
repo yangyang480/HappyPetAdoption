@@ -12,14 +12,13 @@ import java.util.List;
 @Repository
 public interface UserDAO extends JpaRepository<User, Long> {
 
+    @Query(value = "select u from User u where u.userTypeID = 0")
+    public List<User> getAllShelters();
+
     public User findById(@Param("id") Integer id);
 
     @Query(value = "select * from User where email = :email", nativeQuery = true)
     public User findByEmail(@Param("email") String email);
-
-    //find user by user type
-    @Query(value = "select u from  User u where u.userTypeID = : userTypeID", nativeQuery = true)
-    public User findByUserType(@Param("userTypeID") Integer userTypeID);
 
     //get list of animals group by shelterId
     @Query(value = "select a from Animal a where a.ShelterId = : ShelterId", nativeQuery = true)

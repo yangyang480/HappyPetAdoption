@@ -54,7 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .loginPage("/user/login")
                     .usernameParameter("email") // https://stackoverflow.com/questions/50673400/how-to-log-in-by-email-instead-of-username-in-spring-security
                     .loginProcessingUrl("/user/loginSubmit") //tell spring security where to listen
-                    .defaultSuccessUrl("/home", true) //if login successful go to the home page
+                    .defaultSuccessUrl("/user/loginSuccess", true) //if login successful go to the home page
                     .permitAll()
                 .and()
                     .logout()

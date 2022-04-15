@@ -258,7 +258,10 @@
     }
 </style>
 
-<div class="wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+<br>
+<br>
+
+<div class="wrapper container-xl"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
     <title>404</title>
     <g id="Layer_12 yellow-back-fig" data-name="Layer 12">
         <path class="cls-1" d="M600.87,872H156a4,4,0,0,0-3.78,4.19h0a4,4,0,0,0,3.78,4.19H600.87a4,4,0,0,0,3.78-4.19h0A4,4,0,0,0,600.87,872Z"/>
@@ -386,3 +389,10 @@
     </g>
 </svg>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<jsp:include page="../include/footer.jsp" />

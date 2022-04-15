@@ -44,12 +44,16 @@ public class ShelterController {
         ModelAndView response = new ModelAndView();
         response.setViewName("view/shelter");
 
-        List<User> user = new ArrayList<>();
+        List<User> users = new ArrayList<>();
 
         if (!StringUtils.isEmpty(name)) {
-            user = userDAO.findByNameIgnoreCaseContaining(name);
+            users = userDAO.findByNameIgnoreCaseContaining(name);
         }
-        response.addObject("userModelKey", user);
+        else {
+            users = userDAO.getAllShelters();
+        }
+
+        response.addObject("userModelKey", users);
         response.addObject("name", name);
         return response;
         //TODO route this with shelter-home jsp page. this is more like search animals by shelter id

@@ -47,16 +47,25 @@
     </div>
 
     <div class="main-content bg-light">
-        <div class="container-lg album py-5 ">
+        <div class="container-lg album py-5">
+            <form class="row row-cols-lg-auto g-3 mb-3 align-items-center">
+                <div class="col-12">
+                    <div class="input-group">
+                    <div class="input-group-text">Name</div>
+                        <input class="form-control me-2" type="text" name="name" placeholder="Hospital Name"
+                            aria-label="Search" id="shelterSearchBox" value="${name}">
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </form>
             <div class="row">
                 <div class="col-3"></div>
                 <div class="col-6">
                     <div class="d-flex">
-                        <form action="/view/shelterSearch" method="get">
-                            <input class="form-control me-2" type="text" name="name" placeholder="Search" aria-label="Search"
-                                   id="shelterSearchBox" value="${name}">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-<%--                            onclick="searchShelters()"--%>
+                        <form class="form-inline" action="/view/shelterSearch" method="get">
                         </form>
                     </div>
                 </div>
