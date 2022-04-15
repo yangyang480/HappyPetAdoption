@@ -1,11 +1,11 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 
-<link rel="stylesheet" href="../../../pub/style/animal.css">
+<link rel="stylesheet" href="../../pub/style/animal.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/30c6872bce.js" crossorigin="anonymous"></script>
 
-<jsp:include page="../include/header.jsp" />
+<jsp:include page="include/header.jsp" />
 
 <div class="container py-5">
     <div class="row py-5">
@@ -24,13 +24,13 @@
         <div class="col-lg-5">
             <div class="row px-3">
                 <div class="col-12 p-0">
-                    <img class="img-fluid w-100" src="../../../pub/images/about-1.jpg" alt="">
+                    <img class="img-fluid w-100" src="../../pub/images/about-1.jpg" alt="">
                 </div>
                 <div class="col-6 p-0">
-                    <img class="img-fluid w-100" src="../../../pub/images/about-2.jpg" alt="">
+                    <img class="img-fluid w-100" src="../../pub/images/about-2.jpg" alt="">
                 </div>
                 <div class="col-6 p-0">
-                    <img class="img-fluid w-100" src="../../../pub/images/about-3.jpg" alt="">
+                    <img class="img-fluid w-100" src="../../pub/images/about-3.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -168,7 +168,7 @@
 </div>
 
 
-<jsp:include page="../include/footer.jsp" />
+<jsp:include page="include/footer.jsp" />
 
 
 

@@ -35,14 +35,14 @@ public class ShelterController {
     @RequestMapping(value = "/shelter/home", method = RequestMethod.GET)
     public ModelAndView home() throws Exception {
         ModelAndView response = new ModelAndView();
-        response.setViewName("/shelter/home");
+        response.setViewName("shelter/home");
         return response;
     }
 
-    @RequestMapping(value = "/view/shelterSearch", method = RequestMethod.GET)
-    public ModelAndView search(@RequestParam(value = "name", required = false) String name) throws Exception {
+    @RequestMapping(value = "/shelters", method = RequestMethod.GET)
+    public ModelAndView shelters(@RequestParam(value = "name", required = false) String name) throws Exception {
         ModelAndView response = new ModelAndView();
-        response.setViewName("view/shelter");
+        response.setViewName("shelters");
 
         List<User> users = new ArrayList<>();
 
