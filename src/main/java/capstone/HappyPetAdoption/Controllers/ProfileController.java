@@ -33,6 +33,7 @@ public class ProfileController {
         return new ModelAndView("/user/profile");
     }
 
+    //edit the profile
     @RequestMapping(value = "/user/profileSubmit", method = RequestMethod.POST)
     public ModelAndView profileSubmit(ProfileFormBean profileFormBean) throws Exception {
 

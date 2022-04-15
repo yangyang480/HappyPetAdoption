@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -23,6 +25,7 @@ public class RegisterController {
 
     @Autowired
     private UserDAO userDAO;
+
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -41,10 +44,15 @@ public class RegisterController {
         log.info(registerFormBean.toString());
 
         if (bindingResult.hasErrors()) {
-            for (ObjectError error : bindingResult.getAllErrors()) {
-                log.info(((FieldError) error).getField() + " " + error.getDefaultMessage());
+            List<String> errorMessages = new ArrayList<>();
+            List<ObjectError> allErrors = bindingResult.getAllErrors();
+
+            for (ObjectError error : allErrors) {
+                errorMessages.add(error.getDefaultMessage());
             }
+            //show all the input
             response.addObject("formbean", registerFormBean);
+            //add the errors to display
             response.addObject("bindingResult", bindingResult);
             response.setViewName("user/register");
             return response;
@@ -57,7 +65,7 @@ public class RegisterController {
 
         user.setEmail(registerFormBean.getEmail());
 
-        //when register get the password encoded in database
+        //save into the database. when register get the password encoded in database
         String password = passwordEncoder.encode(registerFormBean.getPassword());
         user.setPassword(password);
         user.setName(registerFormBean.getName());
