@@ -26,20 +26,27 @@ body {
   font-size: 26px;
 }
 
+
+.password-control {
+
+}
+
+.form-control {
+    letter-spacing: 1px;
+    padding: 10px 52px;
+    text-align: center;
+}
+
 .email,
-.password,
-.confirmPassword,
 .name,
 .address,
 .city,
+#passwordField,
 #state,
 .zipcode,
 .phone,
 .roles {
     width: 76%;
-    letter-spacing: 1px;
-    padding: 10px 52px;
-    text-align: center;
 }
 
 .form-field {

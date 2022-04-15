@@ -32,20 +32,19 @@
 						</c:forEach>
 				</div>
 
-				<div class="form-field">
-					<form:input id="password" path="password" class="password form-control" name="password" type="password"
-					    placeholder="Password"/>
-					<c:forEach items="${bindingResult.getFieldErrors('password')}" var="error">
+				<div class="form-field d-inline-block" id="passwordField" >
+				    <div class="d-flex gap-3 justify-content-center">
+                        <form:input id="password" path="password" class="form-control" name="password" type="password"
+                            placeholder="Password"/>
+                        <form:input path="confirmPassword" id="confirmPassword" class="form-control" name="confirmPassword" type="password"
+                            placeholder="Confirm Password"/>
+				    </div>
+					<c:forEach items="${bindingResult.getFieldErrors('confirmPassword')}" var="error">
 						<div style="color: red;">
 								${error.getDefaultMessage()}
 						</div>
 					</c:forEach>
-				</div>
-
-				<div class="form-field">
-					<form:input path="confirmPassword" id="confirmPassword" class="password form-control" name="confirmPassword" type="password"
-					    placeholder="Confirm Password"/>
-					<c:forEach items="${bindingResult.getFieldErrors('confirmPassword')}" var="error">
+					<c:forEach items="${bindingResult.getFieldErrors('password')}" var="error">
 						<div style="color: red;">
 								${error.getDefaultMessage()}
 						</div>
