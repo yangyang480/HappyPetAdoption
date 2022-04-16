@@ -5,7 +5,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.util.Date;
 
-public class Animals {
+public class Animal {
 
     private Integer id;
 

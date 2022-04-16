@@ -36,6 +36,10 @@ body {
   padding: 1em;
 }
 
+.card img {
+    border-radius: 1em;
+}
+
 .error-message {
     color: red;
     font-size: 0.9em;
