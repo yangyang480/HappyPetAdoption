@@ -26,14 +26,9 @@ body {
   font-size: 26px;
 }
 
-
-.password-control {
-
-}
-
 .form-control {
     letter-spacing: 1px;
-    padding: 10px 52px;
+    padding: 8px 52px;
     text-align: center;
 }
 
@@ -41,12 +36,10 @@ body {
 .name,
 .address,
 .city,
-#passwordField,
-#state,
-.zipcode,
+.form-row,
 .phone,
 .roles {
-    width: 76%;
+    width: 86%;
 }
 
 .form-field {
@@ -54,11 +47,14 @@ body {
 }
 
 .form {
-  padding-top: 20px;
   text-align: center;
 }
 
 .submit {
+  border-radius: 5em;
+}
+
+.submit:focus {
   border-radius: 5em;
 }
 
@@ -87,7 +83,6 @@ a:hover {
 .create-new p {
   color: #716d71;
 }
-
 
 .invalid-feedback {
   display: none;
