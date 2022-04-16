@@ -25,7 +25,7 @@ public class ProfileFormBean {
 
     private Integer userTypeId;
 
-    private Integer zipcode;
+    private String zipcode;
 
     private String phone;
 }

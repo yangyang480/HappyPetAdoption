@@ -19,7 +19,7 @@ CREATE TABLE User(
 	address varchar(225) NOT NULL,
 	city varchar(225) NOT NULL,
     state varchar(225) NOT NULL,
-    zipcode int NOT NULL,
+    zipcode varchar(50) NOT NULL,
     phone varchar(225) NOT NULL,
 	userTypeID int NOT NULL,
     createDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
