@@ -1,4 +1,5 @@
 <jsp:include page="../include/header.jsp"/>
+<link rel="stylesheet" href="../../../pub/style/shelter/home.css">
 
 <!-- Page Content -->
 <div class="page-heading products-heading header-text">
