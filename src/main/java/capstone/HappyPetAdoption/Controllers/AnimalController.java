@@ -16,4 +16,12 @@ public class AnimalController {
 
         return response;
     }
+
+    @RequestMapping(value = "/animal/{id}", method = RequestMethod.GET)
+    public ModelAndView details() throws Exception {
+        ModelAndView response = new ModelAndView();
+        response.setViewName("animals");
+
+        return response;
+    }
 }

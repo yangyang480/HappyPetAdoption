@@ -1,29 +1,44 @@
 package capstone.HappyPetAdoption.database.Entitys;
 
-import javax.persistence.Column;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import capstone.HappyPetAdoption.database.Entitys.Enums.OrderStatusEnum;
+import lombok.*;
+
+import javax.persistence.*;
 import java.util.Date;
 
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table
 public class Adoption {
 
-    private Integer orderID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column()
+    private Integer id;
 
-    private Integer animalID;
+    @Column()
+    private Integer animalId;
 
-    private Integer RescuerID;
+    @Column()
+    private Integer rescuerId;
 
-    private Integer ShelterID;
+    @Column()
+    private Integer shelterId;
 
-    //TODO enum datatype
-//    private OrderStatus orderStatus;
+    @Column(columnDefinition="ENUM('REQUESTED', 'PENDING', 'CANCELED', 'COMPLETED')")
+    @Enumerated(EnumType.STRING)
+    private OrderStatusEnum orderStatus;
 
-    @Column(name = "orderCreateDate")
+    @Column()
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createData = new Date();
+    private Date createdDate = new Date();
 
-    //TODO figure out how to set the update date up
-    private Date updateDate = new Date();
-
-
+    @Column()
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updatedDate = new Date();
 }

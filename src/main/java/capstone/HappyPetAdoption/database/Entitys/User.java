@@ -1,11 +1,8 @@
 package capstone.HappyPetAdoption.database.Entitys;
 
 import lombok.*;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Date;
 
 @Getter
@@ -20,44 +17,44 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column()
     private Integer id;
 
-    @Column(name = "email")
+    @Column()
     private String email;
 
-    @Column(name = "password")
+    @Column()
     private String password;
 
-    @Column(name = "name")
+    @Column()
     private String name;
 
 //    @OneToMany()
-    @Column(name = "userTypeID")
-    private Integer userTypeID;
+    @Column()
+    private Integer userTypeId;
 
-    @Column(name = "address")
+    @Column()
     private String address;
 
-    @Column(name = "city")
+    @Column()
     private String city;
 
-    @Column(name = "state")
+    @Column()
     private String state;
 
-    @Column(name = "zipcode")
+    @Column()
     private String zipcode;
 
-    @Column(name = "phone")
+    @Column()
     private String phone;
 
-    @Column(name = "createDate")
+    @Column()
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createDate = new Date();
+    private Date createdDate = new Date();
 
-    @Column(name = "updateDate")
+    @Column()
     @Temporal(TemporalType.TIMESTAMP)
-    private Date updateDate = new Date();
+    private Date updatedDate = new Date();
 
 
 //    import java.time.LocalDate;

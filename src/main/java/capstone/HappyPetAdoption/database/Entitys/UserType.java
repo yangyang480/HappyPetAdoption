@@ -15,9 +15,9 @@ import javax.persistence.*;
 public class UserType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column()
     private Integer id;
 
-    @Column(name = "userType")
+    @Column()
     private String userType;
 }
