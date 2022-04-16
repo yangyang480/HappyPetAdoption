@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.Date;
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -47,12 +48,8 @@ public class RegisterController {
             response.setViewName("user/register");
             return response;
         }
-        //if user is null, then create it.
-        User user = userDAO.getById(registerFormBean.getId());
-        if (user == null) {
-            user = new User();
-        }
 
+        User user = new User();
         user.setEmail(registerFormBean.getEmail());
 
         //save into the database. when register get the password encoded in database
