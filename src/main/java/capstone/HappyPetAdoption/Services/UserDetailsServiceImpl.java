@@ -39,7 +39,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
 
         List<UserType> userTypes = new ArrayList<>();
-        userTypes.add(userTypeDAO.getById(user.getUserTypeId()));
+        userTypes.add(userTypeDAO.findById(user.getUserTypeId()));
 
         // check the account status
         boolean accountIsEnabled = true; //user.isActive()
@@ -63,7 +63,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
         for (UserType userType : userTypes) {
-            authorities.add(new SimpleGrantedAuthority(userType.getUserType()));
+            authorities.add(new SimpleGrantedAuthority(userType.getName()));
         }
         return authorities;
     }

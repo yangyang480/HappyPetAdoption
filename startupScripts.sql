@@ -9,7 +9,7 @@ DROP TABLE AnimalSpecies;
 ### Create Tables ###
 CREATE TABLE UserType(
 	id int NOT NULL PRIMARY KEY UNIQUE,
-    userType varchar(225) NOT NULL);   
+    name varchar(225) NOT NULL);   
 
 CREATE TABLE User(
 	id int PRIMARY KEY AUTO_INCREMENT UNIQUE,
@@ -59,14 +59,14 @@ CREATE TABLE Adoption (
 	foreign key (rescuerId) references User(id) ON DELETE restrict);
 
 ### Insert Info ###
-INSERT INTO UserType (id, userType)
+INSERT INTO UserType (id, name)
 VALUES
 (0, 'Shelter'),
 (1, 'Rescuer');
 
 INSERT INTO User (id, email, password, name, address, city, state, zipcode, phone, userTypeId)
 VALUES
-(1, 'oak@gmail.com', 'hfsgfydg', 'Oak Knoll Animal Shelter', '6315 Minnetonka Blvd', 'Los Angeles', 'LA', 76342, '6538762435', 0),
+(1, 'Oak321@gmail.com', '$2a$10$z/1Dp5EVw4ioNXRAgSvWCOPGk9sLfZ4FSNGQH0zrwUCY5qV7OR32S', 'Oak Knoll Animal Shelter', '6315 Minnetonka Blvd', 'Los Angeles', 'LA', 76342, '6538762435', 0),
 (2, 'banfield@gmail.com', 'tdagew453dd', 'Banfield Pet Shelter', '651 Winnetka Ave N', 'Minneapolis', 'MN', 65423, '7463569874', 0),
 (3, 'edina@gmail.com', 'tjkjgeefe73dd', 'Edina Pet Shelter', '7701 Cahill Rd', 'Houston', 'TX', 62241, '8542436254', 0),
 (4, 'jaden@g.com', 'ythdv653gi', 'Jaden', '8610Minnehaha', 'Rhome', 'TX', 45321, '7652445380', 1),
