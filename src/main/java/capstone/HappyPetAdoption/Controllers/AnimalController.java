@@ -17,10 +17,10 @@ public class AnimalController {
         return response;
     }
 
-    @RequestMapping(value = "/animal/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/animal/{id}/details", method = RequestMethod.GET)
     public ModelAndView details() throws Exception {
         ModelAndView response = new ModelAndView();
-        response.setViewName("animals");
+        response.setViewName("animal/details");
 
         return response;
     }
