@@ -30,8 +30,6 @@ public class RegisterFormBean {
     @Pattern(regexp = ".*[a-z].*", message = "Password needs at least one lowercase letter")
     private String password;
 
-
-    //TODO the message won't show
     @NotEmpty(message = "Confirm password must not be empty")
     private String confirmPassword;
 
@@ -51,8 +49,11 @@ public class RegisterFormBean {
     private String state;
 
     @NotNull(message = "Zipcode must not be empty")
-    private Integer zipcode;
+    @Digits(integer = 5, fraction = 0, message = "Zipcode needs digits")
+    @Pattern(regexp = "^\\d{5}(?:[-\\s]\\d{4})?$", message = "Zipcode should be xxxxx or xxxxx-xxxx")
+    private String zipcode;
 
     @NotBlank(message = "Phone must not be empty")
+    @Pattern(regexp="(^$|[0-9]{10})", message = "Phone must be 10 digit")
     private String phone;
 }

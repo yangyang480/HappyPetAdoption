@@ -1,7 +1,7 @@
 
 <jsp:include page="include/header.jsp" />
 
-<link rel="stylesheet" href="../../../pub/style/home.css">
+<link rel="stylesheet" href="../../pub/style/home.css">
 
 <div id="homeCarousel">
     <div class="container-xxl carousel-container p-0">
@@ -55,11 +55,11 @@
     <div class="row align-items-center">
         <div class="col-lg-6 py-3">
             <div class="subhead">About Us</div>
-            <h2 class="title-section">We are <span class="fg-primary">Professional Teams</span> to Growth your Business</h2>
+            <h2 class="title-section">We provide <span class="fg-primary">Most Convenient</span> animal adoption service</h2>
 
-            <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of</p>
-
-            <a href="howtoadopt" class="btn btn-primary mt-4">Read More</a>
+            <p>We have thousands of shelters available in this website. If you are animal lover and want to save life. Then you are in the right place.
+                Adoption procedure is simple and easy. learn more by click on the button below.</p>
+            <a href="../../pub/docs/Guide.pdf" target="_blank" class="btn btn-primary mt-4">Read More</a>
         </div>
         <div class="col-lg-6 py-3">
             <div class="about-img">

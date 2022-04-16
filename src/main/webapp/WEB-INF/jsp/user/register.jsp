@@ -21,6 +21,7 @@
 	<div class="wrapper">
 		<div class="card">
 			<p class="sign">Register</p>
+            <%-- since the confirm password depending on two fields, so they get confused where to put the message, so I put on the global  --%>
             <c:forEach items="${bindingResult.getGlobalErrors()}" var="error">
                 <p class="error-message text-center">
                     ${error.getDefaultMessage()}
@@ -190,12 +191,6 @@
 
 				<button class="submit btn btn-primary py-2 px-4">Register</button>
 			</form:form>
-
-<%--			<c:if test="${not empty errorMessages}">--%>
-<%--				<c:forEach items="${errorMessages}" var="message">--%>
-<%--					<div style="color:red">${message}</div>--%>
-<%--				</c:forEach>--%>
-<%--			</c:if>--%>
 
             <div id="iconHomeContainer">
                 <div id="iconHomeWhitespace"></div>
