@@ -36,17 +36,17 @@ public class AdoptionService {
         return this.adoptionDAO.save(adoption);
     }
 
-    public Adoption getAdoptionById(Long id)
+    public Adoption getAdoptionById(Integer id)
     {
         return this.adoptionDAO.getById(id);
     }
 
-    public List<Adoption> getAdoptionsByShelterId(Long shelterId)
+    public List<Adoption> getAdoptionsByShelterId(Integer shelterId)
     {
         return this.adoptionDAO.getAdoptionsByRescuerId(shelterId);
     }
 
-    public List<Adoption> getAdoptionsByRescuerId(Long rescuerId)
+    public List<Adoption> getAdoptionsByRescuerId(Integer rescuerId)
     {
         return this.adoptionDAO.getAdoptionsByRescuerId(rescuerId);
     }

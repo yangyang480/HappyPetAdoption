@@ -21,10 +21,10 @@ import java.util.List;
 public class ShelterController {
 
     @Autowired
-    UserDAO userDAO;
+    private AnimalDAO animalDAO;
 
     @Autowired
-    private AnimalDAO animalDAO;
+    private UserDAO userDAO;
 
     @RequestMapping(value = "/shelters", method = RequestMethod.GET)
     public ModelAndView shelters(@RequestParam(value = "name", required = false) String name) throws Exception {
@@ -54,7 +54,7 @@ public class ShelterController {
     }
 
     @RequestMapping(value = "/shelter/{id}/details", method = RequestMethod.GET)
-    public ModelAndView shelter(@PathVariable("id") int id) throws Exception {
+    public ModelAndView details(@PathVariable("id") int id) throws Exception {
         ModelAndView response = new ModelAndView();
 
         User shelter = userDAO.getShelterById(id);

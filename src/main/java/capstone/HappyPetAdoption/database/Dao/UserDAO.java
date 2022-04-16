@@ -10,12 +10,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UserDAO extends JpaRepository<User, Long> {
+public interface UserDAO extends JpaRepository<User, Integer> {
 
     @Query(value = "select u from User u where u.userTypeId = 0")
     public List<User> getAllShelters();
-
-    public User findById(@Param("id") Integer id);
 
     @Query(value = "select * from User where email = :email", nativeQuery = true)
     public User findByEmail(@Param("email") String email);
