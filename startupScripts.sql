@@ -21,42 +21,42 @@ CREATE TABLE User(
     state varchar(225) NOT NULL,
     zipcode varchar(50) NOT NULL,
     phone varchar(225) NOT NULL,
-	userTypeID int NOT NULL,
-    createDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updateDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    foreign key (userTypeID) references UserType(id) ON DELETE restrict);
+	userTypeId int NOT NULL,
+    createdDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updatedDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    foreign key (userTypeId) references UserType(id) ON DELETE restrict);
     
 CREATE TABLE AnimalSpecies (
-	animalSpeciesID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-	speciesName varchar(225) NOT NULL,
-	speciesCreateDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP());
+	id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	name varchar(225) NOT NULL,
+	createdDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP());
 
 CREATE TABLE Animal(
-	animalID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-	animalName varchar(225) NOT NULL,
-	animalAge int,
-	animalGender varchar(20) NOT NULL,
-	animalWeight DECIMAL(10,3) NOT NULL,
-	animalSpeciesID int NOT NULL,
-    animalDescription varchar(255) NOT NULL,
-	animalStatus boolean  NOT NULL,
-	ShelterID int NOT NULL,
-	animalCreateDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-	animalUpdateDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-	foreign key (animalSpeciesID) references AnimalSpecies(animalSpeciesID) ON DELETE restrict,
-	foreign key (ShelterID) references User(id) ON DELETE restrict);
+	id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	name varchar(225) NOT NULL,
+	age int,
+	gender varchar(20) NOT NULL,
+	weight DECIMAL(10,3) NOT NULL,
+	speciesId int NOT NULL,
+	description varchar(255) NOT NULL,
+	status boolean  NOT NULL,
+	shelterId int NOT NULL,
+	createdDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+	updatedDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+	foreign key (speciesId) references AnimalSpecies(id) ON DELETE restrict,
+	foreign key (shelterId) references User(id) ON DELETE restrict);
 
 CREATE TABLE Adoption (
-	orderID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-	animalID int NOT NULL,
-	RescuerID int NOT NULL,
-    ShelterID int NOT NULL,
-	orderStatus ENUM ('Accept', 'Waiting for pick up', 'Finished') NOT NULL,
-	orderCreateDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-	orderUpdateDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-    foreign key (animalID) references Animal (animalID) ON DELETE restrict,
-	foreign key (ShelterID) references User(id) ON DELETE restrict,
-    foreign key (RescuerID) references User(id) ON DELETE restrict);
+	id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	animalId int NOT NULL,
+	rescuerId int NOT NULL,
+	shelterId int NOT NULL,
+	orderStatus ENUM ('REQUESTED', 'PENDING', 'CANCELED', 'COMPLETED') NOT NULL,
+	createdDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+	updatedDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+	foreign key (animalId) references Animal (id) ON DELETE restrict,
+	foreign key (shelterId) references User(id) ON DELETE restrict,
+	foreign key (rescuerId) references User(id) ON DELETE restrict);
 
 ### Insert Info ###
 INSERT INTO UserType (id, userType)
@@ -64,7 +64,7 @@ VALUES
 (0, 'Shelter'),
 (1, 'Rescuer');
 
-INSERT INTO User (id, email, password, name, address, city, state, zipcode, phone, userTypeID)
+INSERT INTO User (id, email, password, name, address, city, state, zipcode, phone, userTypeId)
 VALUES
 (1, 'oak@gmail.com', 'hfsgfydg', 'Oak Knoll Animal Shelter', '6315 Minnetonka Blvd', 'Los Angeles', 'LA', 76342, '6538762435', 0),
 (2, 'banfield@gmail.com', 'tdagew453dd', 'Banfield Pet Shelter', '651 Winnetka Ave N', 'Minneapolis', 'MN', 65423, '7463569874', 0),
@@ -73,19 +73,19 @@ VALUES
 (5, 'Mary@g.com', 'kajdgr3646', 'Mary', '8765 St paul', 'Chicago', 'IL', 54821, '1489526741', 1),
 (6, 'Art@g.com', 'vkfje644', 'Art', '6532 University st', 'San Fransico', 'LA', 98562, '98548756123', 1);
 
-INSERT INTO AnimalSpecies (animalSpeciesID, speciesName)
+INSERT INTO AnimalSpecies (id, name)
 VALUES
 (1, 'Dog'),
 (2, 'Cat'),
 (3, 'Rat');
 
-INSERT INTO Animal (animalID, animalName, animalAge, animalGender, animalWeight, animalSpeciesID, animalDescription, animalStatus, ShelterID)
+INSERT INTO Animal (id, name, age, gender, weight, speciesId, description, status, shelterId)
 VALUES
 (1, 'Ruby', 2, 'Female', 10.2, 1, 'Ruby is the a little', true, 1),
 (2, 'Wani', 3, 'Male', 12.2, 2, 'Ruby is the a little', true, 3),
 (3, 'Kiwi', 1, 'Female', 15, 3, 'Ruby is the a little', true, 1);
 
-INSERT INTO Adoption (orderID, animalID, RescuerID, ShelterID, orderStatus)
+INSERT INTO Adoption (id, animalId, rescuerId, shelterId, orderStatus)
 VALUES
-(1, 1, 4, 1, 'Waiting for pick up'),
-(2, 2, 5, 3, 'Finished');
+(1, 1, 4, 1, 'REQUESTED'),
+(2, 2, 5, 3, 'COMPLETED');

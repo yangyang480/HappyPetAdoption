@@ -28,7 +28,7 @@ public class ProfileController {
         profileFormBean.setState(user.getState());
         profileFormBean.setZipcode(user.getZipcode());
         profileFormBean.setPhone(user.getPhone());
-        profileFormBean.setUserTypeId(user.getUserTypeID());
+        profileFormBean.setUserTypeId(user.getUserTypeId());
 
         return new ModelAndView("/user/profile");
     }

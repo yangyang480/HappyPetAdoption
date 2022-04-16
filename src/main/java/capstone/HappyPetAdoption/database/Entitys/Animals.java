@@ -7,29 +7,29 @@ import java.util.Date;
 
 public class Animals {
 
-    private Integer animalID;
+    private Integer id;
 
-    private String animalName;
+    private String name;
 
-    private Integer animalAge;
+    private Integer age;
 
     //TODO figure out how to do the select box in spring
-    private String animalGender;
+    private String gender;
 
-    private Double animalWeight;
+    private Double weight;
 
-    private Integer animalSpeciesID;
+    private Integer speciesId;
 
-    private String animalDescription;
+    private String description;
 
-    private Boolean animalStatus;
+    private Boolean status;
 
-    private Integer ShelterID;
+    private Integer shelterId;
 
-    @Column(name = "animalCreateDate")
+    @Column()
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createData = new Date();
+    private Date createdData = new Date();
 
-    private Date updateDate = new Date();
+    private Date updatedDate = new Date();
 
 }

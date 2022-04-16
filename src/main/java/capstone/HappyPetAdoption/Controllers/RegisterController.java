@@ -67,9 +67,9 @@ public class RegisterController {
         user.setCity(registerFormBean.getCity());
         user.setState(registerFormBean.getState());
         user.setZipcode(registerFormBean.getZipcode());
-        user.setUserTypeID(registerFormBean.getUserTypeId());
+        user.setUserTypeId(registerFormBean.getUserTypeId());
         user.setPhone(registerFormBean.getPhone());
-        user.setCreateDate(new Date());
+        user.setCreatedDate(new Date());
 
         userDAO.save(user);
 

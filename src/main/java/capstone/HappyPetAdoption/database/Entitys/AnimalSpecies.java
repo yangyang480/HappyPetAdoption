@@ -7,11 +7,11 @@ import java.util.Date;
 
 public class AnimalSpecies {
 
-    private Integer animalSpeciesID;
+    private Integer id;
 
-    private String speciesName;
+    private String name;
 
-    @Column(name = "speciesCreateDate")
+    @Column()
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createData = new Date();
+    private Date createdData = new Date();
 }
