@@ -21,6 +21,11 @@
 	<div class="wrapper">
 		<div class="card">
 			<p class="sign">Register</p>
+            <c:forEach items="${bindingResult.getGlobalErrors()}" var="error">
+                <p class="error-message text-center">
+                    ${error.getDefaultMessage()}
+                </p>
+            </c:forEach>
 			<%--@elvariable id="registerFormBean" type=""--%>
 			<form:form class="form" action="/user/registerSubmit" modelAttribute="registerFormBean" method="POST" autocomplete="off">
 				<div class="form-field">
@@ -35,8 +40,8 @@
 				<div class="form-row form-field d-inline-block">
 				    <div class="d-flex gap-3 justify-content-center">
 				        <div class="col">
-                            <form:input id="password" path="password" class="form-control" name="password" type="password"
-                                placeholder="Password"/>
+                            <form:input id="password" path="password" class="form-control" name="password"
+                                type="password" placeholder="Password"/>
                             <c:forEach items="${bindingResult.getFieldErrors('password')}" var="error">
                                 <div class="error-message">
                                     ${error.getDefaultMessage()}
@@ -44,8 +49,8 @@
                             </c:forEach>
 				        </div>
 				        <div class="col">
-                            <form:input path="confirmPassword" id="confirmPassword" class="form-control" name="confirmPassword" type="password"
-                                placeholder="Confirm Password"/>
+                            <form:input path="confirmPassword" id="confirmPassword" class="form-control"
+                                name="confirmPassword" type="password" placeholder="Confirm Password"/>
                             <c:forEach items="${bindingResult.getFieldErrors('confirmPassword')}" var="error">
                                 <div class="error-message">
                                     ${error.getDefaultMessage()}
@@ -56,7 +61,8 @@
 				</div>
 
 				<div class="form-field">
-					<form:input id="name" path="name" class="name form-control" name="name" type="text" placeholder="Full Name"/>
+					<form:input id="name" path="name" class="name form-control" name="name" type="text"
+					    placeholder="Full Name"/>
 					<c:forEach items="${bindingResult.getFieldErrors('name')}" var="error">
                         <div class="error-message">
 						    ${error.getDefaultMessage()}
@@ -100,58 +106,58 @@
                     <div class="d-flex gap-3 justify-content-center">
                         <div class="col">
                             <form:select name="state" class="form-control" path="state" id="state">
-                                <option value="-1">--State--</option>
-                                <option value="AL">Alabama</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AZ">Arizona</option>
-                                <option value="AR">Arkansas</option>
-                                <option value="CA">California</option>
-                                <option value="CO">Colorado</option>
-                                <option value="CT">Connecticut</option>
-                                <option value="DE">Delaware</option>
-                                <option value="DC">District Of Columbia</option>
-                                <option value="FL">Florida</option>
-                                <option value="GA">Georgia</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="ID">Idaho</option>
-                                <option value="IL">Illinois</option>
-                                <option value="IN">Indiana</option>
-                                <option value="IA">Iowa</option>
-                                <option value="KS">Kansas</option>
-                                <option value="KY">Kentucky</option>
-                                <option value="LA">Louisiana</option>
-                                <option value="ME">Maine</option>
-                                <option value="MD">Maryland</option>
-                                <option value="MA">Massachusetts</option>
-                                <option value="MI">Michigan</option>
-                                <option value="MN">Minnesota</option>
-                                <option value="MS">Mississippi</option>
-                                <option value="MO">Missouri</option>
-                                <option value="MT">Montana</option>
-                                <option value="NE">Nebraska</option>
-                                <option value="NV">Nevada</option>
-                                <option value="NH">New Hampshire</option>
-                                <option value="NJ">New Jersey</option>
-                                <option value="NM">New Mexico</option>
-                                <option value="NY">New York</option>
-                                <option value="NC">North Carolina</option>
-                                <option value="ND">North Dakota</option>
-                                <option value="OH">Ohio</option>
-                                <option value="OK">Oklahoma</option>
-                                <option value="OR">Oregon</option>
-                                <option value="PA">Pennsylvania</option>
-                                <option value="RI">Rhode Island</option>
-                                <option value="SC">South Carolina</option>
-                                <option value="SD">South Dakota</option>
-                                <option value="TN">Tennessee</option>
-                                <option value="TX">Texas</option>
-                                <option value="UT">Utah</option>
-                                <option value="VT">Vermont</option>
-                                <option value="VA">Virginia</option>
-                                <option value="WA">Washington</option>
-                                <option value="WV">West Virginia</option>
-                                <option value="WI">Wisconsin</option>
-                                <option value="WY">Wyoming</option>
+                                <form:option label="--State--" value=""/>
+                                <form:option label="Alabama" value="AL"/>
+                                <form:option label="Alaska" value="AK"/>
+                                <form:option label="Arizona" value="AZ"/>
+                                <form:option label="Arkansas" value="AR"/>
+                                <form:option label="California" value="CA"/>
+                                <form:option label="Colorado" value="CO"/>
+                                <form:option label="Connecticut" value="CT"/>
+                                <form:option label="Delaware" value="DE"/>
+                                <form:option label="District Of Columbia" value="DC"/>
+                                <form:option label="Florida" value="FL"/>
+                                <form:option label="Georgia" value="GA"/>
+                                <form:option label="Hawaii" value="HI"/>
+                                <form:option label="Idaho" value="ID"/>
+                                <form:option label="Illinois" value="IL"/>
+                                <form:option label="Indiana" value="IN"/>
+                                <form:option label="Iowa" value="IA"/>
+                                <form:option label="Kansas" value="KS"/>
+                                <form:option label="Kentucky" value="KY"/>
+                                <form:option label="Louisiana" value="LA"/>
+                                <form:option label="Maine" value="ME"/>
+                                <form:option label="Maryland" value="MD"/>
+                                <form:option label="Massachusetts" value="MA"/>
+                                <form:option label="Michigan" value="MI"/>
+                                <form:option label="Minnesota" value="MN"/>
+                                <form:option label="Mississippi" value="MS"/>
+                                <form:option label="Missouri" value="MO"/>
+                                <form:option label="Montana" value="MT"/>
+                                <form:option label="Nebraska" value="NE"/>
+                                <form:option label="Nevada" value="NV"/>
+                                <form:option label="New Hampshire" value="NH"/>
+                                <form:option label="New Jersey" value="NJ"/>
+                                <form:option label="New Mexico" value="NM"/>
+                                <form:option label="New York" value="NY"/>
+                                <form:option label="North Carolina" value="NC"/>
+                                <form:option label="North Dakota" value="ND"/>
+                                <form:option label="Ohio" value="OH"/>
+                                <form:option label="Oklahoma" value="OK"/>
+                                <form:option label="Oregon" value="OR"/>
+                                <form:option label="Pennsylvania" value="PA"/>
+                                <form:option label="Rhode Island" value="RI"/>
+                                <form:option label="South Carolina" value="SC"/>
+                                <form:option label="South Dakota" value="SD"/>
+                                <form:option label="Tennessee" value="TN"/>
+                                <form:option label="Texas" value="TX"/>
+                                <form:option label="Utah" value="UT"/>
+                                <form:option label="Vermont" value="VT"/>
+                                <form:option label="Virginia" value="VA"/>
+                                <form:option label="Washington" value="WA"/>
+                                <form:option label="West Virginia" value="WV"/>
+                                <form:option label="Wisconsin" value="WI"/>
+                                <form:option label="Wyoming" value="WY"/>
                             </form:select>
                             <c:forEach items="${bindingResult.getFieldErrors('state')}" var="error">
                                 <div class="error-message">
@@ -161,8 +167,8 @@
                         </div>
 
                         <div class="col">
-                            <form:input id="zipcode" path="zipcode" class="zipcode form-control" name="zipcode" type="text"
-                                placeholder="Zipcode"/>
+                            <form:input id="zipcode" path="zipcode" class="zipcode form-control" name="zipcode"
+                                type="text" placeholder="Zipcode"/>
                             <c:forEach items="${bindingResult.getFieldErrors('zipcode')}" var="error">
                                 <div class="error-message">
                                         ${error.getDefaultMessage()}

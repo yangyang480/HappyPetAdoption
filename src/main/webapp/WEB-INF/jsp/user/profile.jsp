@@ -63,7 +63,7 @@
                 <label for="state" class="col-sm-2 col-form-label text-end">State</label>
                 <div class="col-sm-10">
                     <form:select name="state" class="form-control" id="state" path="state">
-                        <form:option label="--State--" value="-1"/>
+                        <form:option label="--State--" value=""/>
                         <form:option label="Alabama" value="AL"/>
                         <form:option label="Alaska" value="AK"/>
                         <form:option label="Arizona" value="AZ"/>
