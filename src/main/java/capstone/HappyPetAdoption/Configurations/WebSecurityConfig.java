@@ -32,6 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/",
                         "/animals",
+                        "/shelter/*/details",
                         "/shelter/home",
                         "/shelters",
                         "/error",
