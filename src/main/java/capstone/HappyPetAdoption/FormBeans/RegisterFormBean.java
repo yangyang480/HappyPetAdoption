@@ -23,9 +23,11 @@ public class RegisterFormBean {
     @Email(message = "Email must be formatted")
     private String email;
 
-    @NotBlank(message = "Password must not be empty")
-    @Length(min = 6, max = 20)
-    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$", message = "at least one numeric digit, one uppercase and one lowercase ")
+    @Length(min = 6, message = "Password is too short")
+    @Length(max = 20, message = "Password is too long")
+    @Pattern(regexp = ".*[0-9].*", message = "Password needs at least one number")
+    @Pattern(regexp = ".*[A-Z].*", message = "Password needs at least one uppercase letter")
+    @Pattern(regexp = ".*[a-z].*", message = "Password needs at least one lowercase letter")
     private String password;
 
 
