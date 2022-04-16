@@ -67,9 +67,9 @@ VALUES
 INSERT INTO User (id, email, password, name, address, city, state, zipcode, phone, userTypeId)
 VALUES
 (1, 'Oak321@gmail.com', '$2a$10$z/1Dp5EVw4ioNXRAgSvWCOPGk9sLfZ4FSNGQH0zrwUCY5qV7OR32S', 'Oak Knoll Animal Shelter', '6315 Minnetonka Blvd', 'Los Angeles', 'LA', 76342, '6538762435', 0),
-(2, 'banfield@gmail.com', 'tdagew453dd', 'Banfield Pet Shelter', '651 Winnetka Ave N', 'Minneapolis', 'MN', 65423, '7463569874', 0),
+(2, 'Banfield20@gmail.com', '$2a$10$XKWgWHGP.qhdnmINSN83qeIugqm7YsIdwKjaNYfkCvjKG1Afkvq0y', 'Banfield Pet Shelter', '651 Winnetka Ave N', 'Minneapolis', 'MN', 65423, '7463569874', 0),
 (3, 'edina@gmail.com', 'tjkjgeefe73dd', 'Edina Pet Shelter', '7701 Cahill Rd', 'Houston', 'TX', 62241, '8542436254', 0),
-(4, 'jaden@g.com', 'ythdv653gi', 'Jaden', '8610Minnehaha', 'Rhome', 'TX', 45321, '7652445380', 1),
+(4, 'Jaden@143.com', '$2a$10$4tZh4VBFxsB0v9u7KwzTZOV4jQtaLSeWS2ddziz6ZDgVDqAnDpa0a', 'Jaden', '8610Minnehaha', 'Rhome', 'TX', 45321, '7652445380', 1),
 (5, 'Mary@g.com', 'kajdgr3646', 'Mary', '8765 St paul', 'Chicago', 'IL', 54821, '1489526741', 1),
 (6, 'Art@g.com', 'vkfje644', 'Art', '6532 University st', 'San Fransico', 'LA', 98562, '98548756123', 1);
 
