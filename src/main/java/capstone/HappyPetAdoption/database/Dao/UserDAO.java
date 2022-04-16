@@ -20,10 +20,6 @@ public interface UserDAO extends JpaRepository<User, Long> {
     @Query(value = "select * from User where email = :email", nativeQuery = true)
     public User findByEmail(@Param("email") String email);
 
-    //get list of animals group by shelterId
-    @Query(value = "select a from Animal a where a.shelterId = :shelterId", nativeQuery = true)
-    public List<Animal> findAnimalsByShelterId(@Param("shelterId") Integer ShelterId);
-
     @Query(value = "select u from User u where u.id = :id AND u.userTypeId = 0")
     public User getShelterById(@Param("id") Integer id);
 
