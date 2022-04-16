@@ -51,4 +51,15 @@ public class ShelterController {
         response.setViewName("shelter/home");
         return response;
     }
+
+    @RequestMapping(value = "/shelter/{id}/details", method = RequestMethod.GET)
+    public ModelAndView shelter(@PathVariable("id") int id) throws Exception {
+        ModelAndView response = new ModelAndView();
+
+        User shelter = userDAO.getShelterById(id);
+        response.addObject("shelter", shelter);
+
+        response.setViewName("shelter/details");
+        return response;
+    }
 }
