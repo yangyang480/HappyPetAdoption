@@ -27,14 +27,13 @@ body {
 
 .email,
 .password {
-  width: 76%;
+  width: 86%;
   letter-spacing: 1px;
-  padding: 10px 20px;
+  padding: 8px 20px;
   text-align: center;
 }
 
 .form {
-  padding-top: 20px;
   text-align: center;
 }
 
@@ -43,6 +42,10 @@ body {
 }
 
 .submit {
+  border-radius: 5em;
+}
+
+.submit:focus {
   border-radius: 5em;
 }
 
