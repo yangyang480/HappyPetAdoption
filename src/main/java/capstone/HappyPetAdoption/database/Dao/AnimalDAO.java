@@ -9,10 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AnimalDAO extends JpaRepository<Animal, Long> {
-
-    public Animal findById(@Param("id") Integer id);
-
+public interface AnimalDAO extends JpaRepository<Animal, Integer> {
     //get list of animals group by shelterId
     @Query(value = "select a from Animal a where a.shelterId = :shelterId")
     public List<Animal> findAnimalsByShelterId(@Param("shelterId") Integer shelterId);

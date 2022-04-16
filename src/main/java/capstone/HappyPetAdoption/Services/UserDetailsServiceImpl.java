@@ -39,7 +39,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
 
         List<UserType> userTypes = new ArrayList<>();
-        userTypes.add(userTypeDAO.findById(user.getUserTypeId()));
+        userTypes.add(userTypeDAO.getById(user.getUserTypeId()));
 
         // check the account status
         boolean accountIsEnabled = true; //user.isActive()
