@@ -38,6 +38,8 @@ public class AnimalController {
         User shelter = userDAO.getShelterById(animal.getShelterId());
         response.addObject("shelter", shelter);
 
+        response.addObject("anyOpenAdoptions", false);
+
         response.setViewName("animal/details");
         return response;
     }
