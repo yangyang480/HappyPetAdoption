@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
 @Getter
 @Setter
 @ToString
-@TwoFieldsAreEqual(fieldOneName = "password", fieldTwoName = "confirmPassword", message = "passwords must match")
+@TwoFieldsAreEqual(fieldOneName = "password", fieldTwoName = "confirmPassword", message = "Passwords must match")
 public class RegisterFormBean {
 
     private Integer id;
@@ -47,16 +47,12 @@ public class RegisterFormBean {
     @NotBlank(message = "City must not be empty")
     private String city;
 
-    //TODO how to set default = null/0
-    @NotBlank(message = "State must not be empty")
+    @NotBlank(message = "A state must be selected")
     private String state;
 
     @NotNull(message = "Zipcode must not be empty")
     private Integer zipcode;
 
-    //TODO not showing in the form
-    @NotNull(message = "Phone must not be empty")
+    @NotBlank(message = "Phone must not be empty")
     private String phone;
-
-
 }

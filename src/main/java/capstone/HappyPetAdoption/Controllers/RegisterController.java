@@ -44,12 +44,6 @@ public class RegisterController {
         log.info(registerFormBean.toString());
 
         if (bindingResult.hasErrors()) {
-            List<String> errorMessages = new ArrayList<>();
-            List<ObjectError> allErrors = bindingResult.getAllErrors();
-
-            for (ObjectError error : allErrors) {
-                errorMessages.add(error.getDefaultMessage());
-            }
             //show all the input
             response.addObject("formbean", registerFormBean);
             //add the errors to display
