@@ -14,6 +14,13 @@
         Email: ${shelter.email}<br>
         Phone: ${shelter.phone}
     </address>
+
+    <h2>Animals Available</h2>
+    <c:forEach items="${animals}" var="animal">
+        <div class="error-message">
+            ${animal}
+        </div>
+    </c:forEach>
 </div>
 
 <jsp:include page="../include/footer.jsp" />

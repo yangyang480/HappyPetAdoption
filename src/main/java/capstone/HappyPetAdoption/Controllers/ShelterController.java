@@ -1,8 +1,7 @@
 package capstone.HappyPetAdoption.Controllers;
 
-import capstone.HappyPetAdoption.FormBeans.RegisterFormBean;
 import capstone.HappyPetAdoption.database.Dao.UserDAO;
-import capstone.HappyPetAdoption.database.Entitys.Animals;
+import capstone.HappyPetAdoption.database.Entitys.Animal;
 import capstone.HappyPetAdoption.database.Entitys.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -30,10 +27,10 @@ public class ShelterController {
         ModelAndView response = new ModelAndView();
         response.setViewName("shelters");
 
-        List<User> users = new ArrayList<>();
+        List<User> users;
 
         if (!StringUtils.isEmpty(name)) {
-            users = userDAO.findByNameIgnoreCaseContaining(name);
+            users = userDAO.findShelterByNameIgnoreCase(name);
         }
         else {
             users = userDAO.getAllShelters();
@@ -58,6 +55,9 @@ public class ShelterController {
 
         User shelter = userDAO.getShelterById(id);
         response.addObject("shelter", shelter);
+
+        List<Animal> animals = userDAO.findAnimalsByShelterId(id);
+        response.addObject("animals", animals);
 
         response.setViewName("shelter/details");
         return response;
