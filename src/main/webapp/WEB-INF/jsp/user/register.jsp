@@ -26,7 +26,7 @@
 				<div class="form-field">
 					<form:input id="email" path="email" class="email form-control" name="email" type="text" placeholder="Email"/>
 						<c:forEach items="${bindingResult.getFieldErrors('email')}" var="error">
-							<div style="color: red;">
+                            <div class="error-message">
 									${error.getDefaultMessage()}
 							</div>
 						</c:forEach>
@@ -34,28 +34,32 @@
 
 				<div class="form-row form-field d-inline-block">
 				    <div class="d-flex gap-3 justify-content-center">
-                        <form:input id="password" path="password" class="form-control" name="password" type="password"
-                            placeholder="Password"/>
-                        <form:input path="confirmPassword" id="confirmPassword" class="form-control" name="confirmPassword" type="password"
-                            placeholder="Confirm Password"/>
+				        <div class="col">
+                            <form:input id="password" path="password" class="form-control" name="password" type="password"
+                                placeholder="Password"/>
+                            <c:forEach items="${bindingResult.getFieldErrors('password')}" var="error">
+                                <div class="error-message">
+                                    ${error.getDefaultMessage()}
+                                </div>
+                            </c:forEach>
+				        </div>
+				        <div class="col">
+                            <form:input path="confirmPassword" id="confirmPassword" class="form-control" name="confirmPassword" type="password"
+                                placeholder="Confirm Password"/>
+                            <c:forEach items="${bindingResult.getFieldErrors('confirmPassword')}" var="error">
+                                <div class="error-message">
+                                    ${error.getDefaultMessage()}
+                                </div>
+                            </c:forEach>
+				        </div>
 				    </div>
-					<c:forEach items="${bindingResult.getFieldErrors('confirmPassword')}" var="error">
-						<div style="color: red;">
-								${error.getDefaultMessage()}
-						</div>
-					</c:forEach>
-					<c:forEach items="${bindingResult.getFieldErrors('password')}" var="error">
-						<div style="color: red;">
-								${error.getDefaultMessage()}
-						</div>
-					</c:forEach>
 				</div>
 
 				<div class="form-field">
 					<form:input id="name" path="name" class="name form-control" name="name" type="text" placeholder="Full Name"/>
 					<c:forEach items="${bindingResult.getFieldErrors('name')}" var="error">
-						<div style="color: red;">
-								${error.getDefaultMessage()}
+                        <div class="error-message">
+						    ${error.getDefaultMessage()}
 						</div>
 					</c:forEach>
 				</div>
@@ -67,7 +71,7 @@
 						<div class="form-check mb-0"><form:radiobutton path="userTypeId" class="form-check-input" value="1" label="Rescuer" id="roles2" name="roles"/></div>
 					</div>
 					<c:forEach items="${bindingResult.getFieldErrors('userTypeId')}" var="error">
-						<div style="color: red;">
+                        <div class="error-message">
 								${error.getDefaultMessage()}
 						</div>
 					</c:forEach>
@@ -77,7 +81,7 @@
 					<form:input id="address" path="address" class="address form-control" name="address" type="text"
 				        placeholder="Address"/>
 					<c:forEach items="${bindingResult.getFieldErrors('address')}" var="error">
-						<div style="color: red;">
+                        <div class="error-message">
 								${error.getDefaultMessage()}
 						</div>
 					</c:forEach>
@@ -86,7 +90,7 @@
 				<div class="form-field">
 					<form:input id="city" path="city" class="city form-control" name="city" type="text" placeholder="City"/>
 					<c:forEach items="${bindingResult.getFieldErrors('city')}" var="error">
-						<div style="color: red;">
+                        <div class="error-message">
 								${error.getDefaultMessage()}
 						</div>
 					</c:forEach>
@@ -150,7 +154,7 @@
                                 <option value="WY">Wyoming</option>
                             </form:select>
                             <c:forEach items="${bindingResult.getFieldErrors('state')}" var="error">
-                                <div style="color: red;">
+                                <div class="error-message">
                                         ${error.getDefaultMessage()}
                                 </div>
                             </c:forEach>
@@ -160,7 +164,7 @@
                             <form:input id="zipcode" path="zipcode" class="zipcode form-control" name="zipcode" type="text"
                                 placeholder="Zipcode"/>
                             <c:forEach items="${bindingResult.getFieldErrors('zipcode')}" var="error">
-                                <div style="color: red;">
+                                <div class="error-message">
                                         ${error.getDefaultMessage()}
                                 </div>
                             </c:forEach>
@@ -172,7 +176,7 @@
 					<form:input id="phone" path="phone" class="phone form-control" name="phone" type="tel"
 					    placeholder="Phone Number"/>
 					<c:forEach items="${bindingResult.getFieldErrors('phone')}" var="error">
-						<div style="color: red;">
+                        <div class="error-message">
 								${error.getDefaultMessage()}
 						</div>
 					</c:forEach>

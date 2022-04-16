@@ -36,6 +36,11 @@ body {
   padding: 1em;
 }
 
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
 .main-content {
   flex: auto;
 }
