@@ -56,7 +56,6 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedDate = new Date();
 
-
 //    import java.time.LocalDate;
 //    @DateTimeFormat(pattern = "yyyy-MM-dd")
 //    @Column(name = "birth_date")

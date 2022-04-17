@@ -1,0 +1,47 @@
+.sign {
+    padding-top: 20px;
+    color: #ea5aa9;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+}
+.wrapper {
+    margin-bottom: 1.5em;
+}
+
+.form-field {
+    margin-bottom: 25px;
+}
+
+.form {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.submit {
+    border-radius: 5em;
+}
+
+.submit:focus {
+    border-radius: 5em;
+}
+
+.card {
+    width: 800px;
+}
+
+.form-control {
+    letter-spacing: 1px;
+    padding: 8px 52px;
+    text-align: center;
+}
+
+.age,
+.name,
+.gender,
+.weight,
+.description,
+.species {
+    width: 86%;
+}

@@ -34,6 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/animals",
                         "/shelter/*/details",
                         "/shelter/home",
+                        "/shelter/customize",
                         "/shelters",
                         "/error",
                         "/error/*",
