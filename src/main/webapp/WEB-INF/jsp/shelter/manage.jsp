@@ -1,4 +1,4 @@
-<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <jsp:include page="../include/header.jsp"/>
@@ -28,8 +28,7 @@
                 <div class="filters">
                     <ul>
                         <a href="/shelter/home" style="text-decoration: none; color: #121212"><li data-filter="*">All Animals</li></a>
-                        <a href="/shelter/manage" style="text-decoration: none; color: #121212"><li class="active data-filter=.des" >Manage Animals</li></a>
-                        <a href="/shelter/manage" style="text-decoration: none; color: #121212"><li data-filter=".dev" >Customize Shelter</li></a>
+                        <a href="/shelter/manage/animal" style="text-decoration: none; color: #121212"><li class="active data-filter=.des" >Manage Animals</li></a>
                         <a href="/shelter/manage" style="text-decoration: none; color: #121212"><li data-filter=".gra">Manage Adoptions</li></a>
                     </ul>
                 </div>
@@ -126,7 +125,63 @@
 
         </div>
     </div>
+
+    <div class="container">
+        <form class="row row-cols-lg-auto g-3 mb-3 align-items-center" action="/shelter/manage/animals" method="get">
+            <div class="col-12">
+                <div class="input-group">
+                    <div class="input-group-text">Name</div>
+                    <input class="form-control" type="text" name="name" placeholder="Animal Name"
+                           aria-label="Search" id="shelterSearchBox" value="${name}">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <c:if test="${not empty name}">
+        <h5>Search Results Found ${animals.size()}</h5>
+        <br>
+    </c:if>
+
+    <table class="table" id="shelterTable">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Description</th>
+        </tr>
+
+        <c:forEach items="${animals}" var="animal">
+            <tr scope = "row">
+                <td><a href="/animal/${animal.id}/details">${animal.name}</a></td>
+                <td>${animal.age}</td>
+                <td>${animal.gender}</td>
+                <td>${animal.weight}</td>
+                <td>${animal.description}</td>
+            </tr>
+        </c:forEach>
+
+        </thead>
+    </table>
+
+
+    <%--//TODO add picture to the animal table...--%>
+    <%--<h1>Create Animal</h1>--%>
+
+    <%--<form action="/shelter/createSubmit" method="get">--%>
+
+    <%--    Image URL: <input type="text" name="imageURL">--%>
+    <%--    <br>--%>
+    <%--</form>--%>
 </div>
+
+
+
+
 
 
 

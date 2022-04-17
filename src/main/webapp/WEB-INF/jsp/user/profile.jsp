@@ -11,6 +11,7 @@
     <%--different views on title--%>
     <c:if test="${profileFormBean.userTypeId == 0}">
         <h1>Shelter Profile</h1>
+        <a class="btn btn-primary mx-2 px-4" role="button" href="/shelter/home">Go to Shelter</a>
     </c:if>
     <c:if test="${profileFormBean.userTypeId == 1}">
         <h1>Rescuer Profile</h1>

@@ -24,7 +24,6 @@
                     <ul>
                         <li class="active" data-filter="*">All Animals</li>
                         <a href="/shelter/manage/animal" style="text-decoration: none; color: #121212"><li data-filter=".des">Manage Animals</li></a>
-                        <a href="/shelter/customize" style="text-decoration: none; color: #121212"><li data-filter=".dev">Customize Shelter</li></a>
                         <a href="/shelter/adoptions" style="text-decoration: none; color: #121212"><li data-filter=".gra">Manage Adoptions</li></a>
                     </ul>
                 </div>

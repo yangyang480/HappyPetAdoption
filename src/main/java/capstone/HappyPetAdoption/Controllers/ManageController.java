@@ -6,16 +6,19 @@ import capstone.HappyPetAdoption.database.Dao.AnimalDAO;
 import capstone.HappyPetAdoption.database.Entitys.Animal;
 import capstone.HappyPetAdoption.database.Entitys.User;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.Date;
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -75,7 +78,27 @@ public class ManageController {
         animalDAO.save(animal);
 
         log.info(manageAnimalFormBean.toString());
-        response.setViewName("redirect:/shelter/manage/animal");
+        response.setViewName("redirect:/shelter/home");
+        return response;
+    }
+
+    @RequestMapping(value = "/shelter/manage/animals", method = RequestMethod.GET)
+    public ModelAndView shelters(@RequestParam(value = "name", required = false) String name) throws Exception {
+        ModelAndView response = new ModelAndView();
+        User shelter = this.userService.getCurrentUser();
+
+        List<Animal> animals;
+
+        if (!StringUtils.isEmpty(name)) {
+            animals = animalDAO.findAnimalByNameIgnoreCaseAndShelterId(name, shelter.getId());
+        }
+        else {
+            animals = animalDAO.findAnimalsByShelterId(shelter.getId());
+        }
+
+        response.addObject("animals", animals);
+        response.addObject("name", name);
+        response.setViewName("shelter/manage");
         return response;
     }
 

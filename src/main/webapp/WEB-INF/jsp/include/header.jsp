@@ -33,12 +33,18 @@
                         <a class="nav-link ${requestScope['javax.servlet.forward.request_uri'] eq '/' or requestScope['javax.servlet.forward.request_uri'] eq '/home' ? ' active' : ''}" aria-current="page" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ${fn:startsWith(requestScope['javax.servlet.forward.request_uri'], '/shelter') ? ' active' : ''}" href="/shelters">Shelters</a>
+                        <a class="nav-link ${fn:startsWith(requestScope['javax.servlet.forward.request_uri'], '/shelters') ? ' active' : ''}" href="/shelters">Shelters</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link ${fn:startsWith(requestScope['javax.servlet.forward.request_uri'], '/animal') ? ' active' : ''}" href="/animals">Animals</a>
                     </li>
+                    <li class="nav-item">
+                        <sec:authorize access="hasAuthority('Shelter')">
+                            <a class="nav-link ${fn:startsWith(requestScope['javax.servlet.forward.request_uri'], '/shelter/home') ? ' active' : ''}" href="/shelter/home">My Page</a>
+                        </sec:authorize>
+                    </li>
                 </ul>
+
                 <span class="navbar-text">
                     <small>
                         <sec:authorize access="!isAuthenticated()">
