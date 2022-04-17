@@ -7,7 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserTypeDAO extends JpaRepository<UserType, Long> {
-
-    public UserType findById(@Param("id") Integer id);
-
+    UserType findById(@Param("id") Integer id);
 }

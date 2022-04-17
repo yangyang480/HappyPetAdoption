@@ -6,10 +6,10 @@ import javax.persistence.*;
 
 @Getter
 @Setter
+@ToString
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Entity
 @Table
 public class UserType {
@@ -19,5 +19,5 @@ public class UserType {
     private Integer id;
 
     @Column()
-    private String userType;
+    private String name;
 }

@@ -63,7 +63,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
         for (UserType userType : userTypes) {
-            authorities.add(new SimpleGrantedAuthority(userType.getUserType()));
+            authorities.add(new SimpleGrantedAuthority(userType.getName()));
         }
         return authorities;
     }
