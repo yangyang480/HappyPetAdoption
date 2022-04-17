@@ -54,7 +54,7 @@ public class ShelterController {
     }
 
     @RequestMapping(value = "/shelter/{id}/details", method = RequestMethod.GET)
-    public ModelAndView details(@PathVariable("id") int id) throws Exception {
+    public ModelAndView details(@PathVariable("id") Integer id) throws Exception {
         ModelAndView response = new ModelAndView();
 
         User shelter = userDAO.getShelterById(id);

@@ -55,7 +55,7 @@ public class ManageController {
             return response;
         }
 
-        Animal animal = animalDAO.findById(manageAnimalFormBean.getId());
+        Animal animal = animalDAO.getById(manageAnimalFormBean.getId());
         if (animal == null) {
             animal = new Animal();
             animal.setCreatedDate(new Date());
