@@ -9,11 +9,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AdoptionDAO extends JpaRepository<Adoption, Long> {
+public interface AdoptionDAO extends JpaRepository<Adoption, Integer> {
 
     @Query(value = "select a from Adoption a where a.shelterId = : shelterId", nativeQuery = true)
-    public List<Adoption> getAdoptionsByShelterId(@Param("shelterId") Long shelterId);
+    public List<Adoption> getAdoptionsByShelterId(@Param("shelterId") Integer shelterId);
 
     @Query(value = "select a from Adoption a where a.rescuerId = : rescuerId", nativeQuery = true)
-    public List<Adoption> getAdoptionsByRescuerId(@Param("rescuerId") Long rescuerId);
+    public List<Adoption> getAdoptionsByRescuerId(@Param("rescuerId") Integer rescuerId);
 }

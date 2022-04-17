@@ -1,5 +1,6 @@
 package capstone.HappyPetAdoption.Controllers;
 
+import capstone.HappyPetAdoption.database.Dao.AnimalDAO;
 import capstone.HappyPetAdoption.database.Dao.UserDAO;
 import capstone.HappyPetAdoption.database.Entitys.Animal;
 import capstone.HappyPetAdoption.database.Entitys.User;
@@ -20,7 +21,10 @@ import java.util.List;
 public class ShelterController {
 
     @Autowired
-    UserDAO userDAO;
+    private AnimalDAO animalDAO;
+
+    @Autowired
+    private UserDAO userDAO;
 
     @RequestMapping(value = "/shelters", method = RequestMethod.GET)
     public ModelAndView shelters(@RequestParam(value = "name", required = false) String name) throws Exception {
@@ -50,13 +54,13 @@ public class ShelterController {
     }
 
     @RequestMapping(value = "/shelter/{id}/details", method = RequestMethod.GET)
-    public ModelAndView shelter(@PathVariable("id") int id) throws Exception {
+    public ModelAndView details(@PathVariable("id") int id) throws Exception {
         ModelAndView response = new ModelAndView();
 
         User shelter = userDAO.getShelterById(id);
         response.addObject("shelter", shelter);
 
-        List<Animal> animals = userDAO.findAnimalsByShelterId(id);
+        List<Animal> animals = animalDAO.findAnimalsByShelterId(id);
         response.addObject("animals", animals);
 
         response.setViewName("shelter/details");
