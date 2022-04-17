@@ -41,6 +41,7 @@ public class AdoptionService {
         return this.adoptionDAO.save(adoption);
     }
 
+    // Check if this animal been adopted?
     public Boolean doesCompleteAdoptionExistByAnimal(Animal animal)
     {
         List<Adoption> adoptions = this.adoptionDAO.getAdoptionOrdersByAnimalId(animal.getId());

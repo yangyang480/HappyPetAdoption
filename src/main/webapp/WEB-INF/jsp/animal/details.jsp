@@ -32,7 +32,7 @@
 
     <sec:authorize access="hasAuthority('Rescuer')">
         <c:if test="${!animalHasCompleteAdoption && empty currentRescuerAdoption && rescuerHasOpenAdoption == false}">
-            <a class="btn btn-primary btn-lg" role="button" href="/adoption/request/${animal.id}">Request to Adopt ${animal.name}</a>
+            <a class="btn btn-primary btn-lg" role="button" href="/adoption/request/animal/${animal.id}">Request to Adopt ${animal.name}</a>
         </c:if>
 
         <c:if test="${!animalHasCompleteAdoption && empty currentRescuerAdoption && rescuerHasOpenAdoption == true}">

@@ -10,23 +10,44 @@
         <h4 class="alert-heading">Adoption Status: ${orderStatus}</h4>
 
         <p>
-            <c:if test="${orderStatus == 'Requested'}">
+            <c:if test="${currentUserIsShelter && orderStatus == 'Requested'}">
+                This rescuer has requested to adopted this animal. Please reach out to them to discus adoption steps. Switch to pending status when your shelter awaits for their response.
+            </c:if>
+            <c:if test="${currentUserIsRescuer && orderStatus == 'Requested'}">
                 Aww yeah, you are officially awesome! Please await the shelter to reach out to you for more information.
             </c:if>
-            <c:if test="${orderStatus == 'Canceled'}">
-                Unfortunately, this adoption did not go through. Let's hope next time it will!
+            <c:if test="${currentUserIsShelter && orderStatus == 'Pending'}">
+                Your shelter is currently awaiting for the rescuer. Please reach out to them for any missing adoption steps. Once the adoption is complete, you set this adoption to complete.
+            </c:if>
+            <c:if test="${currentUserIsRescuer && orderStatus == 'Pending'}">
+                So close to completing your adoption! Please reach out to the shelter if you have any questions. You should have received information from the shelter.
+            </c:if>
+            <c:if test="${currentUserIsShelter && orderStatus == 'Canceled'}">
+                Unfortunately, this adoption did not go through. Let's hope next one will!
+            </c:if>
+            <c:if test="${currentUserIsRescuer && orderStatus == 'Canceled'}">
+                Unfortunately, your adoption did not go through. Let's hope next one will!
+            </c:if>
+            <c:if test="${currentUserIsShelter && orderStatus == 'Completed'}">
+                Hooray! We want to congratulate the shelter on a successful adoption!
+            </c:if>
+            <c:if test="${currentUserIsRescuer && orderStatus == 'Completed'}">
+                Hooray! We want to congratulate you on your successful adoption!
             </c:if>
         </p>
-
 
         <c:if test="${orderStatus == 'Requested' || orderStatus == 'Pending'}">
             <hr>
         </c:if>
-        <c:if test="${orderStatus == 'Pending'}">
-            <a class="btn btn-danger" role="button" href="/adoption/complete/${adoptionId}">Complete Adoption</a>
+
+        <c:if test="${currentUserIsShelter && orderStatus == 'Requested'}">
+            <a class="btn btn-primary" role="button" href="/adoption/${adoptionId}/approve">Set Adoption to Pending</a>
+        </c:if>
+        <c:if test="${currentUserIsShelter && orderStatus == 'Pending'}">
+            <a class="btn btn-success" role="button" href="/adoption/${adoptionId}/complete">Complete Adoption</a>
         </c:if>
         <c:if test="${orderStatus == 'Requested' || orderStatus == 'Pending'}">
-            <a class="btn btn-danger" role="button" href="/adoption/cancel/${adoptionId}">Cancel Adoption</a>
+            <a class="btn btn-danger" role="button" href="/adoption/${adoptionId}/cancel">Cancel Adoption</a>
         </c:if>
     </div>
 
