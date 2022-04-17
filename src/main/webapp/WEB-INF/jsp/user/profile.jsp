@@ -4,8 +4,11 @@
 <jsp:include page="../../../WEB-INF/jsp/include/header.jsp"/>
 
 <link rel="stylesheet" href="../../../pub/style/profile.css">
+<script src="../../../pub/js/login.js"></script>
+
 
 <div class="main-content container-lg my-2 my-lg-4">
+    <%--different views on title--%>
     <c:if test="${profileFormBean.userTypeId == 0}">
         <h1>Shelter Profile</h1>
     </c:if>

@@ -59,15 +59,15 @@ li {
     margin-left: 1em;
 }
 
-.products ul.pages {
-    margin-top: 30px;
-    text-align: center;
-}
+/*.products ul.pages {*/
+/*    margin-top: 30px;*/
+/*    text-align: center;*/
+/*}*/
 
-.products ul.pages li {
-    display: inline-block;
-    margin: 0px 2px;
-}
+/*.products ul.pages li {*/
+/*    display: inline-block;*/
+/*    margin: 0px 2px;*/
+/*}*/
 
 .products ul.pages li a {
     width: 44px;
@@ -91,3 +91,4 @@ li {
 .pages {
     margin-bottom: 2em;
 }
+
