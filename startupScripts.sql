@@ -8,8 +8,8 @@ DROP TABLE AnimalSpecies;
 
 ### Create Tables ###
 CREATE TABLE UserType(
-	id int NOT NULL PRIMARY KEY UNIQUE,
-    userType varchar(225) NOT NULL);   
+                         id int NOT NULL PRIMARY KEY UNIQUE,
+                         userType varchar(225) NOT NULL);
 
 CREATE TABLE User(
 	id int PRIMARY KEY AUTO_INCREMENT UNIQUE,
@@ -36,10 +36,10 @@ CREATE TABLE Animal(
 	name varchar(225) NOT NULL,
 	age int,
 	gender varchar(20) NOT NULL,
-	weight DECIMAL(10,3) NOT NULL,
+	weight DOUBLE(10,3) NOT NULL,
 	speciesId int NOT NULL,
 	description varchar(255) NOT NULL,
-	status boolean  NOT NULL,
+-- 	status boolean  NOT NULL,
 	shelterId int NOT NULL,
 	createdDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
 	updatedDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
@@ -66,24 +66,24 @@ VALUES
 
 INSERT INTO User (id, email, password, name, address, city, state, zipcode, phone, userTypeId)
 VALUES
-(1, 'oak@gmail.com', 'hfsgfydg', 'Oak Knoll Animal Shelter', '6315 Minnetonka Blvd', 'Los Angeles', 'LA', 76342, '6538762435', 0),
-(2, 'banfield@gmail.com', 'tdagew453dd', 'Banfield Pet Shelter', '651 Winnetka Ave N', 'Minneapolis', 'MN', 65423, '7463569874', 0),
-(3, 'edina@gmail.com', 'tjkjgeefe73dd', 'Edina Pet Shelter', '7701 Cahill Rd', 'Houston', 'TX', 62241, '8542436254', 0),
-(4, 'jaden@g.com', 'ythdv653gi', 'Jaden', '8610Minnehaha', 'Rhome', 'TX', 45321, '7652445380', 1),
-(5, 'Mary@g.com', 'kajdgr3646', 'Mary', '8765 St paul', 'Chicago', 'IL', 54821, '1489526741', 1),
-(6, 'Art@g.com', 'vkfje644', 'Art', '6532 University st', 'San Fransico', 'LA', 98562, '98548756123', 1);
+    (1, 'oak@gmail.com', 'hfsgfydg', 'Oak Knoll Animal Shelter', '6315 Minnetonka Blvd', 'Los Angeles', 'LA', 76342, '6538762435', 0),
+    (2, 'banfield@gmail.com', 'tdagew453dd', 'Banfield Pet Shelter', '651 Winnetka Ave N', 'Minneapolis', 'MN', 65423, '7463569874', 0),
+    (3, 'edina@gmail.com', 'tjkjgeefe73dd', 'Edina Pet Shelter', '7701 Cahill Rd', 'Houston', 'TX', 62241, '8542436254', 0),
+    (4, 'jaden@g.com', 'ythdv653gi', 'Jaden', '8610Minnehaha', 'Rhome', 'TX', 45321, '7652445380', 1),
+    (5, 'Mary@g.com', 'kajdgr3646', 'Mary', '8765 St paul', 'Chicago', 'IL', 54821, '1489526741', 1),
+    (6, 'Art@g.com', 'vkfje644', 'Art', '6532 University st', 'San Fransico', 'LA', 98562, '98548756123', 1);
 
 INSERT INTO AnimalSpecies (id, name)
 VALUES
-(1, 'Dog'),
-(2, 'Cat'),
-(3, 'Rat');
+    (1, 'Dog'),
+    (2, 'Cat'),
+    (3, 'Rat');
 
-INSERT INTO Animal (id, name, age, gender, weight, speciesId, description, status, shelterId)
+INSERT INTO Animal (id, name, age, gender, weight, speciesId, description, shelterId)
 VALUES
-(1, 'Ruby', 2, 'Female', 10.2, 1, 'Ruby is the a little', true, 1),
-(2, 'Wani', 3, 'Male', 12.2, 2, 'Ruby is the a little', true, 3),
-(3, 'Kiwi', 1, 'Female', 15, 3, 'Ruby is the a little', true, 1);
+    (1, 'Ruby', 2, 'Female', 10.2, 1, 'Ruby is the a little', 1),
+    (2, 'Wani', 3, 'Male', 12.2, 2, 'Ruby is the a little', 3),
+    (3, 'Kiwi', 1, 'Female', 15, 3, 'Ruby is the a little', 1);
 
 INSERT INTO Adoption (id, animalId, rescuerId, shelterId, orderStatus)
 VALUES
