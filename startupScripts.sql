@@ -36,7 +36,7 @@ CREATE TABLE Animal(
 	name varchar(225) NOT NULL,
 	age int,
 	gender varchar(20) NOT NULL,
-	weight DOUBLE(10,3) NOT NULL,
+	weight DOUBLE NOT NULL,
 	speciesId int NOT NULL,
 	description varchar(255) NOT NULL,
 -- 	status boolean  NOT NULL,

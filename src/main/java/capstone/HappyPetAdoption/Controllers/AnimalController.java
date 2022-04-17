@@ -29,7 +29,7 @@ public class AnimalController {
     }
 
     @RequestMapping(value = "/animal/{id}/details", method = RequestMethod.GET)
-    public ModelAndView details(@PathVariable("id") Integer id) throws Exception {
+    public ModelAndView details(@PathVariable("id") Long id) throws Exception {
         ModelAndView response = new ModelAndView();
 
         Animal animal = animalDAO.getById(id);
