@@ -36,10 +36,10 @@ CREATE TABLE Animal(
 	name varchar(225) NOT NULL,
 	age int,
 	gender varchar(20) NOT NULL,
-	weight DECIMAL(10,3) NOT NULL,
+	weight DOUBLE(10,3) NOT NULL,
 	speciesId int NOT NULL,
 	description varchar(255) NOT NULL,
-	status boolean  NOT NULL,
+-- 	status boolean  NOT NULL,
 	shelterId int NOT NULL,
 	createdDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
 	updatedDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
@@ -75,15 +75,15 @@ VALUES
 
 INSERT INTO AnimalSpecies (id, name)
 VALUES
-(1, 'Dog'),
-(2, 'Cat'),
-(3, 'Rat');
+    (1, 'Dog'),
+    (2, 'Cat'),
+    (3, 'Rat');
 
-INSERT INTO Animal (id, name, age, gender, weight, speciesId, description, status, shelterId)
+INSERT INTO Animal (id, name, age, gender, weight, speciesId, description, shelterId)
 VALUES
-(1, 'Ruby', 2, 'Female', 10.2, 1, 'Ruby is the a little', true, 1),
-(2, 'Wani', 3, 'Male', 12.2, 2, 'Ruby is the a little', true, 3),
-(3, 'Kiwi', 1, 'Female', 15, 3, 'Ruby is the a little', true, 1);
+    (1, 'Ruby', 2, 'Female', 10.2, 1, 'Ruby is the a little', 1),
+    (2, 'Wani', 3, 'Male', 12.2, 2, 'Ruby is the a little', 3),
+    (3, 'Kiwi', 1, 'Female', 15, 3, 'Ruby is the a little', 1);
 
 INSERT INTO Adoption (id, animalId, rescuerId, shelterId, orderStatus)
 VALUES

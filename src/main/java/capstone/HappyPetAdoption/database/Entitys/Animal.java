@@ -3,7 +3,6 @@ package capstone.HappyPetAdoption.database.Entitys;
 import lombok.*;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
 
 @Getter
@@ -27,12 +26,11 @@ public class Animal {
     @Column()
     private Integer age;
 
-    //TODO figure out how to do the select box in spring
     @Column()
     private String gender;
 
     @Column()
-    private BigDecimal weight;
+    private Double weight;
 
     @Column()
     private Integer speciesId;
@@ -40,8 +38,8 @@ public class Animal {
     @Column()
     private String description;
 
-    @Column()
-    private Boolean status;
+//    @Column()
+//    private Boolean status;
 
     @Column()
     private Integer shelterId;
