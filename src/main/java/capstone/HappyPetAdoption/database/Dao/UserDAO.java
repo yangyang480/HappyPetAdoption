@@ -17,6 +17,9 @@ public interface UserDAO extends JpaRepository<User, Integer> {
     @Query(value = "select * from User where email = :email", nativeQuery = true)
     public User findByEmail(@Param("email") String email);
 
+    @Query(value = "select u from User u where u.id = :id AND u.userTypeId = 1")
+    public User getRescuerById(@Param("id") Integer id);
+
     @Query(value = "select u from User u where u.id = :id AND u.userTypeId = 0")
     public User getShelterById(@Param("id") Integer id);
 

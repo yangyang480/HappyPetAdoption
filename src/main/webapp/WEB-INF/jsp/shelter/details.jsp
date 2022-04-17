@@ -3,7 +3,7 @@
 <jsp:include page="../include/header.jsp" />
 <link rel="stylesheet" href="../../../pub/style/shelter/details.css">
 
-<div class="container py-5">
+<div class="container py-5 main-content">
     <h1>${shelter.name}</h1>
 
     <address>

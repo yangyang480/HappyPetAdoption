@@ -31,15 +31,31 @@
     </dl>
 
     <sec:authorize access="hasAuthority('Rescuer')">
-        <c:if test="${!anyOpenAdoptions}">
-            <a class="btn btn-primary btn-lg" role="button" href="/adoption/request">Request to Adopt ${animal.name}</a>
+        <c:if test="${!animalHasCompleteAdoption && empty currentRescuerAdoption && rescuerHasOpenAdoption == false}">
+            <a class="btn btn-primary btn-lg" role="button" href="/adoption/request/${animal.id}">Request to Adopt ${animal.name}</a>
         </c:if>
 
-        <c:if test="${anyOpenAdoptions}">
+        <c:if test="${!animalHasCompleteAdoption && empty currentRescuerAdoption && rescuerHasOpenAdoption == true}">
             <button type="button" class="btn btn-secondary disabled">Request to Adopt ${animal.name}</button>
-            <p class="text-secondary">*You currently have an open adoption.</p>
+            <p class="text-secondary">*You currently have an open adoption. Please complete before opening another adoption request.</p>
+        </c:if>
+
+        <c:if test="${not empty currentRescuerAdoption}">
+            <button type="button" class="btn btn-secondary disabled">Request to Adopt ${animal.name}</button>
+            <a class="btn btn-primary" role="button" href="/adoption/${currentRescuerAdoption.getId()}/details">Go to Adoption Page</a>
+            <p class="text-secondary">*You currently have an adoption order.</p>
         </c:if>
     </sec:authorize>
+
+    <sec:authorize access="!isAuthenticated()">
+        <c:if test="${!animalHasCompleteAdoption}">
+            <a class="btn btn-primary btn-lg" role="button" href="/user/register">Sign up to Rescue!</a>
+        </c:if>
+    </sec:authorize>
+
+    <c:if test="${animalHasCompleteAdoption}">
+        <p class="text-success">*${animal.name} has been adopted!</p>
+    </c:if>
 </div>
 
 <jsp:include page="../include/footer.jsp" />

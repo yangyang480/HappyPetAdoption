@@ -1,8 +1,12 @@
 package capstone.HappyPetAdoption.Controllers;
 
+import capstone.HappyPetAdoption.Services.AdoptionService;
+import capstone.HappyPetAdoption.database.Dao.AdoptionDAO;
 import capstone.HappyPetAdoption.database.Dao.AnimalDAO;
 import capstone.HappyPetAdoption.database.Dao.UserDAO;
+import capstone.HappyPetAdoption.database.Entitys.Adoption;
 import capstone.HappyPetAdoption.database.Entitys.Animal;
+import capstone.HappyPetAdoption.database.Entitys.Enums.OrderStatusEnum;
 import capstone.HappyPetAdoption.database.Entitys.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AnimalController {
+
+    @Autowired
+    private AdoptionService adoptionService;
 
     @Autowired
     private AnimalDAO animalDAO;
@@ -38,7 +45,14 @@ public class AnimalController {
         User shelter = userDAO.getShelterById(animal.getShelterId());
         response.addObject("shelter", shelter);
 
-        response.addObject("anyOpenAdoptions", false);
+        Adoption currentRescuerAdoption = adoptionService.getCurrentRescuerAdoptionByAnimal(animal);
+        response.addObject("currentRescuerAdoption", currentRescuerAdoption);
+
+        Boolean animalHasCompleteAdoption = adoptionService.doesCompleteAdoptionExistByAnimal(animal);
+        response.addObject("animalHasCompleteAdoption", animalHasCompleteAdoption);
+
+        Boolean rescuerHasOpenAdoption = adoptionService.doesRescuerHaveOpenAdoption();
+        response.addObject("rescuerHasOpenAdoption", rescuerHasOpenAdoption);
 
         response.setViewName("animal/details");
         return response;
