@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
-public interface AnimalDAO extends JpaRepository<Animal, Integer> {
+public interface AnimalDAO extends JpaRepository<Animal, Long> {
 
     public Animal findById(@Param("id") Integer id);
 
