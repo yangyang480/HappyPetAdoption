@@ -78,6 +78,18 @@ public class AdoptionService {
         return false;
     }
 
+    // Returns true if the current user is a shelter and passed animal in parameter is from there too
+    public Boolean isCurrentUserShelterAndAnimalIsFromThere(Animal animal)
+    {
+        User shelter = userService.getCurrentUser();
+
+        if (shelter != null && animal.getShelterId() == shelter.getId()) {
+            return true;
+        }
+
+        return false;
+    }
+
     public Adoption getAdoptionById(Integer id)
     {
         return this.adoptionDAO.getById(id);

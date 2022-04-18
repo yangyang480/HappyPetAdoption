@@ -1,33 +1,53 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <jsp:include page="../include/header.jsp"/>
 <link rel="stylesheet" href="../../../pub/style/shelter/home.css">
 
-<!-- Page Content -->
-<div class="page-heading products-heading header-text">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="text-content">
-                    <h4>Hello, Shelter!</h4>
-                    <h2>We are glad to have you</h2>
+<jsp:include page="../include/shelter/header.jsp"/>
+
+
+<div class="main-content bg-light">
+    <div class="container-lg album py-5">
+            <form class="row row-cols-lg-auto g-3 mb-3 align-items-center" action="/shelter/home"
+                  method="get">
+                <div class="col-12">
+                    <div class="input-group">
+                        <div class="input-group-text">Name</div>
+                        <input class="form-control" type="text" name="name" placeholder="Animal Name"
+                               aria-label="Search" id="shelterSearchBox" value="${name}">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </form>
+
+            <c:if test="${not empty name}">
+                <h5>Search Results Found ${animals.size()}</h5>
+                <br>
+            </c:if>
+
+            <table class="table" id="shelterTable">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Weight</th>
+                    <th scope="col">Description</th>
+                </tr>
+
+                <c:forEach items="${animals}" var="animal">
+                    <tr scope = "row">
+                        <td><a href="/animal/${animal.id}/details">${animal.name}</a></td>
+                        <td>${animal.age}</td>
+                        <td>${animal.gender}</td>
+                        <td>${animal.weight}</td>
+                        <td>${animal.description}</td>
+                    </tr>
+                </c:forEach>
+                </thead>
+            </table>
     </div>
 </div>
-
-<!-- shelter function -->
-<div class="shelter">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="filters">
-                    <ul>
-                        <li class="active" data-filter="*">All Animals</li>
-                        <a href="/shelter/manage/animal" style="text-decoration: none; color: #121212"><li data-filter=".des">Manage Animals</li></a>
-                        <a href="/shelter/adoptions" style="text-decoration: none; color: #121212"><li data-filter=".gra">Manage Adoptions</li></a>
-                    </ul>
-                </div>
-            </div>
 
             <!-- animal list -->
             <div class="container">

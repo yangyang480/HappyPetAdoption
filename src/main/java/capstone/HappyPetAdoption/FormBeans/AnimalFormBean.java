@@ -4,28 +4,25 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import java.util.Date;
+import javax.validation.constraints.*;
 
 @Getter
 @Setter
 @ToString
-public class ManageAnimalFormBean {
+public class AnimalFormBean {
 
     private Integer id;
 
     @NotBlank(message = "Name must not be empty")
     private String name;
 
+    @Min(value = 0, message = "Age must greater than 0")
     private Integer age;
 
     @NotBlank(message = "Gender must not be empty")
     private String gender;
 
+    @Min(value = 0, message = "Weight must greater than 0")
     @NotNull(message = "Weight must not be empty")
     private Double weight;
 

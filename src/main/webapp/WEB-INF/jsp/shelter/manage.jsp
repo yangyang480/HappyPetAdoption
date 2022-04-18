@@ -28,7 +28,7 @@
                 <div class="filters">
                     <ul>
                         <a href="/shelter/home" style="text-decoration: none; color: #121212"><li data-filter="*">All Animals</li></a>
-                        <a href="/shelter/manage/animal" style="text-decoration: none; color: #121212"><li class="active data-filter=.des" >Manage Animals</li></a>
+                        <a href="/shelter/manage/animal" style="text-decoration: none; color: #121212"><li class="active data-filter=.des" >Create Animals</li></a>
                         <a href="/shelter/manage" style="text-decoration: none; color: #121212"><li data-filter=".gra">Manage Adoptions</li></a>
                     </ul>
                 </div>
@@ -37,8 +37,8 @@
             <div class="wrapper">
                 <div class="card">
                     <p class="sign">Create Animal</p>
-                    <%--@elvariable id="manageAnimalFormBean" type=""--%>
-                    <form:form class="form" action="/shelter/manage/createAnimal" modelAttribute="manageAnimalFormBean" method="post" autocomplete="off">
+                    <%--@elvariable id="animalFormBean" type=""--%>
+                    <form:form class="form" action="/shelter/create/animal" modelAttribute="animalFormBean" method="post" autocomplete="off">
                         <div class="form-field" hidden="true">
                             <form:input  path="id" id="id"  class="id form-control" name="id" type="text" placeholder="Animal ID"/>
                         </div>
@@ -57,6 +57,11 @@
                                 <div class="col">
                                     <form:input id="age" path="age" class="form-control" name="age"
                                                 type="text" placeholder="Animal Age"/>
+                                    <c:forEach items="${bindingResult.getFieldErrors('age')}" var="error">
+                                        <div class="error-message">
+                                                ${error.getDefaultMessage()}
+                                        </div>
+                                    </c:forEach>
                                 </div>
 
                                 <div class="col">
@@ -92,7 +97,7 @@
 
                         <div class="form-field">
                             <div id="speciesId" class="species d-flex justify-content-center form-control">
-                                <div class="pe-2">Animal SpeciesID</div>
+                                <div class="pe-2">Animal Species</div>
                                 <div class="form-check pe-2 mb-0"><form:radiobutton path="speciesId" class="form-check-input" value="1" label="Dog" id="species1" name="speciesId"/></div>
                                 <div class="form-check pe-2 mb-0"><form:radiobutton path="speciesId" class="form-check-input" value="2" label="Cat" id="species2" name="speciesId"/></div>
                                 <div class="form-check mb-0"><form:radiobutton path="speciesId" class="form-check-input" value="3" label="Rat" id="species3" name="speciesId"/></div>
@@ -101,7 +106,7 @@
                             <div class="error-message">
                                     ${error.getDefaultMessage()}
                             </div>
-                        </c:forEach>
+                            </c:forEach>
                         </div>
 
                         <div class="form-field" hidden="true">
@@ -126,62 +131,17 @@
         </div>
     </div>
 
-    <div class="container">
-        <form class="row row-cols-lg-auto g-3 mb-3 align-items-center" action="/shelter/manage/animals" method="get">
-            <div class="col-12">
-                <div class="input-group">
-                    <div class="input-group-text">Name</div>
-                    <input class="form-control" type="text" name="name" placeholder="Animal Name"
-                           aria-label="Search" id="shelterSearchBox" value="${name}">
-                    <button class="btn btn-primary" type="submit">Search</button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-
-    <c:if test="${not empty name}">
-        <h5>Search Results Found ${animals.size()}</h5>
-        <br>
-    </c:if>
-
-    <table class="table" id="shelterTable">
-        <thead>
-        <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Age</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Weight</th>
-            <th scope="col">Description</th>
-        </tr>
-
-        <c:forEach items="${animals}" var="animal">
-            <tr scope = "row">
-                <td><a href="/animal/${animal.id}/details">${animal.name}</a></td>
-                <td>${animal.age}</td>
-                <td>${animal.gender}</td>
-                <td>${animal.weight}</td>
-                <td>${animal.description}</td>
-            </tr>
-        </c:forEach>
-
-        </thead>
-    </table>
-
-
-    <%--//TODO add picture to the animal table...--%>
-    <%--<h1>Create Animal</h1>--%>
-
-    <%--<form action="/shelter/createSubmit" method="get">--%>
-
-    <%--    Image URL: <input type="text" name="imageURL">--%>
-    <%--    <br>--%>
-    <%--</form>--%>
 </div>
 
 
+<%--//TODO add picture to the animal table...--%>
+<%--<h1>Create Animal</h1>--%>
 
+<%--<form action="/shelter/createSubmit" method="get">--%>
 
+<%--    Image URL: <input type="text" name="imageURL">--%>
+<%--    <br>--%>
+<%--</form>--%>
 
 
 
