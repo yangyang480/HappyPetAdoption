@@ -14,11 +14,17 @@ public interface AnimalDAO extends JpaRepository<Animal, Integer> {
     @Query(value = "select a from Animal a where a.shelterId = :shelterId")
     public List<Animal> findAnimalsByShelterId(@Param("shelterId") Integer shelterId);
 
+    @Query(value = "select a from Animal a where a.shelterId = :shelterId")
+    public List<Animal> getAllAnimals();
+
     //get list of animals by name
-    @Query(value = "select a from Animal a where a.name = :name AND a.name like CONCAT('%',:name,'%') AND a.shelterId = :shelterId")
+    @Query(value = "select a from Animal a where a.name like CONCAT('%',:name,'%') AND a.shelterId = :shelterId")
     public List<Animal> findAnimalByNameIgnoreCaseAndShelterId(
             @Param("name") String name,
             @Param("shelterId") Integer shelterId);
+
+    @Query(value = "select a from Animal a where a.name = :name AND a.name like CONCAT('%',:name,'%')")
+    public List<Animal> findAnimalByNameIgnoreCase(@Param("name") String name);
 
 //    @Query(value = "select a from Animal a where a.shelterId = :")
 //    public List<Animal> getAllAnimals();

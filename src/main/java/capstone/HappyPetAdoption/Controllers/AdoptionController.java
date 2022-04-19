@@ -35,6 +35,37 @@ public class AdoptionController {
     @Autowired
     private UserService userService;
 
+    @PreAuthorize("hasAuthority('Rescuer')")
+    @RequestMapping(value = "/adoption/request/animal/{animalId}", method = RequestMethod.GET)
+    public ModelAndView adoptionRequest(@PathVariable("animalId") Integer animalId) throws Exception {
+        ModelAndView response = new ModelAndView();
+
+        Animal animal = animalDAO.getById(animalId);
+
+        if (animal == null) {
+            response.setViewName("redirect:/");
+            return response;
+        }
+
+        // Check if adoption exists, redirect to adoption details
+        Adoption currentRescuerAdoption = adoptionService.getCurrentRescuerAdoptionByAnimal(animal);
+        if (currentRescuerAdoption != null) {
+            response.setViewName("redirect:/adoption/" + currentRescuerAdoption.getId() + "/details");
+            return response;
+        }
+
+        // Check if animal does not have existing completed adoption, redirect to animal details
+        if (adoptionService.doesCompleteAdoptionExistByAnimal(animal)) {
+            response.setViewName("redirect:/animal/" + animalId + "/details");
+            return response;
+        }
+
+        // Adoption does not exist with current user, request adoption
+        Adoption adoption = adoptionService.requestAdoption(animal.getId(), userService.getCurrentUser().getId(), animal.getShelterId());
+        response.setViewName("redirect:/adoption/" + adoption.getId() + "/details");
+        return response;
+    }
+
     @PreAuthorize("hasAuthority('Shelter')")
     @RequestMapping(value = "/adoption/{id}/approve", method = RequestMethod.GET)
     public ModelAndView adoptionApprove(@PathVariable("id") Integer id) throws Exception {
@@ -104,37 +135,6 @@ public class AdoptionController {
 
         adoptionService.completeAdoption(adoption);
 
-        response.setViewName("redirect:/adoption/" + adoption.getId() + "/details");
-        return response;
-    }
-
-    @PreAuthorize("hasAuthority('Rescuer')")
-    @RequestMapping(value = "/adoption/request/animal/{animalId}", method = RequestMethod.GET)
-    public ModelAndView adoptionRequest(@PathVariable("animalId") Integer animalId) throws Exception {
-        ModelAndView response = new ModelAndView();
-
-        Animal animal = animalDAO.getById(animalId);
-
-        if (animal == null) {
-            response.setViewName("redirect:/");
-            return response;
-        }
-
-        // Check if adoption exists, redirect to adoption details
-        Adoption currentRescuerAdoption = adoptionService.getCurrentRescuerAdoptionByAnimal(animal);
-        if (currentRescuerAdoption != null) {
-            response.setViewName("redirect:/adoption/" + currentRescuerAdoption.getId() + "/details");
-            return response;
-        }
-
-        // Check if animal does not have existing completed adoption, redirect to animal details
-        if (adoptionService.doesCompleteAdoptionExistByAnimal(animal)) {
-            response.setViewName("redirect:/animal/" + animalId + "/details");
-            return response;
-        }
-
-        // Adoption does not exist with current user, request adoption
-        Adoption adoption = adoptionService.requestAdoption(animal.getId(), userService.getCurrentUser().getId(), animal.getShelterId());
         response.setViewName("redirect:/adoption/" + adoption.getId() + "/details");
         return response;
     }

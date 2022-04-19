@@ -23,6 +23,18 @@ public class AdoptionService {
     @Autowired
     private UserService userService;
 
+    public Adoption requestAdoption(Integer animalId, Integer rescuerId, Integer shelterId)
+    {
+        Adoption adoption = new Adoption();
+
+        adoption.setAnimalId(animalId);
+        adoption.setRescuerId(rescuerId);
+        adoption.setShelterId(shelterId);
+        adoption.setOrderStatus(OrderStatusEnum.REQUESTED);
+
+        return this.adoptionDAO.save(adoption);
+    }
+
     public Adoption approveAdoption(Adoption adoption)
     {
         adoption.setOrderStatus(OrderStatusEnum.PENDING);
@@ -56,6 +68,7 @@ public class AdoptionService {
         return false;
     }
 
+    //check if the rescuer have open adoption
     public Boolean doesRescuerHaveOpenAdoption()
     {
         User user = userService.getCurrentUser();
@@ -90,11 +103,6 @@ public class AdoptionService {
         return false;
     }
 
-    public Adoption getAdoptionById(Integer id)
-    {
-        return this.adoptionDAO.getById(id);
-    }
-
     public Adoption getCurrentRescuerAdoptionByAnimal(Animal animal)
     {
         User user = userService.getCurrentUser();
@@ -107,6 +115,11 @@ public class AdoptionService {
         return adoptionDAO.getAdoptionByRescuerIdAndAnimalId(user.getId(), animal.getId());
     }
 
+    public Adoption getAdoptionById(Integer id)
+    {
+        return this.adoptionDAO.getById(id);
+    }
+
     public List<Adoption> getAdoptionsByShelterId(Integer shelterId)
     {
         return this.adoptionDAO.getAdoptionsByRescuerId(shelterId);
@@ -117,15 +130,5 @@ public class AdoptionService {
         return this.adoptionDAO.getAdoptionsByRescuerId(rescuerId);
     }
 
-    public Adoption requestAdoption(Integer animalId, Integer rescuerId, Integer shelterId)
-    {
-        Adoption adoption = new Adoption();
 
-        adoption.setAnimalId(animalId);
-        adoption.setRescuerId(rescuerId);
-        adoption.setShelterId(shelterId);
-        adoption.setOrderStatus(OrderStatusEnum.REQUESTED);
-
-        return this.adoptionDAO.save(adoption);
-    }
 }

@@ -31,6 +31,7 @@ public class ShelterController {
     @Autowired
     private UserService userService;
 
+    //a list of shelters, and search shelters by name.
     @RequestMapping(value = "/shelters", method = RequestMethod.GET)
     public ModelAndView shelters(@RequestParam(value = "name", required = false) String name) throws Exception {
         ModelAndView response = new ModelAndView();
@@ -48,10 +49,9 @@ public class ShelterController {
         response.addObject("userModelKey", users);
         response.addObject("name", name);
         return response;
-        //TODO route this with shelter-home jsp page. this is more like search animals by shelter id
     }
 
-    //shelter's home page, get a list of animals where these animals belong to this shelter
+    //shelter's home page
     @PreAuthorize("hasAuthority('Shelter')")
     @RequestMapping(value = "/shelter/home", method = RequestMethod.GET)
     public ModelAndView home(@RequestParam(value = "name", required = false) String name) throws Exception {
@@ -67,6 +67,7 @@ public class ShelterController {
         return response;
     }
 
+    //shelter detail
     @RequestMapping(value = "/shelter/{id}/details", method = RequestMethod.GET)
     public ModelAndView details(@PathVariable("id") Integer id) throws Exception {
         ModelAndView response = new ModelAndView();
@@ -81,6 +82,7 @@ public class ShelterController {
         return response;
     }
 
+    // search and get a list of animals where these animals belong to this shelter
     @RequestMapping(value = "/shelter/{id}/animals", method = RequestMethod.GET)
     public ModelAndView shelterAnimals(@PathVariable("id") Integer id, @RequestParam(value = "name", required = false) String name) throws Exception {
         ModelAndView response = new ModelAndView();

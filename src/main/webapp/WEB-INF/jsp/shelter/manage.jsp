@@ -29,7 +29,7 @@
                     <ul>
                         <a href="/shelter/home" style="text-decoration: none; color: #121212"><li data-filter="*">All Animals</li></a>
                         <a href="/shelter/manage/animal" style="text-decoration: none; color: #121212"><li class="active data-filter=.des" >Create Animals</li></a>
-                        <a href="/shelter/manage" style="text-decoration: none; color: #121212"><li data-filter=".gra">Manage Adoptions</li></a>
+                        <a href="/adoption/${id}/details" style="text-decoration: none; color: #121212"><li data-filter=".gra">Manage Adoptions</li></a>
                     </ul>
                 </div>
             </div>

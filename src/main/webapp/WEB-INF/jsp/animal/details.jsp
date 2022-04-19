@@ -39,7 +39,7 @@
         </dl>
     </c:if>
 
-<%--if is current shelter and the animal is in current shelter, then can can be edit and delete--%>
+    <%--if is current shelter and the animal is in current shelter, then can can be edit and delete--%>
     <c:if test="${isCurrentUserShelterAndAnimalIsFromThere}">
         <%--@elvariable id="animalFormBean" type=""--%>
         <form:form action="/animal/${animalFormBean.id}/detailsSubmit" modelAttribute="animalFormBean" method="POST">
@@ -47,7 +47,7 @@
                 <label for="name" class="col-sm-2 col-form-label text-end">Name</label>
                 <div class="col-sm-10">
                     <form:input type="text" id="name" class="form-control" name="name" path="name"/>
-                    <c:forEach items="${bindingResult.getFieldErrors('name')}" var="error">
+                    <c:forEach items="${errorFields.getFieldErrors('name')}" var="error">
                         <div class="error-message">
                                 ${error.getDefaultMessage()}
                         </div>
@@ -59,7 +59,7 @@
                 <label for="age" class="col-sm-2 col-form-label text-end">Age</label>
                 <div class="col-sm-10">
                     <form:input type="text" id="age" class="form-control" name="age" path="age"/>
-                    <c:forEach items="${bindingResult.getFieldErrors('age')}" var="error">
+                    <c:forEach items="${errorFields.getFieldErrors('age')}" var="error">
                         <div class="error-message">
                                 ${error.getDefaultMessage()}
                         </div>
@@ -71,7 +71,7 @@
                 <label for="gender" class="col-sm-2 col-form-label text-end">Gender</label>
                 <div class="col-sm-10">
                     <form:input type="text" id="gender" class="form-control" name="gender" path="gender"/>
-                    <c:forEach items="${bindingResult.getFieldErrors('gender')}" var="error">
+                    <c:forEach items="${errorFields.getFieldErrors('gender')}" var="error">
                         <div class="error-message">
                                 ${error.getDefaultMessage()}
                         </div>
@@ -83,7 +83,7 @@
                 <label for="weight" class="col-sm-2 col-form-label text-end">Weight</label>
                 <div class="col-sm-10">
                     <form:input type="text" id="weight" class="form-control" name="weight" path="weight"/>
-                    <c:forEach items="${bindingResult.getFieldErrors('weight')}" var="error">
+                    <c:forEach items="${errorFields.getFieldErrors('weight')}" var="error">
                         <div class="error-message">
                                 ${error.getDefaultMessage()}
                         </div>
@@ -95,7 +95,7 @@
                 <label for="description" class="col-sm-2 col-form-label text-end">Description</label>
                 <div class="col-sm-10">
                     <form:input name="description" class="form-control" id="description" path="description"/>
-                    <c:forEach items="${bindingResult.getFieldErrors('description')}" var="error">
+                    <c:forEach items="${errorFields.getFieldErrors('description')}" var="error">
                         <div class="error-message">
                                 ${error.getDefaultMessage()}
                         </div>
@@ -110,7 +110,7 @@
                     <div class="form-check pe-2 mb-0"><form:radiobutton path="speciesId" class="form-check-input" value="2" label="Cat" id="species2" name="speciesId"/></div>
                     <div class="form-check mb-0"><form:radiobutton path="speciesId" class="form-check-input" value="3" label="Rat" id="species3" name="speciesId"/></div>
                 </div>
-                <c:forEach items="${bindingResult.getFieldErrors('speciesId')}" var="error">
+                <c:forEach items="${errorFields.getFieldErrors('speciesId')}" var="error">
                     <div class="error-message">
                             ${error.getDefaultMessage()}
                     </div>

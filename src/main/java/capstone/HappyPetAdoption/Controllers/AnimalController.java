@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,7 +21,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import javax.websocket.server.PathParam;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -88,22 +91,35 @@ public class AnimalController {
     public ModelAndView detailsSubmit(@PathVariable("id") Integer id, @Valid AnimalFormBean animalFormBean, BindingResult bindingResult) throws Exception {
         ModelAndView response = new ModelAndView();
 
+        Animal animal = animalDAO.getById(id);
 
         //TODO validation on edit animal, when field be empty the home page won't show the animal list anymore, and also won't show the message
         log.info(animalFormBean.toString());
 
         if (bindingResult.hasErrors()) {
-            //show all the input
-            response.addObject("formbean", animalFormBean);
-            //add the errors to display
-            response.addObject("bindingResult", bindingResult);
-            response.setViewName("shelter/home");
+            response.addObject("errorFields", bindingResult);
+            response.addObject("animalFormBean", animalFormBean);
+
+            User shelter = userDAO.getShelterById(animal.getShelterId());
+            response.addObject("shelter", shelter);
+
+            Adoption currentRescuerAdoption = adoptionService.getCurrentRescuerAdoptionByAnimal(animal);
+            response.addObject("currentRescuerAdoption", currentRescuerAdoption);
+
+            Boolean animalHasCompleteAdoption = adoptionService.doesCompleteAdoptionExistByAnimal(animal);
+            response.addObject("animalHasCompleteAdoption", animalHasCompleteAdoption);
+
+            Boolean rescuerHasOpenAdoption = adoptionService.doesRescuerHaveOpenAdoption();
+            response.addObject("rescuerHasOpenAdoption", rescuerHasOpenAdoption);
+
+            Boolean isCurrentUserShelterAndAnimalIsFromThere = adoptionService.isCurrentUserShelterAndAnimalIsFromThere(animal);
+            response.addObject("isCurrentUserShelterAndAnimalIsFromThere", isCurrentUserShelterAndAnimalIsFromThere);
+
+            response.setViewName("animal/details");
             return response;
         }
-//
-//        return new ModelAndView("redirect:/shelter/home");
 
-        Animal animal = animalDAO.getById(id);
+
         // Check if animal exists by id
         if (animal == null) {
             return new ModelAndView("redirect:/");
@@ -125,7 +141,6 @@ public class AnimalController {
 
         this.animalDAO.save(animal);
 
-//        return new ModelAndView("redirect:/animal/" + animalFormBean.getId()  + "/details");
         return new ModelAndView("redirect:/shelter/home");
 
     }

@@ -9,6 +9,8 @@ import lombok.ToString;
 @ToString
 public class ProfileFormBean {
 
+    private Integer id;
+
     private String email;
 
     private String password;

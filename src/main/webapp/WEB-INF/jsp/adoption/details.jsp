@@ -51,6 +51,7 @@
         </c:if>
     </div>
 
+<%--adoption details--%>
     <h2>Animal</h2>
     <dl class="row">
         <dt class="col-sm-2">Name</dt>

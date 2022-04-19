@@ -2,6 +2,7 @@ package capstone.HappyPetAdoption.Controllers;
 
 import capstone.HappyPetAdoption.FormBeans.ProfileFormBean;
 import capstone.HappyPetAdoption.Services.UserService;
+import capstone.HappyPetAdoption.database.Dao.UserDAO;
 import capstone.HappyPetAdoption.database.Entitys.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class ProfileController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserDAO userDAO;
 
     @RequestMapping(value = "/user/profile", method = RequestMethod.GET)
     public ModelAndView profile(ProfileFormBean profileFormBean) throws Exception
@@ -52,6 +56,8 @@ public class ProfileController {
 
         this.userService.save(user);
 
-        return new ModelAndView("redirect:/user/profile");
+        return new ModelAndView("redirect:/");
     }
+
+
 }

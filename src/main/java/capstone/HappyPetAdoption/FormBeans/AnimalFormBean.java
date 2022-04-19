@@ -27,6 +27,7 @@ public class AnimalFormBean {
     private Double weight;
 
     @NotBlank(message = "Description must not be empty")
+    @NotNull(message = "Description must not be empty")
     private String description;
 
     private Integer shelterId;

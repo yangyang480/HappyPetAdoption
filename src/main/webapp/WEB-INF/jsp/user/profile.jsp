@@ -4,8 +4,18 @@
 <jsp:include page="../../../WEB-INF/jsp/include/header.jsp"/>
 
 <link rel="stylesheet" href="../../../pub/style/profile.css">
-<script src="../../../pub/js/login.js"></script>
+<script src="../../../pub/js/register.js"></script>
 
+<style>
+    .invalid-feedback {
+        display: none;
+        font-family: sans-serif;
+        width: 100%;
+        margin-top: 0.25rem;
+        font-size: small;
+        color: #dc3545;
+    }
+</style>
 
 <div class="main-content container-lg my-2 my-lg-4">
     <%--different views on title--%>
@@ -24,12 +34,12 @@
                 <label for="email" class="col-sm-2 col-form-label text-end">Email</label>
                 <div class="col-sm-10">
                     <form:input type="text" id="email" class="form-control" name="email" path="email"/>
-                </div>
-                <div id="emptyEmail" class="invalid-feedback">
-                    Please enter an email
-                </div>
-                <div id="emailNoAnnotation" class="invalid-feedback">
-                    Email should have @.
+                    <div id="emptyEmail" class="invalid-feedback">
+                        Please enter an email
+                    </div>
+                    <div id="emailNoAnnotation" class="invalid-feedback">
+                        Email should have @ .
+                    </div>
                 </div>
             </div>
 
@@ -152,16 +162,17 @@
                 </div>
             </div>
         </fieldset>
-
-        <div class="mb-3 row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary mx-2 px-4">Save</button>
-                <a class="btn btn-primary mx-2 px-4" role="button" href="/user/logout">Logout</a>
-                <button class="btn btn-link mx-2 px-4 float-end">Delete</button>
-            </div>
-        </div>
     </form:form>
+
+    <div class="mb-3 row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+            <button class="btn btn-primary mx-2 px-4" onclick="validate();">Save</button>
+            <a class="btn btn-primary mx-2 px-4" role="button" href="/user/logout">Logout</a>
+            <button class="btn btn-link mx-2 px-4 float-end">Delete</button>
+        </div>
+    </div>
+
 </div>
 
 <jsp:include page="../../../WEB-INF/jsp/include/footer.jsp"/>
