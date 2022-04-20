@@ -64,7 +64,12 @@
             <c:forEach items="${userModelKey}" var="animal">
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="${animal.imgURL}" alt="dog">
+                    <c:if test="${empty animal.imgURL}">
+                        <img src="https://placedog.net/50${animal.getId()}/50${animal.getId()}?r" alt="animal image">
+                    </c:if>
+                    <c:if test="${not empty animal.imgURL}">
+                        <img src="${animal.imgURL}" alt="animal image">
+                    </c:if>
                     <div class="card-body">
                         <p class="card-text">${animal.name}</p>
                         <p class="card-text">${animal.description}</p>
