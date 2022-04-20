@@ -69,10 +69,10 @@ INSERT INTO User (id, email, password, name, address, city, state, zipcode, phon
 VALUES
 (1, 'Oak321@gmail.com', '$2a$10$z/1Dp5EVw4ioNXRAgSvWCOPGk9sLfZ4FSNGQH0zrwUCY5qV7OR32S', 'Oak Knoll Animal Shelter', '6315 Minnetonka Blvd', 'Los Angeles', 'LA', 76342, '6538762435', 0),
 (2, 'Banfield20@gmail.com', '$2a$10$XKWgWHGP.qhdnmINSN83qeIugqm7YsIdwKjaNYfkCvjKG1Afkvq0y', 'Banfield Pet Shelter', '651 Winnetka Ave N', 'Minneapolis', 'MN', 65423, '7463569874', 0),
-(3, 'edina@gmail.com', 'tjkjgeefe73dd', 'Edina Pet Shelter', '7701 Cahill Rd', 'Houston', 'TX', 62241, '8542436254', 0),
+(3, 'edina@gmail.com', '$2a$12$LBB13.5MS6hQIvMGQlWIBOgk0NA6PiUg66omMzuFRA9SqwQ2MX9vi', 'Edina Pet Shelter', '7701 Cahill Rd', 'Houston', 'TX', 62241, '8542436254', 0),
 (4, 'Jaden@143.com', '$2a$10$4tZh4VBFxsB0v9u7KwzTZOV4jQtaLSeWS2ddziz6ZDgVDqAnDpa0a', 'Jaden', '8610Minnehaha', 'Rhome', 'TX', 45321, '7652445380', 1),
-(5, 'Mary@g.com', 'kajdgr3646', 'Mary', '8765 St paul', 'Chicago', 'IL', 54821, '1489526741', 1),
-(6, 'Art@g.com', 'vkfje644', 'Art', '6532 University st', 'San Fransico', 'LA', 98562, '98548756123', 1);
+(5, 'Mary@g.com', '$2a$12$0g03ObFvj92cZ2DI1SPaVuH6c0xzUvCtN/kQQGZvBoi2MOOEiDREO', 'Mary', '8765 St paul', 'Chicago', 'IL', 54821, '1489526741', 1),
+(6, 'Art@g.com', '$2a$12$2AEwC/ROabFpFLnn6/N7l.Z98P.mwADDDR1xLreVbCr0z52NhzdfO', 'Art', '6532 University st', 'San Fransico', 'LA', 98562, '98548756123', 1);
 
 INSERT INTO AnimalSpecies (id, name)
 VALUES
@@ -82,9 +82,14 @@ VALUES
 
 INSERT INTO Animal (id, name, age, gender, weight, speciesId, description, shelterId, imgURL)
 VALUES
-    (1, 'Ruby', 2, 'Female', 10.2, 1, 'Ruby is the a little', 1, 'https://placekitten.com/401/401'),
-    (2, 'Wani', 3, 'Male', 12.2, 2, 'Ruby is the a little', 3, 'https://placekitten.com/401/401'),
-    (3, 'Kiwi', 1, 'Female', 15, 3, 'Ruby is the a little', 1, 'https://placekitten.com/401/401');
+    (1, 'Ruby', 2, 'Female', 10.2, 1, 'Ruby is the a little dog', 1, 'https://placekitten.com/401/401'),
+    (2, 'Wani', 3, 'Male', 12.2, 2, 'Wani is a cute girl', 3, 'https://placekitten.com/403/403'),
+    (3, 'Kiwi', 1, 'Female', 15, 3, 'Kiwi is the only 12 month', 3, 'https://placekitten.com/404/404'),
+    (4, 'Apple', 1, 'Male', 15, 1, 'Apple is the a little', 1, 'https://placekitten.com/408/408'),
+    (5, 'Banana', 2, 'Female', 15, 2, 'Banana is the a little', 2, 'https://placekitten.com/401/401'),
+    (6, 'Haha', 1, 'Male', 15, 2, 'Haha is the one of us favorite', 1, 'https://placekitten.com/406/406'),
+    (7, 'Yaya', 3, 'Female', 15, 1, 'Yaya is the a little', 2, 'https://placekitten.com/407/407');
+
 
 INSERT INTO Adoption (id, animalId, rescuerId, shelterId, orderStatus)
 VALUES
