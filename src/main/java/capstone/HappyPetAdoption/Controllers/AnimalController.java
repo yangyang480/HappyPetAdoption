@@ -15,10 +15,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -107,7 +104,6 @@ public class AnimalController {
 
         Animal animal = animalDAO.getById(id);
 
-        //TODO validation on edit animal, when field be empty the home page won't show the animal list anymore, and also won't show the message
         log.info(animalFormBean.toString());
 
         if (bindingResult.hasErrors()) {
@@ -132,7 +128,6 @@ public class AnimalController {
             response.setViewName("animal/details");
             return response;
         }
-
 
         // Check if animal exists by id
         if (animal == null) {
@@ -173,4 +168,17 @@ public class AnimalController {
         return new ModelAndView("redirect:/shelter/home");
 
     }
+
+    //get all dogs
+//    @GetMapping(value = "/animals/Dogs")
+//    public ModelAndView getAllDogs(@RequestParam(value = "species", required = false) Integer species) throws Exception {
+//        ModelAndView response = new ModelAndView();
+//
+//        log.info("getting by gender");
+//
+//        List<Animal> animals = new ArrayList<>();
+//
+//
+//    }
+
 }

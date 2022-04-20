@@ -1,0 +1,13 @@
+.img-container {
+    display: flex;
+    width: 379px;
+    height: 295px;
+    float: left;
+}
+
+.content-container {
+    display: flex;
+    width: 500px;
+    float: left;
+    height: 295px;
+}

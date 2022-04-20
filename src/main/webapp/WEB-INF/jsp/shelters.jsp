@@ -36,7 +36,8 @@
             <br>
         </c:if>
 
-        <table class="table" id="shelterTable">
+        <div class="container-lg album py-5">
+        <table class="table border 3px" id="shelterTable">
             <thead>
                 <tr>
                     <th scope="col">Name</th>
@@ -53,9 +54,10 @@
                         <td>${user.phone}</td>
                     </tr>
                 </c:forEach>
-
             </thead>
         </table>
+        </div>
+
     </div>
 </div>
 

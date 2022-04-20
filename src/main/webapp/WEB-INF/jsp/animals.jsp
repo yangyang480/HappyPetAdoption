@@ -39,8 +39,8 @@
 <%--search animal--%>
 <div class="main-content bg-light">
     <div class="container-lg album py-5">
-        <form class="row row-cols-lg-auto g-3 mb-3 align-items-center" action="/animals" method="get">
-            <div class="col-12">
+        <form class="row g-3 mb-3 align-items-center" action="/animals" method="get">
+            <div class="col-md-4">
                 <div class="input-group">
                     <div class="input-group-text">Name</div>
                     <input class="form-control" type="text" name="name" placeholder="Animal Name"
@@ -48,7 +48,22 @@
                     <button class="btn btn-primary" type="submit">Search</button>
                 </div>
             </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-2">
+                <div class="input-group">
+                    <select id="searchBy" class="form-select" name="searchBy">
+                        <option value="-1">Filter By</option>
+                        <option value="Available Titles">Dogs</option>
+                        <option value="Available Titles">Cats</option>
+                        <option value="Checked Out Authors">Rats</option>
+                        <option value="Checked Out By User">All animals</option>
+                    </select>
+                    <button class="btn btn-primary" type="submit">submit</button>
+                </div>
+            </div>
         </form>
+
+
 
         <c:if test="${not empty name}">
             <h5>Search Results Found ${userModelKey.size()}</h5>

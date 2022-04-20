@@ -13,3 +13,15 @@ h1, h4, h5 {
 .search-box {
     margin-top: 2em;
 }
+
+#searchBy {
+    color: rgb(38, 50, 56);
+    background: rgba(237, 174, 174, 0.2);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0 1em;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin: 0 auto;
+}

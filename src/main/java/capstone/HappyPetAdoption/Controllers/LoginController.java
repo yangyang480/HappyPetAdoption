@@ -31,6 +31,7 @@ public class LoginController {
         ModelAndView response = new ModelAndView();
         User user = userService.getCurrentUser();
 
+        //if shelter logged in go to shelter home
         if (user.getUserTypeId() == 0) {
             response.setViewName("redirect:/shelter/home");
         } else {

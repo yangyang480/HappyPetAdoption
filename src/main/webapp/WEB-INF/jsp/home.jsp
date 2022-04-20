@@ -21,7 +21,6 @@
                                 <h5 class="text-white mb-3 d-none d-sm-block">We hope our beloved animals can have a sweet home.</h5>
                                 <a href="/user/register" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">JOIN US</a>
                             </div>
-
                         </div>
                 </div>
                 <div class="carousel-item">

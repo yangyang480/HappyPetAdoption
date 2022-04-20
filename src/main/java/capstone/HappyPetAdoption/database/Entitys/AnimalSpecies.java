@@ -1,17 +1,26 @@
 package capstone.HappyPetAdoption.database.Entitys;
 
-import javax.persistence.Column;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import lombok.*;
+
+import javax.persistence.*;
 import java.util.Date;
 
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table
 public class AnimalSpecies {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column()
     private Integer id;
 
+    @Column()
     private String name;
 
-    @Column()
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdData = new Date();
 }

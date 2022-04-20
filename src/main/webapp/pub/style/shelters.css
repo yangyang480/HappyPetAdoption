@@ -9,6 +9,22 @@
   background-image: url("../images/shelter.jpg");
 }
 
+.container-header {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+
+.page-heading-shelters {
+    padding: 210px 0px 130px 0px;
+    text-align: center;
+    justify-content: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../images/shelter-individual.jpg");
+}
+
 h2, h4 {
   color: white;
   font-width: 10px;

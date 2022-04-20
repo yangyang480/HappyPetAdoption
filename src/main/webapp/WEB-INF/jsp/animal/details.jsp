@@ -15,9 +15,19 @@
 
 <%--if is not current shelter and the animal is not belong to the current shelter, then can only see the info of the animal--%>
     <c:if test="${!isCurrentUserShelterAndAnimalIsFromThere}">
+        <div class="img-container">
+            <c:if test="${empty animal.imgURL}">
+                <img src="https://placedog.net/50${animal.getId()}/50${animal.getId()}?r" alt="animal image">
+            </c:if>
+            <c:if test="${not empty animal.imgURL}">
+                <img src="${animal.imgURL}" alt="animal image">
+            </c:if>
+        </div>
+
+        <div class="content-container">
         <dl class="row">
             <dt class="col-sm-3 text-sm-end">From Shelter</dt>
-            <dd class="col-sm-9"><a href="/shelter/${animalFormBean.id}/details">${animalFormBean.name}</a></dd>
+            <dd class="col-sm-9"><a href="/shelter/${id}/details">${shelter.name}</a></dd>
 
             <dt class="col-sm-3 text-sm-end">Name</dt>
             <dd class="col-sm-9">${animalFormBean.name}</dd>
@@ -37,7 +47,9 @@
             <dt class="col-sm-3 text-sm-end">Description</dt>
             <dd class="col-sm-9">${animalFormBean.description}</dd>
         </dl>
+        </div>
     </c:if>
+
 
     <%--if is current shelter and the animal is in current shelter, then can can be edit and delete--%>
     <c:if test="${isCurrentUserShelterAndAnimalIsFromThere}">
