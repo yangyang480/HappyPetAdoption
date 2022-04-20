@@ -27,11 +27,4 @@ public interface UserDAO extends JpaRepository<User, Integer> {
     @Query(value = "select u from User u where u.userTypeId = 0 AND u.name like CONCAT('%',:name,'%')")
     public List<User> findShelterByNameIgnoreCase(@Param("name") String name);
 
-
-    // select * from user where upper(first_name) like '%:firstName%';
-    //public List<Users> findByFirstNameIgnoreCaseContaining(@Param("firstName") String firstName);
-
-    //public List<Users> findByFirstNameAndLastName(@Param("firstName") String firstName, @Param("lastName") String lastName);
-
-
 }

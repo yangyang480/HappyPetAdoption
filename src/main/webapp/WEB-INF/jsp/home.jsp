@@ -81,7 +81,7 @@
                     <h3 class="flaticon-house display-3 font-weight-normal text-secondary mb-3"><i class="fa-solid fa-dog"></i></h3>
                     <h3 class="mb-3">Dogs Adoption</h3>
                     <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
-                    <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                    <a class="text-uppercase font-weight-bold" href="/animals">Read More</a>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 mb-4">
@@ -89,7 +89,7 @@
                     <h3 class="flaticon-food display-3 font-weight-normal text-secondary mb-3"><i class="fa-solid fa-cat"></i></h3>
                     <h3 class="mb-3">Cats Adoption</h3>
                     <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
-                    <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                    <a class="text-uppercase font-weight-bold" href="/animals">Read More</a>
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 mb-4">
@@ -97,7 +97,7 @@
                     <h3 class="flaticon-grooming display-3 font-weight-normal text-secondary mb-3"><i class="fa-solid fa-heart"></i></h3>
                     <h3 class="mb-3">Volunteer</h3>
                     <p>Volunteers play a vital role in our organization, caring for animals, taking photos, writing bios and more.</p>
-                    <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                    <a class="text-uppercase font-weight-bold" href="/shelters">Read More</a>
                 </div>
             </div>
         </div>

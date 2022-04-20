@@ -42,6 +42,7 @@
 .gender,
 .weight,
 .description,
-.species {
+.species,
+.imgURL {
     width: 86%;
 }

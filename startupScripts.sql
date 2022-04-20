@@ -41,6 +41,7 @@ CREATE TABLE Animal(
 	description varchar(255) NOT NULL,
 -- 	status boolean  NOT NULL,
 	shelterId int NOT NULL,
+	imgURL varchar(255) NOT NULL,
 	createdDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
 	updatedDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
 	foreign key (speciesId) references AnimalSpecies(id) ON DELETE restrict,
@@ -79,11 +80,11 @@ VALUES
     (2, 'Cat'),
     (3, 'Rat');
 
-INSERT INTO Animal (id, name, age, gender, weight, speciesId, description, shelterId)
+INSERT INTO Animal (id, name, age, gender, weight, speciesId, description, shelterId, imgURL)
 VALUES
-    (1, 'Ruby', 2, 'Female', 10.2, 1, 'Ruby is the a little', 1),
-    (2, 'Wani', 3, 'Male', 12.2, 2, 'Ruby is the a little', 3),
-    (3, 'Kiwi', 1, 'Female', 15, 3, 'Ruby is the a little', 1);
+    (1, 'Ruby', 2, 'Female', 10.2, 1, 'Ruby is the a little', 1, 'https://placekitten.com/401/401'),
+    (2, 'Wani', 3, 'Male', 12.2, 2, 'Ruby is the a little', 3, 'https://placekitten.com/401/401'),
+    (3, 'Kiwi', 1, 'Female', 15, 3, 'Ruby is the a little', 1, 'https://placekitten.com/401/401');
 
 INSERT INTO Adoption (id, animalId, rescuerId, shelterId, orderStatus)
 VALUES

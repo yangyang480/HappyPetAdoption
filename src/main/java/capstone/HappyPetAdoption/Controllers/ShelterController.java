@@ -104,5 +104,13 @@ public class ShelterController {
         }
     }
 
+    //shelter's adoptions
+    @PreAuthorize("hasAuthority('Shelter')")
+    @RequestMapping(value = "/shelter/adoptions", method = RequestMethod.GET)
+    public ModelAndView shelterAdoptions() throws Exception{
+        ModelAndView response = new ModelAndView();
+        response.setViewName("shelter/adoptions");
+        return response;
+    }
 
 }

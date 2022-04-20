@@ -45,6 +45,9 @@ public class Animal {
     private Integer shelterId;
 
     @Column()
+    private String imgURL;
+
+    @Column()
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate = new Date();
 

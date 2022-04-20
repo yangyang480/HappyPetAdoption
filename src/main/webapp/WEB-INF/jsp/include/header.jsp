@@ -36,7 +36,7 @@
                         <a class="nav-link ${fn:startsWith(requestScope['javax.servlet.forward.request_uri'], '/shelters') ? ' active' : ''}" href="/shelters">Shelters</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ${fn:startsWith(requestScope['javax.servlet.forward.request_uri'], '/animal') ? ' active' : ''}" href="/animals">Animals</a>
+                        <a class="nav-link ${fn:startsWith(requestScope['javax.servlet.forward.request_uri'], '/animals') ? ' active' : ''}" href="/animals">Animals</a>
                     </li>
                     <li class="nav-item">
                         <sec:authorize access="hasAuthority('Shelter')">

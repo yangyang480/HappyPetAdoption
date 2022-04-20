@@ -25,6 +25,7 @@
     </c:if>
     <c:if test="${profileFormBean.userTypeId == 1}">
         <h1>Rescuer Profile</h1>
+        <a class="btn btn-primary mx-2 px-4" role="button" href="">My adoption</a>
     </c:if>
 
     <%--@elvariable id="profileFormBean" type=""--%>

@@ -73,6 +73,7 @@ public class ManageController {
         animal.setSpeciesId(animalFormBean.getSpeciesId());
         animal.setShelterId(user.getId());
         animal.setDescription(animalFormBean.getDescription());
+        animal.setImgURL(animalFormBean.getImgURL());
 //        animal.setStatus(manageAnimalFormBean.getStatus()); Future work
         animal.setUpdatedDate(new Date());
 

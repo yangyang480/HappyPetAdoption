@@ -9,6 +9,7 @@ import capstone.HappyPetAdoption.database.Entitys.Adoption;
 import capstone.HappyPetAdoption.database.Entitys.Animal;
 import capstone.HappyPetAdoption.database.Entitys.User;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -41,11 +43,23 @@ public class AnimalController {
     @Autowired
     private UserService userService;
 
+    //get a list of animals and search by name
     @RequestMapping(value = "/animals", method = RequestMethod.GET)
-    public ModelAndView home() throws Exception {
+    public ModelAndView animalSearch(@RequestParam(value = "name", required = false) String name) throws Exception {
         ModelAndView response = new ModelAndView();
         response.setViewName("animals");
 
+        List<Animal> animals;
+
+        if (!StringUtils.isEmpty(name)) {
+            animals = animalDAO.findAnimalByNameIgnoreCase(name);
+        }
+        else {
+            animals = animalDAO.getAllAnimal();
+        }
+
+        response.addObject("userModelKey", animals);
+        response.addObject("name", name);
         return response;
     }
 

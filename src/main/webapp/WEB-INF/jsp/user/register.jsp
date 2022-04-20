@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
 	<div class="wrapper">
 		<div class="card">
 			<p class="sign">Register</p>
