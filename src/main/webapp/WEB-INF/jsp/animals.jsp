@@ -54,144 +54,33 @@
             <h5>Search Results Found ${userModelKey.size()}</h5>
             <br>
         </c:if>
-
-        <table class="table" id="animalTable">
-            <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">Name</th>
-                <th scope="col">Age</th>
-                <th scope="col">Weight</th>
-            </tr>
-
-            <c:forEach items="${userModelKey}" var="animal">
-                <tr scope = "row">
-                    <td><img src="${animal.imgURL}"/></td>
-                    <td><a href="/animal/${animal.id}/details">${animal.name}</a></td>
-                    <td>${animal.age}</td>
-                    <td>${animal.weight}</td>
-                </tr>
-            </c:forEach>
-
-            </thead>
-        </table>
     </div>
 </div>
+
 <%--    animal with picture--%>
 <div class="container-lg album py-5 ">
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <c:forEach items="${userModelKey}" var="animal">
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="https://placedog.net/506/506?r" alt="dog">
+                    <img src="${animal.imgURL}" alt="dog">
                     <div class="card-body">
-                        <p class="card-text">
-                            My name is Coco. I am 2 years old. I love playing throw and catch.
-                            Happy pet Adoption saved me in a cold day.
-                        </p>
+                        <p class="card-text">${animal.name}</p>
+                        <p class="card-text">${animal.description}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/animal/${animal.id}/details">View</a></button>
                             </div>
-                            <small class="text-muted">create date</small>
+                            <small class="text-muted">${animal.createdDate}</small>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://placekitten.com/401/401" alt="cat">
-                    <div class="card-body">
-                        <p class="card-text">
-                            My name is Coco. I am 2 years old. I love playing throw and catch.
-                            Happy pet Adoption saved me in a cold day.
-                        </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            </div>
-                            <small class="text-muted">create date</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://placekitten.com/400/400" alt="cat">
-                    <div class="card-body">
-                        <p class="card-text">
-                            My name is Coco. I am 2 years old. I love playing throw and catch.
-                            Happy pet Adoption saved me in a cold day.
-                        </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            </div>
-                            <small class="text-muted">create date</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://placekitten.com/460/460" alt="cat">
-                    <div class="card-body">
-                        <p class="card-text">
-                            My name is Coco. I am 2 years old. I love playing throw and catch.
-                            Happy pet Adoption saved me in a cold day.
-                        </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            </div>
-                            <small class="text-muted">create date</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://placedog.net/500/500" alt="dog">
-                    <div class="card-body">
-                        <p class="card-text">
-                            My name is Coco. I am 2 years old. I love playing throw and catch.
-                            Happy pet Adoption saved me in a cold day.
-                        </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            </div>
-                            <small class="text-muted">create date</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://placedog.net/499/499" alt="dog">
-                    <div class="card-body">
-                        <p class="card-text">
-                            My name is Coco. I am 2 years old. I love playing throw and catch.
-                            Happy pet Adoption saved me in a cold day.
-                        </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            </div>
-                            <small class="text-muted">create date</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
 </div>
-
 
 
 <jsp:include page="include/footer.jsp" />
