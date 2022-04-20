@@ -122,7 +122,7 @@ public class AdoptionService {
 
     public List<Adoption> getAdoptionsByShelterId(Integer shelterId)
     {
-        return this.adoptionDAO.getAdoptionsByRescuerId(shelterId);
+        return this.adoptionDAO.getAdoptionsByShelterId(shelterId);
     }
 
     public List<Adoption> getAdoptionsByRescuerId(Integer rescuerId)

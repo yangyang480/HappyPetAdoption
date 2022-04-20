@@ -14,9 +14,10 @@ public interface AdoptionDAO extends JpaRepository<Adoption, Integer> {
     @Query(value = "select a from Adoption a where a.animalId = :animalId")
     public List<Adoption> getAdoptionOrdersByAnimalId(@Param("animalId") Integer animalId);
 
-    @Query(value = "select a from Adoption a where a.shelterId = :shelterId", nativeQuery = true)
+    @Query(value = "select a from Adoption a where a.shelterId = :shelterId")
     public List<Adoption> getAdoptionsByShelterId(@Param("shelterId") Integer shelterId);
 
+    // May have multiple adoptions if previous were canceled or completed
     @Query(value = "select a from Adoption a where a.rescuerId = :rescuerId")
     public List<Adoption> getAdoptionsByRescuerId(@Param("rescuerId") Integer rescuerId);
 

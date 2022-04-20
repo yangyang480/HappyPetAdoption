@@ -14,13 +14,12 @@
 }
 
 .shelter {
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .shelter .filters {
     text-align: center;
     border-bottom: 1px solid #eee;
-    margin-bottom: 60px;
 }
 
 *, ::after, ::before {
@@ -55,7 +54,7 @@ ul {
     justify-content: center;
 }
 
-li {
+.shelter li {
     margin-left: 1em;
 }
 

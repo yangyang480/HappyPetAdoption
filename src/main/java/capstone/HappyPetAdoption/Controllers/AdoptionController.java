@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import static capstone.HappyPetAdoption.Extensions.OrderStatusExtension.OrderStatusString;
+
 @Controller
 public class AdoptionController {
 
@@ -165,20 +167,8 @@ public class AdoptionController {
         response.addObject("rescuer", rescuer);
 
         response.addObject("adoptionId", adoption.getId());
-        switch (adoption.getOrderStatus()) {
-            case REQUESTED:
-                response.addObject("orderStatus", "Requested");
-                break;
-            case PENDING:
-                response.addObject("orderStatus", "Pending");
-                break;
-            case CANCELED:
-                response.addObject("orderStatus", "Canceled");
-                break;
-            case COMPLETED:
-                response.addObject("orderStatus", "Completed");
-                break;
-        }
+
+        response.addObject("orderStatus", OrderStatusString(adoption.getOrderStatus()));
 
         response.setViewName("adoption/details");
         return response;

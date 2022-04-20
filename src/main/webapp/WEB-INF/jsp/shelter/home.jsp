@@ -5,7 +5,6 @@
 
 <jsp:include page="../include/shelter/header.jsp"/>
 
-
 <div class="main-content bg-light">
     <div class="container-lg album py-5">
             <form class="row row-cols-lg-auto g-3 mb-3 align-items-center" action="/shelter/home"

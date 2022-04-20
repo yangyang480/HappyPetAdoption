@@ -22,9 +22,15 @@
             <div class="col-md-12">
                 <div class="filters">
                     <ul>
-                        <li class="active" data-filter="*">All Animals</li>
-                        <a href="/shelter/manage/animal" style="text-decoration: none; color: #121212"><li data-filter=".des">Create Animals</li></a>
-                        <a href="/shelter/adoptions" style="text-decoration: none; color: #121212"><li data-filter=".gra">Manage Adoptions</li></a>
+                        <a href="/shelter/home" class="text-decoration-none" style="color: #121212">
+                            <li class="${requestScope['javax.servlet.forward.request_uri'] eq '/shelter/home' ? ' active' : ''}">All Animals</li>
+                        </a>
+                        <a href="/shelter/manage/animal" class="text-decoration-none" style="color: #121212">
+                            <li data-filter=".des" class="${requestScope['javax.servlet.forward.request_uri'] eq '/shelter/manage/animal' ? ' active' : ''}">Create Animals</li>
+                        </a>
+                        <a href="/shelter/adoptions" class="text-decoration-none" style="color: #121212">
+                            <li data-filter=".gra" class="${requestScope['javax.servlet.forward.request_uri'] eq '/shelter/adoptions' ? ' active' : ''}">Manage Adoptions</li>
+                        </a>
                     </ul>
                 </div>
             </div>
