@@ -68,6 +68,7 @@ public class AdoptionController {
         return response;
     }
 
+    //call the approveAdoption from adoption service
     @PreAuthorize("hasAuthority('Shelter')")
     @RequestMapping(value = "/adoption/{id}/approve", method = RequestMethod.GET)
     public ModelAndView adoptionApprove(@PathVariable("id") Integer id) throws Exception {

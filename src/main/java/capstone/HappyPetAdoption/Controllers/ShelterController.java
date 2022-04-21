@@ -124,7 +124,7 @@ public class ShelterController {
 
         List<Map<String, Object>> adoptionObjectList = new ArrayList<>();
 
-        // Adding an object list of each item containing adoption, animal, rescuer, and order status
+        // Adding an object list of each item containing adoption, animal, rescuer, and order status. using map pull info from multiple tables
         adoptions.stream().forEach(adoption -> {
             Map<String, Object> adoptionMap = new HashMap<>();
             adoptionMap.put("adoption", adoption);

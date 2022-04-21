@@ -53,7 +53,7 @@ public class AdoptionService {
         return this.adoptionDAO.save(adoption);
     }
 
-    // Check if this animal been adopted?
+    // Check if this animal been adopted? get adoption by animalId
     public Boolean doesCompleteAdoptionExistByAnimal(Animal animal)
     {
         List<Adoption> adoptions = this.adoptionDAO.getAdoptionOrdersByAnimalId(animal.getId());
@@ -68,7 +68,7 @@ public class AdoptionService {
         return false;
     }
 
-    //check if the rescuer have open adoption
+    //check if the rescuer have open adoption, get adoption by rescuerId
     public Boolean doesRescuerHaveOpenAdoption()
     {
         User user = userService.getCurrentUser();
@@ -87,7 +87,6 @@ public class AdoptionService {
             }
         }
 
-        // Rescuer does not have an open order for an adoption
         return false;
     }
 

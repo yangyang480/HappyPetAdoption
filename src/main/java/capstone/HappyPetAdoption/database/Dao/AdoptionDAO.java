@@ -11,6 +11,8 @@ import java.util.List;
 @Repository
 public interface AdoptionDAO extends JpaRepository<Adoption, Integer> {
 
+    //Query and method be called in AdoptionService and controller
+
     @Query(value = "select a from Adoption a where a.animalId = :animalId")
     public List<Adoption> getAdoptionOrdersByAnimalId(@Param("animalId") Integer animalId);
 
