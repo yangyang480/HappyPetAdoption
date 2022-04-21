@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table
+@Table(name = "AnimalSpecies")
 public class AnimalSpecies {
 
     @Id

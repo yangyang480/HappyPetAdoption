@@ -1,6 +1,7 @@
 package capstone.HappyPetAdoption.database.Dao;
 
 import capstone.HappyPetAdoption.database.Entitys.Animal;
+import capstone.HappyPetAdoption.database.Entitys.UserType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -29,6 +30,4 @@ public interface AnimalDAO extends JpaRepository<Animal, Integer> {
     //get all the animal from database
     @Query(value = "select * from Animal", nativeQuery = true)
     public List<Animal> getAllAnimal();
-
-
 }

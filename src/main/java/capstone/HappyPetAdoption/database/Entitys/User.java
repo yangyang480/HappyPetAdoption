@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.Date;
 
+@Builder
 @Getter
 @Setter
 @ToString
@@ -12,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table
+@Table(name = "User")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -54,16 +55,5 @@ public class User {
     @Column()
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedDate = new Date();
-
-//    import java.time.LocalDate;
-//    @DateTimeFormat(pattern = "yyyy-MM-dd")
-//    @Column(name = "birth_date")
-//    private LocalDate birthDate;
-//
-//    public ModelAndView addChild(ChildFormBean form,
-//                                 @RequestParam("birthDay") String birthDay,
-//                                 @PathVariable("family_id") Integer familyId) throws Exception
-//
-//        log.info(String.valueOf(LocalDate.parse(birthDay)));
 
 }
