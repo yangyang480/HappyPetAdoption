@@ -49,11 +49,6 @@ body {
   border-radius: 5em;
 }
 
-.forgot {
-  text-align: center;
-  padding-top: 15px;
-}
-
 a {
   color: #bbb8bb;
   text-decoration: none;
@@ -87,6 +82,11 @@ a:hover {
   margin-top: 0.25rem;
   color: #dc3545;
   font-size: small;
+}
+
+#formOptions {
+    white-space: nowrap;
+    color: #bbb8bb;
 }
 
 #homeLink:hover {

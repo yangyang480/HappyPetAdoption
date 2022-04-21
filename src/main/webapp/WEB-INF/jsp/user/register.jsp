@@ -188,7 +188,7 @@
 					</c:forEach>
 				</div>
 
-				<button class="submit btn btn-primary py-2 px-4">Register</button>
+				<button class="submit btn btn-primary py-2 px-5">Register</button>
 			</form:form>
 
             <div id="iconHomeContainer">
