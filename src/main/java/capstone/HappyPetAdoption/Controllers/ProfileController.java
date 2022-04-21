@@ -46,7 +46,7 @@ public class ProfileController {
 
         List<Map<String, Object>> adoptionObjectList = new ArrayList<>();
 
-        for (Adoption adoption: adoptions) {
+        adoptions.forEach(adoption -> {
             Map<String, Object> adoptionMap = new HashMap<>();
             adoptionMap.put("adoption", adoption);
             adoptionMap.put("animal", animalDAO.getById(adoption.getAnimalId()));
@@ -54,7 +54,7 @@ public class ProfileController {
             adoptionMap.put("orderStatus", OrderStatusString(adoption.getOrderStatus()));
 
             adoptionObjectList.add(adoptionMap);
-        }
+        });
 
         response.addObject("adoptionObjectList", adoptionObjectList);
         response.setViewName("/user/adoptions");
