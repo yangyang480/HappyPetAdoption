@@ -124,7 +124,8 @@ public class ShelterController {
 
         List<Map<String, Object>> adoptionObjectList = new ArrayList<>();
 
-        for (Adoption adoption: adoptions) {
+        // Adding an object list of each item containing adoption, animal, rescuer, and order status
+        adoptions.stream().forEach(adoption -> {
             Map<String, Object> adoptionMap = new HashMap<>();
             adoptionMap.put("adoption", adoption);
             adoptionMap.put("animal", animalDAO.getById(adoption.getAnimalId()));
@@ -132,7 +133,7 @@ public class ShelterController {
             adoptionMap.put("orderStatus", OrderStatusString(adoption.getOrderStatus()));
 
             adoptionObjectList.add(adoptionMap);
-        }
+        });
 
         response.addObject("adoptionObjectList", adoptionObjectList);
 
