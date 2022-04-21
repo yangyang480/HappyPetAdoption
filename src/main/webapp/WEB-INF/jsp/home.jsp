@@ -246,5 +246,12 @@
         </div>
     </div>
 </div>
+<div class="alert alert-light">
+    <div class="container text-center">
+        Server Health Status: <b id="healthStatus">...</b>
+    </div>
+</div>
+
+<script src="../../../pub/js/health.js"></script>
 
 <jsp:include page="include/footer.jsp" />
