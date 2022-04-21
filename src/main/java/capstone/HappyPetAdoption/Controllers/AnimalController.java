@@ -166,16 +166,5 @@ public class AnimalController {
 
     }
 
-    //get all dogs
-//    @GetMapping(value = "/animals/Dogs")
-//    public ModelAndView getAllDogs(@RequestParam(value = "species", required = false) Integer species) throws Exception {
-//        ModelAndView response = new ModelAndView();
-//
-//        log.info("getting by gender");
-//
-//        List<Animal> animals = new ArrayList<>();
-//
-//
-//    }
 
 }

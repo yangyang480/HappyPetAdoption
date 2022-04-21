@@ -37,7 +37,7 @@ public class ManageController {
         return response;
     }
 
-    //TODO shelter/manage/AcceptAdoption/{id}
+    //create animal
     @RequestMapping(value = "/shelter/create/animal", method = RequestMethod.POST)
     public ModelAndView manageAnimalSubmit(@Valid AnimalFormBean animalFormBean, BindingResult bindingResult) throws Exception {
         ModelAndView response = new ModelAndView();

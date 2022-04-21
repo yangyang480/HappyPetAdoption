@@ -53,7 +53,7 @@
                             <a href="/user/login" class="login link-primary"> Login</a> /
                             <a href="/user/register" class="link-primary">Register</a>
                         </sec:authorize>
-                        <sec:authorize access="isAuthenticated()">
+                        <sec:authorize access="hasAnyAuthority('Rescuer','Shelter')">
                             <a href="/user/profile" class="link-primary">Welcome, <sec:authentication property="name"/>!</a>
                         </sec:authorize>
                     </small>
@@ -63,3 +63,4 @@
     </nav>
 </div>
 
+w
