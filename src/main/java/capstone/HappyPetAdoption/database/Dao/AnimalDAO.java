@@ -11,7 +11,6 @@ import java.util.List;
 @Repository
 public interface AnimalDAO extends JpaRepository<Animal, Integer> {
 
-    //get list of animals group by shelterId
     @Query(value = "select a from Animal a where a.shelterId = :shelterId")
     public List<Animal> findAnimalsByShelterId(@Param("shelterId") Integer shelterId);
 
@@ -27,7 +26,6 @@ public interface AnimalDAO extends JpaRepository<Animal, Integer> {
     @Query(value = "select a from Animal a where a.name like CONCAT('%',:name,'%')")
     public List<Animal> findAnimalByNameIgnoreCase(@Param("name") String name);
 
-    //get all the animal from database
     @Query(value = "select * from Animal", nativeQuery = true)
     public List<Animal> getAllAnimal();
 }

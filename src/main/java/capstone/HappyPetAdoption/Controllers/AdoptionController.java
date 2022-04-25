@@ -77,12 +77,8 @@ public class AdoptionController {
         Adoption adoption = adoptionDAO.getById(id);
         User user = userService.getCurrentUser();
 
-        if (adoption == null || user == null ||
-                // Only allow the shelter to approve, if not redirect to home
-                user.getId() != adoption.getShelterId() ||
-                // Do not set to approve if adoption is not in requested status
-                adoption.getOrderStatus() != OrderStatusEnum.REQUESTED)
-        {
+        // Do not set to approve if adoption is not in requested status
+        if (adoption == null || user == null || user.getId() != adoption.getShelterId() || adoption.getOrderStatus() != OrderStatusEnum.REQUESTED) {
             response.setViewName("redirect:/");
             return response;
         }
@@ -100,9 +96,8 @@ public class AdoptionController {
         Adoption adoption = adoptionDAO.getById(id);
         User user = userService.getCurrentUser();
 
-        if (adoption == null ||
-                // Can't cancel a completed or canceled adoption
-                (adoption.getOrderStatus() != OrderStatusEnum.REQUESTED && adoption.getOrderStatus() != OrderStatusEnum.PENDING)||
+        // Can't cancel a completed or canceled adoption
+        if (adoption == null || (adoption.getOrderStatus() != OrderStatusEnum.REQUESTED && adoption.getOrderStatus() != OrderStatusEnum.PENDING)||
                 // Check if current user is not adoption shelter or rescuer, redirect to home since should not have access
                 user.getId() != adoption.getRescuerId() && user.getId() != adoption.getShelterId()) {
             response.setViewName("redirect:/");
@@ -124,14 +119,8 @@ public class AdoptionController {
         User user = userService.getCurrentUser();
         Animal animal = animalDAO.getById(adoption.getAnimalId());
 
-        if (adoption == null || user == null || animal == null ||
-                // Only allow the shelter to complete, if not redirect to home
-                user.getId() != adoption.getShelterId() ||
-                // Do not set to approve if adoption is not in requested status
-                adoption.getOrderStatus() != OrderStatusEnum.PENDING ||
-                // Do not allow to be completed if animal already adopted
-                adoptionService.doesCompleteAdoptionExistByAnimal(animal))
-        {
+        if (adoption == null || user == null || animal == null || user.getId() != adoption.getShelterId() || adoption.getOrderStatus() != OrderStatusEnum.PENDING ||
+                adoptionService.doesCompleteAdoptionExistByAnimal(animal)) {
             response.setViewName("redirect:/");
             return response;
         }

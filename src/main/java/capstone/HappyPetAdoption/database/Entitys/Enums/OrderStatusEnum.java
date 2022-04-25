@@ -1,7 +1,6 @@
 package capstone.HappyPetAdoption.database.Entitys.Enums;
 
-public enum OrderStatusEnum
-{
+public enum OrderStatusEnum {
     REQUESTED,
     PENDING,
     CANCELED,

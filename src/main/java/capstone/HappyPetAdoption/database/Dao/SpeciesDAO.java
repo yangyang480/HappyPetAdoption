@@ -12,7 +12,6 @@ import java.util.List;
 @Repository
 public interface SpeciesDAO extends JpaRepository<AnimalSpecies, Long> {
 
-    //get animals by speciesId
     @Query(value = "select a from Animal a where a.speciesId = :speciesId")
     public List<Animal> findAnimalsBySpeciesId(@Param("speciesId") Integer speciesId);
 

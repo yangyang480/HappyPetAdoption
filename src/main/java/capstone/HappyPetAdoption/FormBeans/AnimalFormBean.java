@@ -35,12 +35,10 @@ public class AnimalFormBean {
     @NotNull(message = "Species must not be empty")
     private Integer speciesId;
 
-    @NotNull(message = "imageURL must not be empty")
     private String imgURL;
 
 //    @NotBlank(message = "Status must not be empty")
-//    private Boolean status;
-// Status could be future work.
+//    private String status;
 
 
 }

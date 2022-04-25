@@ -38,7 +38,7 @@
                 <button class="submit btn btn-primary py-2 px-5" onclick="validate();">Sign in</button>
                 <div id="formOptions" class="d-flex justify-content-evenly pt-3">
                     <div class="form-field form-check d-flex justify-content-end">
-                        <input class="form-check-input" type="checkbox">
+                        <%--@declare id="flexcheckdefault"--%><input class="form-check-input" type="checkbox">
                         <label class="form-check-label ms-2" for="flexCheckDefault">Remember me</label>
                     </div>
                     <a href="#">Forgot Password?</a>

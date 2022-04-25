@@ -38,8 +38,6 @@ public class TwoFieldsAreEqualImpl implements ConstraintValidator<TwoFieldsAreEq
         } catch (Exception e) {
             return false;
         }
-//        context.disableDefaultConstraintViolation();
-//        context.buildConstraintViolationWithTemplate(context.getDefaultConstraintMessageTemplate());
         return false;
     }
 

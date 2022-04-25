@@ -27,7 +27,7 @@
         <h1>Rescuer Profile</h1>
 
         <c:if test="${not empty currentAdoption}">
-            <a class="btn btn-primary mx-2 px-4" role="button" href="/adoption/${currentAdoption.getId()}/details">My Adoption</a>
+            <a class="btn btn-primary mx-2 px-4" role="button" href="/adoption/${currentAdoption.getId()}/details">Current Adoption</a>
         </c:if>
         <a class="btn btn-primary mx-2 px-4" role="button" href="/user/adoptions">Historical Adoptions</a>
 

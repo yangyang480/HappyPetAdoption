@@ -89,11 +89,6 @@
                         <div class="form-field">
                             <form:input id="imgURL" path="imgURL" class="imgURL form-control" name="imgURL" type="text"
                                         placeholder="Animal image"/>
-                            <c:forEach items="${bindingResult.getFieldErrors('imgURL')}" var="error">
-                                <div class="error-message">
-                                        ${error.getDefaultMessage()}
-                                </div>
-                            </c:forEach>
                         </div>
 
                         <div class="form-field" hidden="true">

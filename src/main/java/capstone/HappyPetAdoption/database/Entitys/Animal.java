@@ -39,8 +39,9 @@ public class Animal {
     @Column()
     private String description;
 
-//    @Column()
-//    private Boolean status;
+//    @Column(columnDefinition="ENUM('AVAILABLE', 'UNAVAILABLE')")
+//    @Enumerated(EnumType.STRING)
+//    private AnimalStatusEnum status;
 
     @Column()
     private Integer shelterId;

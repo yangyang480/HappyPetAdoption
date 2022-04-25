@@ -49,7 +49,7 @@
                 <c:forEach items="${userModelKey}" var="user">
                     <tr scope = "row">
                         <td><a href="/shelter/${user.id}/details">${user.name}</a></td>
-                        <td>${user.address}</td>
+                        <td>${user.address}, ${user.city}, ${user.state}</td>
                         <td>${user.email}</td>
                         <td>${user.phone}</td>
                     </tr>

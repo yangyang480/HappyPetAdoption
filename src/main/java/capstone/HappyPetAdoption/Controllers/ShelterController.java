@@ -61,6 +61,21 @@ public class ShelterController {
         return response;
     }
 
+    //shelter detail and a list of animals belongs to this shelter
+    @RequestMapping(value = "/shelter/{id}/details", method = RequestMethod.GET)
+    public ModelAndView details(@PathVariable("id") Integer id) throws Exception {
+        ModelAndView response = new ModelAndView();
+
+        User shelter = userDAO.getShelterById(id);
+        response.addObject("shelter", shelter);
+
+        List<Animal> animals = getShelterAnimals(shelter, null);
+        response.addObject("animals", animals);
+
+        response.setViewName("shelter/details");
+        return response;
+    }
+
     //shelter's home page
     @PreAuthorize("hasAuthority('Shelter')")
     @RequestMapping(value = "/shelter/home", method = RequestMethod.GET)
@@ -74,21 +89,6 @@ public class ShelterController {
         response.addObject("animals", animals);
         response.addObject("name", name);
 
-        return response;
-    }
-
-    //shelter detail
-    @RequestMapping(value = "/shelter/{id}/details", method = RequestMethod.GET)
-    public ModelAndView details(@PathVariable("id") Integer id) throws Exception {
-        ModelAndView response = new ModelAndView();
-
-        User shelter = userDAO.getShelterById(id);
-        response.addObject("shelter", shelter);
-
-        List<Animal> animals = getShelterAnimals(shelter, null);
-        response.addObject("animals", animals);
-
-        response.setViewName("shelter/details");
         return response;
     }
 

@@ -19,7 +19,7 @@ import java.util.Date;
 
 @Slf4j
 @Controller
-@PreAuthorize("hasAuthority( 'Shelter')") //only shelter can view create/edit/delete animal page.
+@PreAuthorize("hasAuthority('Shelter')")
 public class ManageController {
 
     @Autowired

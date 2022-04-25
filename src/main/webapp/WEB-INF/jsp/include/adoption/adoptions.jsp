@@ -7,6 +7,9 @@
     <h1>Adoptions</h1>
     <br>
 
+    <c:if test="${empty adoptionObjectList}">
+        <p style="color: #4e4066">* You have no adoption history!</p>
+    </c:if>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <c:forEach items="${adoptionObjectList}" var="adoptionObject">
             <div class="col">

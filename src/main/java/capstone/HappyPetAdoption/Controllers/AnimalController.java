@@ -93,7 +93,7 @@ public class AnimalController {
         return response;
     }
 
-    // only shelter can edit the animal details and save it
+    //edit animal
     @PreAuthorize("hasAuthority('Shelter')")
     @RequestMapping(value = "/animal/{id}/detailsSubmit", method = RequestMethod.POST)
     public ModelAndView detailsSubmit(@PathVariable("id") Integer id, @Valid AnimalFormBean animalFormBean, BindingResult bindingResult) throws Exception {
@@ -151,7 +151,7 @@ public class AnimalController {
 
     }
 
-    //only current shelter can delete the current animal
+    //delete animal
     @PreAuthorize("hasAuthority('Shelter')")
     @RequestMapping(value = "/animal/{id}/delete", method = RequestMethod.GET)
     public ModelAndView delete(@PathVariable("id") Integer id) throws Exception {
@@ -163,8 +163,6 @@ public class AnimalController {
         }
         this.animalDAO.delete(animal);
         return new ModelAndView("redirect:/shelter/home");
-
     }
-
 
 }

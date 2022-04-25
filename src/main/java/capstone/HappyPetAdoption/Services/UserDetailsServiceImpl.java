@@ -31,11 +31,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userDao.findByEmail(username); //get user from db
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userDao.findByEmail(email); //get user from db
 
         if (user == null) {
-            throw new UsernameNotFoundException("Username '" + username + "' not found in database");
+            throw new UsernameNotFoundException("Username '" + email + "' not found in database");
         }
 
         List<UserType> userTypes = new ArrayList<>();

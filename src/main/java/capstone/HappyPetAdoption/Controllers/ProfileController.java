@@ -36,14 +36,15 @@ public class ProfileController {
     @Autowired
     private UserDAO userDAO;
 
+    //get the historical adoptions.
     @PreAuthorize("hasAuthority('Rescuer')")
     @RequestMapping(value = "/user/adoptions", method = RequestMethod.GET)
-    public ModelAndView adoptions() throws Exception
-    {
+    public ModelAndView adoptions() throws Exception {
         ModelAndView response = new ModelAndView();
 
         List<Adoption> adoptions = adoptionDAO.getAdoptionsByRescuerId(userService.getCurrentUser().getId());
 
+        //create an object of adoption, put actual value in the object and return
         List<Map<String, Object>> adoptionObjectList = new ArrayList<>();
 
         adoptions.forEach(adoption -> {
@@ -61,9 +62,9 @@ public class ProfileController {
         return response;
     }
 
+    // Get the profile and decide if to show current adoption button
     @RequestMapping(value = "/user/profile", method = RequestMethod.GET)
-    public ModelAndView profile(ProfileFormBean profileFormBean) throws Exception
-    {
+    public ModelAndView profile(ProfileFormBean profileFormBean) throws Exception {
         ModelAndView response = new ModelAndView();
 
         User user = this.userService.getCurrentUser();
@@ -81,6 +82,7 @@ public class ProfileController {
 
             for (Adoption adoption : adoptions)
             {
+                // If the adoption status is pending or requested, then add to currentAdoption.
                 if (adoption.getOrderStatus() == OrderStatusEnum.PENDING || adoption.getOrderStatus() == OrderStatusEnum.REQUESTED) {
                     response.addObject("currentAdoption", adoption);
                     break;

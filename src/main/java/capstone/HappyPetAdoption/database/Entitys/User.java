@@ -29,7 +29,6 @@ public class User {
     @Column()
     private String name;
 
-//    @OneToMany()
     @Column()
     private Integer userTypeId;
 

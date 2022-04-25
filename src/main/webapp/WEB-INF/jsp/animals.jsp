@@ -63,8 +63,6 @@
             </div>
         </form>
 
-
-
         <c:if test="${not empty name}">
             <h5>Search Results Found ${userModelKey.size()}</h5>
             <br>
